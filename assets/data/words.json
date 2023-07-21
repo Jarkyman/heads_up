@@ -1,0 +1,6262 @@
+{
+  "allWords": [
+    {
+      "word": "Bohemian Rhapsody",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Stairway to Heaven",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Sweet Child o' Mine",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Hotel California",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Imagine",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Blinding Lights",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Thriller",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Dancing Queen",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "I Want It That Way",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Ace of Spades",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Come Together",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Yesterday",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Ticket to Ride",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Hound Dog",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Hallelujah",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Hey Jude",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "All You Need Is Love",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Purple Haze",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "I Will Always Love You",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Sweet Dreams",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "I'm a Believer",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Good Vibrations",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Take On Me",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "I Want to Break Free",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Superstition",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Sweet Caroline",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Let It Be",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Billie Jean",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "We Are the Champions",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Landslide",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Shape of You",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Despacito",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Uptown Funk",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Sugar",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Sorry",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "See You Again",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Roar",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Blank Space",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Counting Stars",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Radioactive",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Let It Go",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Wake Me Up",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Moves Like Jagger",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Cake By The Ocean",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Stressed Out",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Don't Wanna Know",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Suit & Tie",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Photograph",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Meant to Be",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Mercy",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "The Middle",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Umbrella",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Scream & Shout",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Stronger",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "I Gotta Feeling",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Ain't No Mountain High Enough",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Can't Stop The Feeling!",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Can't Hold Us",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Can't Stop",
+      "category": [
+        "Music"
+      ]
+    },
+    {
+      "word": "Avatar",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Titanic",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Star Wars",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Harry Potter",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Marvel",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Godfather",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Jurassic Park",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Indiana Jones",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Dark Knight",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Shawshank Redemption",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Matrix",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Pulp Fiction",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Terminator",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Shining",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "E.T.",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Back to the Future",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Lion King",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Jurassic Park",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Rocky",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Ghostbusters",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Jaws",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Good, the Bad and the Ugly",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Silence of the Lambs",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Pirates of the Caribbean",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Fast and the Furious",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Interstellar",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Wolf of Wall Street",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Mad Max",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Inception",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Toy Story",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Boyhood",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Black Swan",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Blade Runner",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "12 Years a Slave",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Django Unchained",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "La La Land",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Social Network",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Mamma Mia!",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Avengers",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Spiderman",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Hulk",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Superman",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Batman",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Life of Pi",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "James Bond",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Android",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "iPhone",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "iPod",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "iPad",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Mac book",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Windows",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Linux",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "3D Printer",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Drone",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Computer",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Powerbank",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Tablet",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Kendle",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Microsoft",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Intel",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "IBM",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Cisco",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Oracle",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "AMD",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Nvidia",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "HP",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Lenovo",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Asus",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Acer",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Huawei",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Sony",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Playstation",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Xbox",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Nokia",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Panasonic",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Siemens",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Motorola",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Philips",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Johnny Depp",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Arnold Schwarzenegger",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jim Carrey",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Emma Watson",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Robert Downey Jr.",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Daniel Radcliffe",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Chris Evans",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Leonardo DiCaprio",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Tom Cruise",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Brad Pitt",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Charles Chaplin",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Morgan Freeman",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Tom Hanks",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Hugh Jackman",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Matt Damon",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Sylvester Stallone",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Will Smith",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Clint Eastwood",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Cameron Diaz",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "George Clooney",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Steven Spielberg",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Harrison Ford",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Robert De Niro",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Al Pacino",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Robert Downey Jr.",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Russell Crowe",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Liam Neeson",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Kate Winslet",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Mark Wahlberg",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Natalie Portman",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Pierce Brosnan",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Dwayne Johnson",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jackie Chan",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Angelina Jolie",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Adam Sandler",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Scarlett Johansson",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Anne Hathaway",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jessica Alba",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Edward Norton",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Keira Knightley",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Bradley Cooper",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Will Ferrell",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Julia Roberts",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Nicolas Cage",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Daniel Craig",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Bruce Willis",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Rowan Atkinson",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jennifer Aniston",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Kevin Hart",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Olivia Rodrigo",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Justin Bieber",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Lady Gaga",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Katy Perry",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Rihanna",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Taylor Swift",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Britney Spears",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Shakira",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Justin Timberlake",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jennifer Lopez",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Nicki Minaj",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Bruno Mars",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Selena Gomez",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Adele",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Alicia Keys",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Chris Brown",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Harry Styles",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Miley Ray Cyrus",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Lil Wayne",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Snoop Dogg",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Wiz Khalifa",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Kanye West",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Beyoncé",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Usain Bolt",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Muhammad Ali",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Lionel Messi",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Michael Jordan",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Serena Williams",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Roger Federertennis",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Michael Phelps",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Tiger Woods",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "David Beckham",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Cristiano Ronaldo",
+      "category": [
+        "Sport",
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Joe Biden",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Donald Trump",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Barack Obama",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "George W. Bush",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "John F. Kennedy",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Marilyn Monroe",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Abraham Lincoln",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Nelson Mandela",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Queen Elizabeth II",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Martin Luther King",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Bill Gates",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Mahatma Gandhi",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Mother Teresa",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Christopher Columbus",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Charles Darwin",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Elvis Presley",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Albert Einstein",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Paul McCartney",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Queen Victoria",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Leonardo da Vinci",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Vincent Van Gogh",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Thomas Edison",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Ludwig Beethoven",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Walt Disney",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Neil Armstrong",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Henry Ford",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "John Lennon",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Elon Musk",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Michael Jackson",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Madonna",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Cleopatra",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Steve Jobs",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Sigmund Freud",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Kim Kardashian",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Kylie Jenner",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Khloé Kardashian",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Stephen Hawking",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Stephen King",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Cardi B",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Grand Canyon",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Victoria Falls",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Machu Picchu",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Taj Mahal",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Bali",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Great Barrier Reef",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Bora Bora",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Colosseum",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Jerusalem",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Louvre",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Stonehenge",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Niagara Falls",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Empire State Building",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Mount Everest",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Christ the Redeemer",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Buckingham Palace",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Hagia Sophia",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Notre Dame",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Big Ben",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Acropolis",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Golden Gate Bridge",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Pentagon",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Chichen Itza",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Times Square",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "London Eye",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Petra",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Angkor Wat",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Lacoste",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Levi's",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "louis vuitton",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Netflix",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Facebook",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Apple",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Coca Cola",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Spotify",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Tesla",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Lego",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Adidas",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Nike",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Amazon",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Samsung",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "LG",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Twitter",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Snapchat",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Nikon",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "YouTube",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Yahoo!",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Pepsi",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Ikea",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Google",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Master Card",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Starbucks",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Ebay",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Canon",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Heinz",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Kellogg's",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Nestlé",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Audi",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Porsche",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Ford",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Disney",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Tommy Hilfiger",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Varsace",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "McDonald's",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "HTC",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "One Plus",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "H&M",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "BMW",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "BBC",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Adobe",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "DELL",
+      "category": [
+        "Electronics",
+        "Brands"
+      ]
+    },
+    {
+      "word": "Oreo",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Oral-B",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Bosch",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "VISA",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Colgate",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Sprite",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Mtv",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Asos",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "CNN",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Uber",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Michelin",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "HBO",
+      "category": [
+        "Brands"
+      ]
+    }
+  ],
+  "allWordsEn": [
+    {
+      "word": "Squirrel",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Horse",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Dog",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Cat",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Mouse",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Turtle",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Crocodile",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Cow",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Goat",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Horse",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Frog",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Sheep",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Pig",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Eagle",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Rooster",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Tiger",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Lion",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Jaguar",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Lynx",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Shark",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Goldfish",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Clownfish",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Whale",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Seal",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Seagull",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hedgehog",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Spider",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Wolf",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Giraffe",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Elephant",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Rhino",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Snake",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Crocodile",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Gorilla",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Perch",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Dolphin",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Panda",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Killer whale",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Bear",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hyena",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Tiger",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Lemur",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Antelope",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Zebra",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hippopotamus",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Panther",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Kangaroo",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Leopard",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Chimpanzee",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Monkey",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Labtop",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Television",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Speaker",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Charger",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Aikido",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skiing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "American football",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Athletics",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Badminton",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Ballet",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "E-sport",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Baseball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Basketball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Beach volleyball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Billiards",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Bobsled",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Boxing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Table tennis",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Bowling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Tennis",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Wrestling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Archery",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cheerleading",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cricket",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Curling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cycling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Dance",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Darts",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Diving",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skydiving",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Pentathlon",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Fitness",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Floorball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Football",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Fencing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Golf",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Gymnastics",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Hockey",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Handball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Ice hockey",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Judo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Jiu-Jitsu",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kayaking",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Canoeing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Karate",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kickboxing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kitesurfing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Rock climbing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Figure skating",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cross-country skiing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Running",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "MMA",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Mini golf",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Motorsport",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Orienteering",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Parkour",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Petanque",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Pole Dance",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Polo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Horse Riding",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Rowing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Rugby",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Sailing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skateboarding",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Ski Jumping",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Shooting",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skating",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Snowboarding",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Spinning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Squash",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Weightlifting",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Swimming",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Taekwondo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Decathlon",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Triathlon",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Diving",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Water polo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Volleyball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Gymnastic riding",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Windsurfing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Yoga",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cheese",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pork Chops",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Milk",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Butter",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Biscuits",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Chocolate",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Feta Cheese",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Avocado",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Banana",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Apple",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pear",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tomato",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cucumber",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Onion",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Potatoes",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Rice Pudding",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Roast Pork",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Spare Ribs",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Meatballs",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sausages",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pizza",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Burger",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pasta",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Risotto",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Lasagna",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Carbonara",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Bolognese",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Soup",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Salad",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sushi",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Ramen",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tacos",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Burrito",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Coffee",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tea",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Orange",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Lemon",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Strawberry",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Watermelon",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pineapple",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mango",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kiwi",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Toast",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Grapefruit",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Peach",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Plum",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Blueberry",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Raspberry",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cherry",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Coconut",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Almonds",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Coffee",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Rib-Eye",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Entrecôte",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Peanuts",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cake",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Vanilla Ice Cream",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cauliflower",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Broccoli",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Parsley",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Egg",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mint",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pumpkin",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Peanuts",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Beer",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "IPA",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Water",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cola",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Juice",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Milk",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cocoa",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Smoothie",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Lemonade",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Iced Tea",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Energy Drink",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Espresso",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mojito",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Margarita",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Piña Colada",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sangria",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Vodka",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Whisky",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Rum",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tequila",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Gin",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Gin and Tonic",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tequila Sunrise",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mimosa",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sambuca",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pyramid",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Great Wall of China",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Galápagos Islands",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "The Eiffel Tower",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "The Nile",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Sahara Desert",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Leaning Tower of Pisa",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Yellowstone National Park",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Vatican City",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Sydney Opera House",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Statue of Liberty",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Amazon Rainforest",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Easter Island",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Disney World Paris",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Forbidden City",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Northern Lights",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Galapagos Islands",
+      "category": [
+        "World"
+      ]
+    }
+  ],
+  "allWordsDa": [
+    {
+      "word": "Egern",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hest",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hund",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Kat",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Mus",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Skilpade",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Krokedille",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Ko",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Ged",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hest",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Frø",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Får",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Gris",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Ørn",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hane",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Tiger",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Løve",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Jaguar",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Los",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Haj",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Guldfisk",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Klovnfisk",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hval",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Sæl",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Måge",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Pindsvin",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Edderkop",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Ulv",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Giraf",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Elefant",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Næsehorn",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Slange",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Krokodille",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Gorilla",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Aborre",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Delfin",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Panda",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Spækhuggere",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Bjørn",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Hyæne",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Tiger",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Lemur",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Antilope",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Zebra",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Flodhest",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Panter",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Kænguru",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Leopard",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Chimpanse",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Abe",
+      "category": [
+        "Animals"
+      ]
+    },
+    {
+      "word": "Dicte",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Klovn",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Kvinden i buret",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Sommeren 92",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Smukke mennesker",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "En kongelig affære",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Jagten",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Hævnen",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Mifunes sidste sang",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Anja og Viktor",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Sorg og glæde",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Antboy",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "En frygtelig kvinde",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Razzia",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Shelley",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "The Rain",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Rejseholdet",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Forbrydelsen",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Sæsonen",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Ternet ninja",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Terkel i knibe",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "I Kina spiser de hunde",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Adams æbler",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Nattevagten",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Den eneste ene",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "De grønne slagtere",
+      "category": [
+        "Movies"
+      ]
+    },
+    {
+      "word": "Ost",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kotteletter",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mælk",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Smør",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kiks",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Chokolade",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Feta",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Avocado",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Banan",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Æble",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pære",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tomat",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Gurke",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Løg",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kartofler",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Risengrød",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Flæskesteg",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Ribbensteg",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Frikadeller",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pølser",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pizza",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Burger",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Pasta",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Risotto",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Lasagne",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Carbonara",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Bolognese",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Soupe",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Salat",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sushi",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Ramen",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tacos",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Burrito",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kaffe",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Te",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Appelsin",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Citron",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Jordbær",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Vandmelon",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Ananas",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mango",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kiwi",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Toast",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Grapefrugt",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Fersken",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Blomme",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Blåbær",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Hindbær",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kirsebær",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kokosnød",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mandler",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kaffe",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Rib-Eye",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Entrecôte",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Peanuts",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kage",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Vaniljeis",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Blomkål",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Broccoli",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Persille",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Æg",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mynte",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Græskar",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Peanuts",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Øl",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "IPA",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Vand",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Cola",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Juice",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mælk",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Kakao",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Smoothie",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Lemonade",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "iste",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Enegidrik",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Espresso",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mojito",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Margarita",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Piña Colada",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sangria",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Vodka",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Whisky",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Rom",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tequila",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Gin",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Gin og Tonic",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Tequila Sunrise",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Mimosa",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Sambuka",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Gammel Dansk",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "1 Enkelt",
+      "category": [
+        "Food"
+      ]
+    },
+    {
+      "word": "Bærbar",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Fjensyn",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Højttaler",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Oplader",
+      "category": [
+        "Electronics"
+      ]
+    },
+    {
+      "word": "Lars Løkke Rasmussen",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Mette Frederiksen",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Lars von Trier",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Mads Mikkelsen",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Dronning Margrethe II",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Helle Thorning-Schmidt",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Søren Kierkegaard",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Niels Bohr",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jakob Fuglsang",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Thomas Helmig",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Karen Blixen",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Bjarne Riis",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Lars Hjortshøj",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Caroline Wozniacki",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Peter Schmeichel",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Michael Laudrup",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Jesper Grønkjær",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Christian Eriksen",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Morten Olsen",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Jesper Skibby",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Tom Kristensen",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Mikkel Hansen",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Niklas Landin Jacobsen",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Viktor Axelsen",
+      "category": [
+        "Celebrities",
+        "Sport"
+      ]
+    },
+    {
+      "word": "Mick Øgendahl",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Anders Matthesen",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Lasse Rimmer",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jan Gintberg",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Thomas Hartmann",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Simon Talbot",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Jonatan Spang",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Christian Fuhlendorff",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Casper Christensen",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Uffe Holm",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Ruben Søltoft",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Rune Klan",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Tobias Dybvad",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Frank Hvam",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Nikolaj Stokholm",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Linda P",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Melvin Kakooza",
+      "category": [
+        "Celebrities"
+      ]
+    },
+    {
+      "word": "Aikido",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skiløb",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Amerikansk fodbold",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Atletik",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Badminton",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Ballet",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "E-sport",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Baseball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Basketball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Beachvolley",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Billard",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Bobslæde",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Boksning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Bordtennis",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Bowling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Tennis",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Brydning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Bueskydning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cheerleading",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cricket",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Curling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Cykling",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Dans",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Dart",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Dykning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Faldskærmsspring",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Femkamp",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Fitness",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Floorball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Fodbold",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Fægtning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Golf",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Gymnastik",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Hockey",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Håndbold",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Ishockey",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Judo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Jiu-Jitsu",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kajak",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kano",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Karate",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kickboxing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kitesurfing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Klatring",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Kunstskøjteløb",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Langrend",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Løb",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "MMA",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Minigolf",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Motorsport",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Orienteringsløb",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Parkour",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Petanque",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Poledance",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Polo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Ridning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Roning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Rugby",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Sejlads",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skateboarding",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skiskydning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skydning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Skøjteløb",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Snowboard",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Spinning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Squash",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Styrkeløft",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Svømning",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Taekwondo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Tikamp",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Triathlon",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Udspring",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Vandpolo",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Volleyball",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Voltigering",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Windsurfing",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Yoga",
+      "category": [
+        "Sport"
+      ]
+    },
+    {
+      "word": "Pyramide",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Den kinesiske mur",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Galapagosøerne",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Regnskoven i Amazones",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Den forbudte by",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Eiffeltårnet",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Nilen",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Sahara-ørkenen",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Det skæve tårn i Pisa",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Yellowstone nationalpark",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Vatikanstaten",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Rundetårn",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Christiansborg",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Rosenborg slot",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Operahuset i Sydney",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Frihedsgudinden",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Påskeøen",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Nordlyset",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Den Himmelske Freds Plads",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Tivoli",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Disneyland Paris",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Nyhavn",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Det Kongelige Teater",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Legoland",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Nationalmuseet",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "H.C. Andersen Eventyrhuset",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Den Lille Havfrue",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Hammershus",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Rokkestenene",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Galapagosøerne",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Forbudte By",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Amazonasregnskoven",
+      "category": [
+        "World"
+      ]
+    },
+    {
+      "word": "Netto",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "MobilePay",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Nordea",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Danske Bank",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Viaplay",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Bilka",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Coop",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Rema 1000",
+      "category": [
+        "Brands"
+      ]
+    },
+    {
+      "word": "Græsker",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Spøgelse",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Skelet",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Udklædning",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Monster",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Uhyggelig",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Maske",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Heks",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Troldmand",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Gyserfilm",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Skræmme",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Fredag den 13.",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Zombier",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Knogle",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Blod",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Dæmon",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Djævel",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Vampyr",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Døden",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Kranie",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Gys",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Gådefuld",
+      "category": [
+        "Halloween"
+      ]
+    },
+    {
+      "word": "Adventskalender",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Chokoladeæske",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julefrokost",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Gløgg",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juleøl",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Pakkeleg",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Ris a la mande",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Risengrød",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Flæskesteg",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "And",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Brunede kartofler",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Snaps",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Snapseglas",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julebord",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Sild",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julemanden",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juletræspynt",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Nisse",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Nissepige",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Sne",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Alf",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julegave",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juletræ",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julelys",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julemad",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Rudolf",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Rensdyr",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Kane",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julesok",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Gavebånd",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Grandnål",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julefred",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julehumør",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julemelodi",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Snebold",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Snekrystal",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Vinterjakke",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Legetøj",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juleønske",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Nissefar",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Nissemor",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Slæde",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Ski",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juleferie",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Pepperkage",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Kirke",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Jesus",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Hue",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Nissehue",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Hansker",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Snemand",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julestjerne",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julekugler",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julekrans",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julesang",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Højtid",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juleaften",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julestemning",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julekalender",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julepynt",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julekort",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juledekorationer",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Juleand",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julemusik",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julefilm",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julemarkede",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Engel",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Pebernødder",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Brunkager",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Julekoncert",
+      "category": [
+        "Christmas"
+      ]
+    },
+    {
+      "word": "Chokolade",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Hjerte",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kæreste",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kys",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kærlighed",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Blomster",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Rose",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Digt",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Parfume",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Stemningsfuld",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Romantisk",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Bånd",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Gave",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Håndtryk",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Valentinsdag",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Forelskelse",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Ægtefælle",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Venner",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kærtegn",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Rød",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Pink",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Lilla",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kærlighedserklæring",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Sød",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kærlighedsbrev",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Kærlighedshistorie",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Parforhold",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Passion",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Flirt",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Dating",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Frieri",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Tændte lys",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Middag",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Intim",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Forførelse",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Lykke",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Stearinlys",
+      "category": [
+        "Valentine"
+      ]
+    },
+    {
+      "word": "Sensual",
+      "category": [
+        "Valentine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+[
+  {
+    "language": "English",
+    "country_code": "en_US",
+    "texts": {
+      "Duration": "Duration",
+      "Language": "Language",
+      "How to play": "How to play",
+      "Restore purchase": "Restore purchase",
+      "Choose Your Language": "Choose Your Language",
+      "Place the phone on your forehead to get the first word": "Place the phone on your forehead to get the first word",
+      "Tap the screen to start": "Tap the screen to start",
+      "Correct": "Correct",
+      "Pass": "Pass",
+      "_Buy full Version": "-----------------------------------------------",
+      "BUY FULL VERSION": "BUY FULL VERSION",
+      "Buy the full version, and unlock all the features.": "Buy the full version, and unlock all the features.",
+      "Unlock all categories.": "Unlock all categories.",
+      "Remove advertisements.": "Remove advertisements.",
+      "Ability to create custom categories and words.": "Ability to create custom categories and words.",
+      "Experience the full functionality of the game.": "Experience the full functionality of the game.",
+      "_Buy or try": "-----------------------------------------------------",
+      "GET A FREE TRY": "GET A FREE TRY",
+      "AD NOT AVAILABLE": "AD NOT AVAILABLE",
+      "TRY AGAIN IN": "TRY AGAIN IN",
+      "You do not have access to this category, buy the full version or watch a video and and get a free try.": "You do not have access to this category, buy the full version or watch a video and and get a free try.",
+      "_how to play": "----------------------------------------------------",
+      "Choose a category, such as food, animals, technology, etc. Then select a person to hold the phone to their forehead.": "Choose a category, such as food, animals, technology, etc. Then select a person to hold the phone to their forehead.",
+      "The other players give hints about the word without saying the word directly. The person holding the phone tries to guess the word using the hints.": "The other players give hints about the word without saying the word directly. The person holding the phone tries to guess the word using the hints.",
+      "If the word is guessed correctly, the person holding the phone tilts the phone down to get points. The person can skip the word by tilting the phone up.": "If the word is guessed correctly, the person holding the phone tilts the phone down to get points. The person can skip the word by tilting the phone up.",
+      "The game continues with new words until time runs out. At the end of the game, you can see all the words and see how many correct guesses you got.": "The game continues with new words until time runs out. At the end of the game, you can see all the words and see how many correct guesses you got.",
+      "It's a simple but fun and challenging game that can be played by people of all ages and can be a fun activity with friends and family or a challenging competition with a group of colleagues or classmates.": "It's a simple but fun and challenging game that can be played by people of all ages and can be a fun activity with friends and family or a challenging competition with a group of colleagues or classmates.",
+      "_Categories": "-----------------------------------------------------",
+      "Electronics": "Electronics",
+      "Animals": "Animals",
+      "Music": "Music",
+      "Movies": "Movies",
+      "Food": "Food",
+      "Celebrities": "Celebrities",
+      "Sport": "Sport",
+      "World": "World",
+      "Brands": "Brands",
+      "Halloween": "Halloween",
+      "Christmas": "Christmas",
+      "Valentine": "Valentine"
+    }
+  },
+  {
+    "language": "Deutsch",
+    "country_code": "de_DE",
+    "texts": {}
+  },
+  {
+    "language": "Dansk",
+    "country_code": "da_DK",
+    "texts": {
+      "Duration": "Varighed",
+      "Language": "Sprog",
+      "How to play": "Hvordan spiller man",
+      "Restore purchase": "Gendan køb",
+      "Choose Your Language": "Vælg dit sprog",
+      "Place the phone on your forehead to get the first word": "Sæt telefonen på panden for at få første ord",
+      "Tap the screen to start": "Tryk på skærmen for at starte",
+      "Correct": "Korrekt",
+      "Pass": "Pas",
+      "_Buy full Version": "-----------------------------------------------",
+      "BUY FULL VERSION": "KØB DEN FULDE VERSION",
+      "Buy the full version, and unlock all the features.": "Køb den fulde version, og lås op for alle funktioner.",
+      "Unlock all categories.": "Lås op for alle kategorier.",
+      "Remove advertisements.": "Fjern reklamer.",
+      "Ability to create custom categories and words.": "Mulighed for at oprette egne kategorier og ord.",
+      "Experience the full functionality of the game.": "Få en fuldstændig oplevelse af spilet.",
+      "_Buy or try": "-----------------------------------------------------",
+      "GET A FREE TRY": "FÅ EN GRATIS PRØVE",
+      "AD NOT AVAILABLE": "UTILGÆNGELIG ANNONCE",
+      "TRY AGAIN IN": "PRØV IGEN OM",
+      "You do not have access to this category, buy the full version or watch a video and and get a free try.": "Du har ikke adgang til denne kategori. Køb den fulde version eller se en video og få en gratis prøve.",
+      "_how to play": "----------------------------------------------------",
+      "Choose a category, such as food, animals, technology, etc. Then select a person to hold the phone to their forehead.": "Vælg en kategori, fx mad, dyr, teknik, osv. Vælg derefter en person til at tage telefonen og sætte den på panden.",
+      "The other players give hints about the word without saying the word directly. The person holding the phone tries to guess the word using the hints.": "De andre spillere skal give hints om ordet, uden at sige ordet direkte. Personen med telefonen skal forsøge at gætte ordet ved hjælp af hintene.",
+      "If the word is guessed correctly, the person holding the phone tilts the phone down to get points. The person can skip the word by tilting the phone up.": "Hvis man gætter ordet, skal telefonen vippe ned for at får point. Man kan springe ordet over ved at vippe telefonen op.",
+      "The game continues with new words until time runs out. At the end of the game, you can see all the words and see how many correct guesses you got.": "Spillet fortsætter med nye ord, indtil tiden er gået. Når spillet er færdigt, kan man se alle ordene og se hvor mange rigtige man fik.",
+      "It's a simple but fun and challenging game that can be played by people of all ages and can be a fun activity with friends and family or a challenging competition with a group of colleagues or classmates.": "Det er et simpelt, men sjovt og udfordrende spil, der kan spilles af alle aldersgrupper og kan være en sjov aktivitet med venner og familie, eller en udfordrende konkurrence med en gruppe kollegaer eller klassekammerater.",
+      "_Categories": "-----------------------------------------------------",
+      "Electronics": "Elektronik",
+      "Animals": "Dyr",
+      "Music": "Musik",
+      "Movies": "Film",
+      "Food": "Mad",
+      "Celebrities": "Berømtheder",
+      "Sport": "Sport",
+      "World": "Verden",
+      "Brands": "Mærker",
+      "Halloween": "Halloween",
+      "Christmas": "Jul",
+      "Valentine": "Valentine"
+    }
+  },
+  {
+    "language": "Svenska",
+    "country_code": "sv_SE",
+    "texts": {}
+  },
+  {
+    "language": "Norsk",
+    "country_code": "nb_NO",
+    "texts": {}
+  },
+  {
+    "language": "Español",
+    "country_code": "es_ES",
+    "texts": {}
+  },
+  {
+    "language": "Français",
+    "country_code": "fr_FR",
+    "texts": {}
+  },
+  {
+    "language": "Português",
+    "country_code": "pt_PT",
+    "texts": {}
+  },
+  {
+    "language": "Brasileiro",
+    "country_code": "pt_BR",
+    "texts": {}
+  }
+]

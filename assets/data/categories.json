@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "category": "Animals",
+      "iconUrl": "assets/icons/animal.svg",
+      "colorHex": "0xFF35A3ED"
+    },
+    {
+      "category": "Music",
+      "iconUrl": "assets/icons/music.svg",
+      "colorHex": "0xFFE21D60"
+    },
+    {
+      "category": "Movies",
+      "iconUrl": "assets/icons/movie.svg",
+      "colorHex": "0xFFF09200"
+    },
+    {
+      "category": "Food",
+      "iconUrl": "assets/icons/food.svg",
+      "colorHex": "0xFFF1BA08"
+    },
+    {
+      "category": "Electronics",
+      "iconUrl": "assets/icons/electronic.svg",
+      "colorHex": "0xFF49A94D"
+    },
+    {
+      "category": "Celebrities",
+      "iconUrl": "assets/icons/star.svg",
+      "colorHex": "0xFFD83DF3"
+    },
+    {
+      "category": "Sport",
+      "iconUrl": "assets/icons/sport.svg",
+      "colorHex": "0xFF2A9283"
+    },
+    {
+      "category": "World",
+      "iconUrl": "assets/icons/world.svg",
+      "colorHex": "0xFF5656EA"
+    },
+    {
+      "category": "Brands",
+      "iconUrl": "assets/icons/all.svg",
+      "colorHex": "0xFFD84001"
+    }
+  ],
+  "eventCategories": [
+    {
+      "category": "Halloween",
+      "iconUrl": "assets/icons/halloween.svg",
+      "colorHex": "0xFFF06625"
+    },
+    {
+      "category": "Christmas",
+      "iconUrl": "assets/icons/christmas.svg",
+      "colorHex": "0xFFF13E03"
+    },
+    {
+      "category": "Valentine",
+      "iconUrl": "assets/icons/valentine.svg",
+      "colorHex": "0xFFE21D60"
+    }
+  ]
+}
