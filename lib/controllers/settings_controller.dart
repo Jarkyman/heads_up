@@ -1,5 +1,5 @@
-import 'dart:ui';
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
@@ -128,7 +128,7 @@ class SettingsController extends GetxController implements GetxService {
     _tries = tries;
     await settingsRepo.triesPerDaySave(tries);
     DateTime today = await getDateNow();
-    print('now $today');
+    //print('now $today');
     await settingsRepo.triesDateSave(today.toString());
     update();
   }
@@ -136,26 +136,26 @@ class SettingsController extends GetxController implements GetxService {
   Future<void> resetTries() async {
     DateTime today = await getDateNow();
     String loadRead = await settingsRepo.triesDateRead();
-    print('read $loadRead');
-    //DateTime old = DateTime.parse(loadRead).add(Duration(days: 1));
-    DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1));
-    print('Dif = ${old.difference(today)}');
-    print('?? = ${old.isBefore(today)}');
+    //print('read $loadRead');
+    DateTime old = DateTime.parse(loadRead).add(const Duration(days: 1));
+    //DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1)); //TEST ONLY
+    //print('Dif = ${old.difference(today)}');
+    //print('?? = ${old.isBefore(today)}');
     if (old.isBefore(today)) {
       _tries = 0;
       settingsRepo.triesPerDaySave(0);
     }
-    print('Trys reset');
+    //print('Trys reset');
     update();
   }
 
   Future<Duration> getTimeToNewTry() async {
     DateTime today = await getDateNow();
     String loadRead = await settingsRepo.triesDateRead();
-    print('read $loadRead');
-    //DateTime old = DateTime.parse(loadRead).add(Duration(days: 1));
-    DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1));
-    print('Dif = ${old.difference(today)}');
+    //print('read $loadRead');
+    DateTime old = DateTime.parse(loadRead).add(Duration(days: 1));
+    //DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1)); //TEST ONLY
+    //print('Dif = ${old.difference(today)}');
     return old.difference(today);
   }
 
