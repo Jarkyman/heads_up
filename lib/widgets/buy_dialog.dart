@@ -1,14 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../../controllers/settings_controller.dart';
 import '../../helper/app_colors.dart';
 import '../../helper/dimensions.dart';
-import '../helper/app_constants.dart';
 
 void buildBuyDialog() {
   Get.bottomSheet(
@@ -101,22 +98,7 @@ void buildBuyDialog() {
             return CustomIconButton(
               onTap: () async {
                 if (!settingsController.isUnlockAll) {
-                  try {
-                    CustomerInfo customerInfo = await Purchases.purchaseProduct(
-                        AppConstants.UNLOCK_ALL_ID,
-                        type: PurchaseType.inapp);
-                    debugPrint('Purchase info: $customerInfo');
-                    settingsController.unlockAllSave(true);
-                    debugPrint('Levels unlocked');
-                    Get.back();
-                  } on PlatformException catch (e) {
-                    var errorCode = PurchasesErrorHelper.getErrorCode(e);
-                    if (errorCode !=
-                        PurchasesErrorCode.purchaseCancelledError) {
-                      debugPrint('Failed to purchase product. ');
-                      //purchaseErrorSnackbar(); TODO: Error popup
-                    }
-                  }
+                  settingsController.unlockAllSave(true);
                 }
               },
               title: 'BUY FULL VERSION'.tr,

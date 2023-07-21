@@ -34,13 +34,12 @@ class SettingsRepo {
   }
 
   Future<bool> unlockAllRead() async {
-    bool unlockAll =
-        sharedPreferences.getBool(AppConstants.UNLOCK_ALL) ?? false;
+    bool unlockAll = true;
     return unlockAll;
   }
 
   Future<bool> unlockAllSave(bool unlockAll) async {
-    return await sharedPreferences.setBool(AppConstants.UNLOCK_ALL, unlockAll);
+    return await sharedPreferences.setBool(AppConstants.UNLOCK_ALL, true);
   }
 
   Future<int> triesPerDayRead() async {

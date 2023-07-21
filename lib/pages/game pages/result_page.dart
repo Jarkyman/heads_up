@@ -169,7 +169,7 @@ class _ResultPageState extends State<ResultPage> {
                                     top: Dimensions.height45),
                                 child: Column(
                                   children: List.generate(
-                                    Get.arguments[2].length,
+                                    7,
                                     (index) => Padding(
                                       padding:
                                           EdgeInsets.all(Dimensions.height20),

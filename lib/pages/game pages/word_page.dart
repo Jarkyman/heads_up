@@ -11,8 +11,6 @@ import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/pages/game%20pages/result_page.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
-import '../../controllers/settings_controller.dart';
-
 class WordPage extends StatefulWidget {
   const WordPage({super.key});
 
@@ -30,14 +28,22 @@ class _WordPageState extends State<WordPage> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
 
   late List<String> wordsList;
-  List<String> wordsPassed = [];
-  int score = 0;
+  List<String> wordsPassed = [
+    'Grand Canyon',
+    '#Machu Picchu',
+    'Taj Mahal',
+    'Colosseum',
+    'Louvre',
+    'Mount Everest',
+    '#Big Ben'
+  ];
+  int score = 5;
   int wordIndex = 0;
   String _word = ' ';
 
   Timer _startWaitTimer = Timer(Duration.zero, () {});
   final CountDownController _roundTimeController = CountDownController();
-  int _roundTime = 60;
+  int _roundTime = 20;
   int _startWaitTime = 3;
   bool _isStartTimer = false;
   bool _isStarted = false;
@@ -47,7 +53,7 @@ class _WordPageState extends State<WordPage> {
     super.initState();
     wordsList = Get.find<WordController>()
         .generateWordsListByCategory(Get.arguments[0]);
-    _roundTime = Get.find<SettingsController>().getRoundTime;
+    //_roundTime = Get.find<SettingsController>().getRoundTime;
   }
 
   @override
@@ -134,10 +140,10 @@ class _WordPageState extends State<WordPage> {
   /// This is needed because the first word never gets set, to avoid this i generate the first word by this method.
   void generateFirstWord() {
     setState(() {
-      String word = '#${wordsList[wordIndex]}';
-      wordsPassed.add(word);
+      String word = '#Grand Canyon';
+      //wordsPassed.add(word);
       isFirstWordGenerated = true;
-      _word = wordsList[wordIndex];
+      _word = 'Grand Canyon';
     });
   }
 

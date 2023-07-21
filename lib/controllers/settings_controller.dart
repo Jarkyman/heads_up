@@ -1,5 +1,5 @@
-import 'dart:ui';
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
@@ -17,7 +17,7 @@ class SettingsController extends GetxController implements GetxService {
 
   int get getRoundTime => _roundTime;
 
-  bool _unlockAll = false;
+  bool _unlockAll = true;
 
   bool get isUnlockAll => _unlockAll;
 
