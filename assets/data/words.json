@@ -698,7 +698,7 @@
       ]
     },
     {
-      "word": "Kendle",
+      "word": "Kindle",
       "category": [
         "Electronics"
       ]
@@ -1726,31 +1726,33 @@
     {
       "word": "Lacoste",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "Levi's",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "louis vuitton",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "Netflix",
       "category": [
-        "Electronics"
+        "Electronics",
+        "Brands"
       ]
     },
     {
       "word": "Facebook",
       "category": [
-        "Electronics"
+        "Electronics",
+        "Brands"
       ]
     },
     {
@@ -1763,43 +1765,45 @@
     {
       "word": "Coca Cola",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "Spotify",
       "category": [
-        "Electronics"
+        "Electronics",
+        "Brands"
       ]
     },
     {
       "word": "Tesla",
       "category": [
-        "Electronics"
+        "Electronics",
+        "Brands"
       ]
     },
     {
       "word": "Lego",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "Adidas",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "Nike",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
       "word": "Amazon",
       "category": [
-        "Electronics"
+        "Brands"
       ]
     },
     {
