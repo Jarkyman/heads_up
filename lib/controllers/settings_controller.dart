@@ -25,11 +25,13 @@ class SettingsController extends GetxController implements GetxService {
 
   int get getTries => _tries;
 
+  List<StoreProduct> _products = [];
+
+  List<StoreProduct> get products => _products;
+
   SettingsController({required this.settingsRepo});
 
   final List<String> _productsIds = [AppConstants.UNLOCK_ALL_ID];
-
-  List<StoreProduct> _products = [];
 
   Future<void> readSettings() async {
     _readLanguage();

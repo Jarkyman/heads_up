@@ -89,6 +89,8 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
         ),
         Expanded(child: Container()),
         GetBuilder<SettingsController>(builder: (settingsController) {
+          StoreProduct? product = settingsController.products[0];
+
           return CustomIconButton(
             onTap: () async {
               if (!settingsController.isUnlockAll) {
@@ -110,6 +112,7 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
               }
             },
             title: 'BUY FULL VERSION'.tr,
+            price: product.priceString,
             color: AppColors.greenColor,
             textColor: Colors.white,
             icon: Icons.monetization_on_outlined,
@@ -163,12 +166,14 @@ class CustomIconButton extends StatefulWidget {
     required this.icon,
     required this.onTap,
     required this.color,
+    this.price = '',
     this.textColor = Colors.black,
     this.isTimer = false,
   }) : super(key: key);
 
   final VoidCallback onTap;
   final String title;
+  final String price;
   final IconData icon;
   final Color color;
   final Color textColor;
@@ -248,13 +253,27 @@ class _CustomIconButtonState extends State<CustomIconButton> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(
-                    child: Text(
-                      widget.title,
-                      style: TextStyle(
-                        color: widget.textColor,
-                        fontSize: Dimensions.font16,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          widget.title,
+                          style: TextStyle(
+                            color: widget.textColor,
+                            fontSize: Dimensions.font16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        if (widget.price != '')
+                          Text(
+                            ' ${widget.price}',
+                            style: TextStyle(
+                              color: widget.textColor,
+                              fontSize: Dimensions.font16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                      ],
                     ),
                   ),
                   if (widget.isTimer)

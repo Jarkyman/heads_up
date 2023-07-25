@@ -97,34 +97,7 @@ void buildBuyDialog() {
             ),
           ),
           Expanded(child: Container()),
-          GetBuilder<SettingsController>(builder: (settingsController) {
-            return CustomIconButton(
-              onTap: () async {
-                if (!settingsController.isUnlockAll) {
-                  try {
-                    CustomerInfo customerInfo = await Purchases.purchaseProduct(
-                        AppConstants.UNLOCK_ALL_ID,
-                        type: PurchaseType.inapp);
-                    debugPrint('Purchase info: $customerInfo');
-                    settingsController.unlockAllSave(true);
-                    debugPrint('Levels unlocked');
-                    Get.back();
-                  } on PlatformException catch (e) {
-                    var errorCode = PurchasesErrorHelper.getErrorCode(e);
-                    if (errorCode !=
-                        PurchasesErrorCode.purchaseCancelledError) {
-                      debugPrint('Failed to purchase product. ');
-                      //purchaseErrorSnackbar(); TODO: Error popup
-                    }
-                  }
-                }
-              },
-              title: 'BUY FULL VERSION'.tr,
-              color: AppColors.greenColor,
-              textColor: Colors.white,
-              icon: Icons.monetization_on_outlined,
-            );
-          }),
+          BuyButton(),
           SizedBox(
             height: Dimensions.height45,
           ),
@@ -134,6 +107,51 @@ void buildBuyDialog() {
   );
 }
 
+class BuyButton extends StatefulWidget {
+  const BuyButton({
+    super.key,
+  });
+
+  @override
+  State<BuyButton> createState() => _BuyButtonState();
+}
+
+class _BuyButtonState extends State<BuyButton> {
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<SettingsController>(builder: (settingsController) {
+      StoreProduct? product = settingsController.products[0];
+
+      return CustomIconButton(
+        onTap: () async {
+          if (!settingsController.isUnlockAll) {
+            try {
+              CustomerInfo customerInfo = await Purchases.purchaseProduct(
+                  AppConstants.UNLOCK_ALL_ID,
+                  type: PurchaseType.inapp);
+              debugPrint('Purchase info: $customerInfo');
+              settingsController.unlockAllSave(true);
+              debugPrint('Levels unlocked');
+              Get.back();
+            } on PlatformException catch (e) {
+              var errorCode = PurchasesErrorHelper.getErrorCode(e);
+              if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
+                debugPrint('Failed to purchase product. ');
+                //purchaseErrorSnackbar(); TODO: Error popup
+              }
+            }
+          }
+        },
+        title: 'BUY FULL VERSION'.tr,
+        price: product.priceString,
+        color: AppColors.greenColor,
+        textColor: Colors.white,
+        icon: Icons.monetization_on_outlined,
+      );
+    });
+  }
+}
+
 class CustomIconButton extends StatefulWidget {
   const CustomIconButton({
     Key? key,
@@ -141,12 +159,14 @@ class CustomIconButton extends StatefulWidget {
     required this.icon,
     required this.onTap,
     required this.color,
+    this.price = "",
     this.textColor = Colors.black,
     this.isTimer = false,
   }) : super(key: key);
 
   final VoidCallback onTap;
   final String title;
+  final String price;
   final IconData icon;
   final Color color;
   final Color textColor;
@@ -224,13 +244,27 @@ class _CustomIconButtonState extends State<CustomIconButton> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(
-                    child: Text(
-                      widget.title,
-                      style: TextStyle(
-                        color: widget.textColor,
-                        fontSize: Dimensions.font16,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          widget.title,
+                          style: TextStyle(
+                            color: widget.textColor,
+                            fontSize: Dimensions.font16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        if (widget.price != "")
+                          Text(
+                            ' ${widget.price}',
+                            style: TextStyle(
+                              color: widget.textColor,
+                              fontSize: Dimensions.font16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                      ],
                     ),
                   ),
                   if (widget.isTimer)
