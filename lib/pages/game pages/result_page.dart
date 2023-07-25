@@ -81,7 +81,7 @@ class _ResultPageState extends State<ResultPage> {
       DeviceOrientation.portraitDown,
     ]);
     Duration(seconds: 2).delay(() {
-      _interstitialAd?.show();
+      //_interstitialAd?.show(); //TODO: Tilføj reklame igen
     });
     return Scaffold(
       body: BackgroundImage(
