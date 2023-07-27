@@ -23,6 +23,7 @@ dependencies:
   purchases_flutter: ^5.3.0
   wakelock: ^0.6.2
   gdpr_dialog: ^2.0.0
+  rate_my_app: ^2.0.0
 
 dev_dependencies:
   flutter_test:
