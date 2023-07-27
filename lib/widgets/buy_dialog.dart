@@ -120,7 +120,10 @@ class _BuyButtonState extends State<BuyButton> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SettingsController>(builder: (settingsController) {
-      StoreProduct? product = settingsController.products[0];
+      StoreProduct? product;
+      if (settingsController.products.isNotEmpty) {
+        product = settingsController.products[0];
+      }
 
       return CustomIconButton(
         onTap: () async {
@@ -142,8 +145,8 @@ class _BuyButtonState extends State<BuyButton> {
             }
           }
         },
-        title: 'BUY FULL VERSION'.tr,
-        price: product.priceString,
+        title: product == null ? 'TRY AGAIN LATER'.tr : 'BUY FULL VERSION'.tr,
+        price: product == null ? '' : product.priceString,
         color: AppColors.greenColor,
         textColor: Colors.white,
         icon: Icons.monetization_on_outlined,

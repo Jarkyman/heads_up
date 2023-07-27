@@ -89,7 +89,10 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
         ),
         Expanded(child: Container()),
         GetBuilder<SettingsController>(builder: (settingsController) {
-          StoreProduct? product = settingsController.products[0];
+          StoreProduct? product;
+          if (settingsController.products.isNotEmpty) {
+            product = settingsController.products[0];
+          }
 
           return CustomIconButton(
             onTap: () async {
@@ -111,8 +114,9 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
                 }
               }
             },
-            title: 'BUY FULL VERSION'.tr,
-            price: product.priceString,
+            title:
+                product == null ? 'TRY AGAIN LATER'.tr : 'BUY FULL VERSION'.tr,
+            price: product == null ? '' : product.priceString,
             color: AppColors.greenColor,
             textColor: Colors.white,
             icon: Icons.monetization_on_outlined,
