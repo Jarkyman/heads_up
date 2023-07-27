@@ -61,6 +61,8 @@ PODS:
     - PurchasesHybridCommon (= 5.3.0)
   - PurchasesHybridCommon (5.3.0):
     - RevenueCat (= 4.24.1)
+  - rate_my_app (2.0.0):
+    - Flutter
   - RevenueCat (4.24.1)
   - sensors_plus (0.0.1):
     - Flutter
@@ -78,6 +80,7 @@ DEPENDENCIES:
   - gdpr_dialog (from `.symlinks/plugins/gdpr_dialog/ios`)
   - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
   - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
+  - rate_my_app (from `.symlinks/plugins/rate_my_app/ios`)
   - sensors_plus (from `.symlinks/plugins/sensors_plus/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - wakelock (from `.symlinks/plugins/wakelock/ios`)
@@ -105,6 +108,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_mobile_ads/ios"
   purchases_flutter:
     :path: ".symlinks/plugins/purchases_flutter/ios"
+  rate_my_app:
+    :path: ".symlinks/plugins/rate_my_app/ios"
   sensors_plus:
     :path: ".symlinks/plugins/sensors_plus/ios"
   shared_preferences_foundation:
@@ -127,6 +132,7 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   purchases_flutter: 3cf1671df370c385e6142a2b4209a03ad21e52ca
   PurchasesHybridCommon: b7e85ee8afb68789191e0d776c98e02c3439771d
+  rate_my_app: 80fba94c4885cd31738231b7b1f51c1ad726f5c7
   RevenueCat: 8e5da200b5a5f45688aead5d803654c19f739914
   sensors_plus: bda64198ccc7d3ccbb49e6ae17d92f67687bee20
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126

@@ -8,6 +8,7 @@ import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
 import 'package:heads_up/widgets/icon_button.dart';
 
+import '../../controllers/review_controller.dart';
 import '../../helper/ad_helper.dart';
 
 class ResultPage extends StatefulWidget {
@@ -82,6 +83,7 @@ class _ResultPageState extends State<ResultPage> {
     ]);
     Duration(seconds: 2).delay(() {
       //_interstitialAd?.show(); //TODO: Tilføj reklame igen
+      ReviewController.checkReviewPopup(context);
     });
     return Scaffold(
       body: BackgroundImage(

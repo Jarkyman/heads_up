@@ -20,7 +20,7 @@ class ReviewController {
     if (rateMyApp.shouldOpenDialog) {
       rateMyApp.showRateDialog(
         context,
-        title: 'Rate Flags game'.tr,
+        title: 'Rate Hint Master'.tr,
         message: 'RateMsg'.tr,
         rateButton: 'RATE'.tr,
         noButton: 'NO THANKS'.tr,

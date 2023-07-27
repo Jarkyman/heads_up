@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/background_image.dart';
@@ -8,7 +9,10 @@ import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/controllers/word_controller.dart';
 import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/pages/home_page.dart';
+import 'package:rate_my_app/rate_my_app.dart';
 import 'package:wakelock/wakelock.dart';
+
+import 'controllers/review_controller.dart';
 import 'controllers/settings_controller.dart';
 import 'helper/app_colors.dart';
 import 'helper/dimensions.dart';
@@ -39,6 +43,15 @@ class _SplashPageState extends State<SplashScreen>
     print('loading Words');
     await Get.find<WordController>().readAllWords();
     print('Loaded Words');
+    print('loading review');
+    ReviewController.rateMyApp.init().then((_) {
+      for (var condition in ReviewController.rateMyApp.conditions) {
+        if (condition is DebuggableCondition) {
+          print(condition.valuesAsString);
+        }
+      }
+    });
+    print('loaded review');
     print('Flutter phone locale = ${Platform.localeName}');
     if (controller.isCompleted) {
       await Future.delayed(const Duration(milliseconds: 4000));
