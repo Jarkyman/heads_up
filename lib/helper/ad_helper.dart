@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:get/get.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 
-/*
 class AdHelper {
   static String get bannerAdUnitId {
     if (!Get.find<SettingsController>().isUnlockAll) {
@@ -34,22 +33,22 @@ class AdHelper {
   }
 
   static String get rewardedAdUnitId {
-  if (!Get.find<SettingsController>().isUnlockAll) {
-    if (Platform.isAndroid) {
-      return 'ca-app-pub-9894760850635221/4870824043';
-    } else if (Platform.isIOS) {
-      return 'ca-app-pub-9894760850635221/4268188814';
+    if (!Get.find<SettingsController>().isUnlockAll) {
+      if (Platform.isAndroid) {
+        return 'ca-app-pub-9894760850635221/4870824043';
+      } else if (Platform.isIOS) {
+        return 'ca-app-pub-9894760850635221/4268188814';
+      } else {
+        throw new UnsupportedError("Unsupported platform");
+      }
     } else {
-      throw new UnsupportedError("Unsupported platform");
-    }
-  }else {
       return "no ad rewardedAd";
     }
   }
 }
-*/
-// TEST
 
+// TEST
+/*
 class AdHelper {
   static String get bannerAdUnitId {
     if (!Get.find<SettingsController>().isUnlockAll) {
@@ -93,3 +92,4 @@ class AdHelper {
     }
   }
 }
+*/
