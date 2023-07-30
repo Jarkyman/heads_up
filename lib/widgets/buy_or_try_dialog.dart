@@ -132,7 +132,7 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
               print(settingsController.getTries);
               if (widget.isAdLoaded &&
                   settingsController.getTries < AppConstants.TRYS_PR_DAY) {
-                /*widget.rewardedAd?.show(
+                widget.rewardedAd?.show(
                   onUserEarnedReward: (_, reward) {
                     settingsController
                         .triesPerDaySave(settingsController.getTries + 1);
@@ -140,12 +140,7 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
                     Get.to(() => const WordPage(),
                         arguments: [widget.categoryData, false]);
                   },
-                );*/ //TODO: Tilføj reklame igen
-                settingsController
-                    .triesPerDaySave(settingsController.getTries + 1);
-                Get.close(1);
-                Get.to(() => const WordPage(),
-                    arguments: [widget.categoryData, false]);
+                );
               }
             },
             title: settingsController.getTries < AppConstants.TRYS_PR_DAY

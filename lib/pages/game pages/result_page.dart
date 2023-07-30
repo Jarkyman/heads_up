@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -82,8 +84,13 @@ class _ResultPageState extends State<ResultPage> {
       DeviceOrientation.portraitDown,
     ]);
     Duration(seconds: 2).delay(() {
-      //_interstitialAd?.show(); //TODO: Tilføj reklame igen
-      ReviewController.checkReviewPopup(context);
+      Random random = Random();
+      int randomInt = random.nextInt(6);
+      if (randomInt == 2) {
+        _interstitialAd?.show();
+      } else {
+        ReviewController.checkReviewPopup(context);
+      }
     });
     return Scaffold(
       body: BackgroundImage(
