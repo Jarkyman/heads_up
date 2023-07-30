@@ -7,6 +7,7 @@ import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/widgets/how_to_play_dialog.dart';
+import 'package:launch_review/launch_review.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../helper/app_constants.dart';
@@ -190,6 +191,44 @@ class _SettingsPageState extends State<SettingsPage> {
                                 ),
                               ),
                               const IconIndicator(icon: Icons.question_mark),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: Dimensions.height20,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        LaunchReview.launch(
+                            androidAppId: AppConstants.ANDROID_ID,
+                            iOSAppId: AppConstants.IOS_ID);
+                      },
+                      child: SettingsBtn(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: Dimensions.width10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: Dimensions.width30 * 7.5,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Review app'.tr,
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font26,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white.withOpacity(0.8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const IconIndicator(icon: Icons.star),
                             ],
                           ),
                         ),

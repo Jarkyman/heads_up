@@ -24,6 +24,7 @@ dependencies:
   wakelock: ^0.6.2
   gdpr_dialog: ^2.0.0
   rate_my_app: ^2.0.0
+  launch_review: ^3.0.1
 
 dev_dependencies:
   flutter_test:

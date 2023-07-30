@@ -2,7 +2,7 @@ class AppConstants {
   static const String APP_NAME = 'Heads up';
   static const String APP_VERSION = '1.0.0';
   static const String IOS_ID = '1666497757';
-  static const String ANDROID_ID = 'com.hartvig.develop.heads_up';
+  static const String ANDROID_ID = 'com.hartvig.develop.hint.master';
 
   //Links
   static const String TIME_API =
