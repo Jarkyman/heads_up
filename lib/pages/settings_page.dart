@@ -127,7 +127,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                 return GroupButton(
                                   controller: GroupButtonController(
                                       selectedIndex: index),
-                                  buttons: const ['60', '90', '12'],
+                                  buttons: const ['60', '90', '120'],
                                   onSelected: (value, index, selected) {
                                     settingsController
                                         .roundTimeSave(int.parse(value));
