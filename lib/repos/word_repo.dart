@@ -22,11 +22,9 @@ class WordRepo {
     return _getWordsFromName('allWordsDa');
   }
 
-  Future<List<WordModel>> _getWordsFromName(
-      String wordRole) async {
+  Future<List<WordModel>> _getWordsFromName(String wordRole) async {
     List<WordModel> result = [];
-    String jsonString =
-    await rootBundle.loadString("assets/data/words.json");
+    String jsonString = await rootBundle.loadString("assets/data/words.json");
     var jsonData = json.decode(jsonString);
     var data = jsonData[wordRole];
     for (var item in data) {

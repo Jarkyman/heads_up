@@ -18,19 +18,23 @@ class WordController extends GetxController implements GetxService {
 
   Future<void> readWords() async {
     List<WordModel> words = await wordRepo.getWords();
+    List<WordModel> langWords = await _readLangWords();
     _words = [];
     _words.addAll(words);
-    _words.addAll(await _readLangWords());
+    _words.addAll(langWords);
   }
 
-  Future<List<WordModel>> _readLangWords() async{
+  Future<List<WordModel>> _readLangWords() async {
     List<WordModel> result = [];
-    switch (Get.locale.toString()) { //TODO: Det her kan nok gøres anderledes måske bruge Locale('da')
+    switch (Get.locale.toString()) {
+      //TODO: Det her kan nok gøres anderledes måske bruge Locale('da')
       case ('da_DK'):
-        result.addAll(await wordRepo.getDaWords());
+        List<WordModel> temp = await wordRepo.getDaWords();
+        result.addAll(temp);
         break;
       case ('en_US'):
-        result.addAll(await wordRepo.getEnWords());
+        List<WordModel> temp = await wordRepo.getEnWords();
+        result.addAll(temp);
         break;
     }
     return result;
@@ -41,7 +45,8 @@ class WordController extends GetxController implements GetxService {
 
     for (WordModel word in _words) {
       for (CategoryModel wordCategory in word.category) {
-        if (wordCategory.category == category.category) {
+        if (wordCategory.category.toLowerCase() ==
+            category.category.toLowerCase()) {
           wordsList.add(word.word);
         }
       }

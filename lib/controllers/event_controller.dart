@@ -23,7 +23,7 @@ class EventController extends GetxController implements GetxService {
     //print(response.body);
     if (response.statusCode == 200) {
       await setDate(response.body['dateTime']);
-      //await setDate('2022-10-30 17:35:22.895127');
+      //await setDate('2023-12-24 17:35:22.895127'); //2023-02-14 / 2023-10-31 / 2023-12-24
       setEventStatus();
     }
   }

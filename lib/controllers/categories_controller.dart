@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import '../models/category_model.dart';
 import '../repos/category_repo.dart';
 
@@ -9,7 +10,7 @@ class CategoryController extends GetxController implements GetxService {
   List<CategoryModel> _categories = [];
   List<CategoryModel> get categories => _categories;
 
-  List<CategoryModel> _eventCategories = []; //TODO: Add til events
+  List<CategoryModel> _eventCategories = []; //TODO: Add own til events
   List<CategoryModel> get eventCategories => _eventCategories;
 
   List<CategoryModel> _ownCategories = [];
@@ -18,7 +19,7 @@ class CategoryController extends GetxController implements GetxService {
   Future<void> readAllCategories() async {
     await readCategories();
     await readEventCategories();
-    await readOwnCategories();
+    //await readOwnCategories();
   }
 
   Future<void> readCategories() async {

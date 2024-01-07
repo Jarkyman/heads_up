@@ -12,8 +12,10 @@ class WordModel {
     var categoryNames = json['category'].cast<String>();
     List<CategoryModel> result = [];
     for (String categoryName in categoryNames) {
-      for (CategoryModel category
-          in Get.find<CategoryController>().categories) {
+      List<CategoryModel> categories =
+          Get.find<CategoryController>().categories +
+              Get.find<CategoryController>().eventCategories;
+      for (CategoryModel category in categories) {
         if (category.category == categoryName) {
           result.add(category);
         }
