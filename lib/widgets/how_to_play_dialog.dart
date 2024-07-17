@@ -38,7 +38,9 @@ class _HowToWidgetState extends State<HowToWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: Dimensions.screenHeight / 2.5,
-      width: Dimensions.width45 * 6,
+      width: Dimensions.screenWidth > 600
+          ? Dimensions.screenWidth / 1.6
+          : Dimensions.screenWidth,
       decoration: BoxDecoration(
         color: AppColors.lightPurpleColor,
         borderRadius: BorderRadius.only(

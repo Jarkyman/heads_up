@@ -14,7 +14,9 @@ void buildBuyDialog() {
   Get.bottomSheet(
     Container(
       height: Dimensions.screenHeight / 1.5,
-      width: Dimensions.width45 * 6,
+      width: Dimensions.screenWidth > 600
+          ? Dimensions.screenWidth / 1.6
+          : Dimensions.screenWidth,
       decoration: BoxDecoration(
         color: AppColors.lightPurpleColor,
         borderRadius: BorderRadius.only(
