@@ -62,7 +62,7 @@ class SettingsController extends GetxController implements GetxService {
   }
 
   Future<void> initPlatformState() async {
-    await Purchases.setDebugLogsEnabled(true);
+    await Purchases.setLogLevel(LogLevel.debug);
 
     PurchasesConfiguration? configuration;
     if (Platform.isAndroid) {

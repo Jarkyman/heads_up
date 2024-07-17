@@ -1,15 +1,15 @@
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
-import 'package:get/get.dart';
 
 class BackgroundImage extends StatefulWidget {
   final Widget child;
-  bool showAnimation;
+  final bool showAnimation;
 
-  BackgroundImage({Key? key, required this.child, this.showAnimation = false})
-      : super(key: key);
+  const BackgroundImage(
+      {super.key, required this.child, this.showAnimation = false});
 
   @override
   State<BackgroundImage> createState() => _BackgroundImageState();

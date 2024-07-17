@@ -1,6 +1,4 @@
-import 'package:heads_up/controllers/categories_controller.dart';
 import 'package:heads_up/models/word_model.dart';
-import 'package:get/get.dart';
 
 /*
   Get.find<CategoryController>().categories[0] = Dyr

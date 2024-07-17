@@ -24,7 +24,7 @@ void buildHowToDialog() {
 }
 
 class HowToWidget extends StatefulWidget {
-  const HowToWidget({Key? key, required this.howToPlayList}) : super(key: key);
+  const HowToWidget({super.key, required this.howToPlayList});
 
   final List<String> howToPlayList;
 
