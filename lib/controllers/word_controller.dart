@@ -17,7 +17,7 @@ class WordController extends GetxController implements GetxService {
   }
 
   Future<void> readWords() async {
-    List<WordModel> words = await wordRepo.getWords();
+    //List<WordModel> words = await wordRepo.getWords();
     List<WordModel> langWords = await _readLangWords();
     _words = [];
     _words.addAll(words);

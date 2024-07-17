@@ -10,9 +10,9 @@ class WordRepo {
 
   WordRepo({required this.sharedPreferences});
 
-  Future<List<WordModel>> getWords() async {
-    return _getWordsFromName('allWords');
-  }
+  //Future<List<WordModel>> getWords() async {
+  //  return _getWordsFromName('allWords');
+  //}
 
   Future<List<WordModel>> getEnWords() async {
     return _getWordsFromName('allWordsEn');
