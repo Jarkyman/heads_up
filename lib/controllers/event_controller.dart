@@ -1,4 +1,4 @@
-import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/repos/event_repo.dart';
 
@@ -17,8 +17,7 @@ class EventController extends GetxController implements GetxService {
   EventController({required this.eventRepo});
 
   Future<void> getDate() async {
-    final String currentTimeZone =
-        await FlutterNativeTimezone.getLocalTimezone();
+    final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
     Response response = await eventRepo.getTime(currentTimeZone);
     //print(response.body);
     if (response.statusCode == 200) {

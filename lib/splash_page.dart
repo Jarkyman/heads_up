@@ -47,7 +47,7 @@ class _SplashPageState extends State<SplashScreen>
     ReviewController.rateMyApp.init().then((_) {
       for (var condition in ReviewController.rateMyApp.conditions) {
         if (condition is DebuggableCondition) {
-          print(condition.valuesAsString);
+          //print(condition.valuesAsString);
         }
       }
     });

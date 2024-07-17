@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
@@ -162,8 +162,7 @@ class SettingsController extends GetxController implements GetxService {
   }
 
   Future<DateTime> getDateNow() async {
-    final String currentTimeZone =
-        await FlutterNativeTimezone.getLocalTimezone();
+    final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
     Response response = await settingsRepo.getTime(currentTimeZone);
     //print(response.body);
     if (response.statusCode == 200) {
