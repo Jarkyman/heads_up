@@ -36,6 +36,14 @@ class WordController extends GetxController implements GetxService {
         List<WordModel> temp = await wordRepo.getEnWords();
         result.addAll(temp);
         break;
+      case ('sv_SE'):
+        List<WordModel> temp = await wordRepo.getSeWords();
+        result.addAll(temp);
+        break;
+      case ('nb_NO'):
+        List<WordModel> temp = await wordRepo.getNoWords();
+        result.addAll(temp);
+        break;
     }
     return result;
   }

@@ -22,6 +22,14 @@ class WordRepo {
     return _getWordsFromName('allWordsDa');
   }
 
+  Future<List<WordModel>> getSeWords() async {
+    return _getWordsFromName('allWordsSe');
+  }
+
+  Future<List<WordModel>> getNoWords() async {
+    return _getWordsFromName('allWordsNo');
+  }
+
   Future<List<WordModel>> _getWordsFromName(String wordRole) async {
     List<WordModel> result = [];
     String jsonString = await rootBundle.loadString("assets/data/words.json");

@@ -11,11 +11,11 @@ final List locale = [
   {'name': 'Dansk', 'locale': const Locale('da', 'DK')},
   //{'name': 'Deutsch', 'locale': Locale('de', 'DE')},
   {'name': 'English', 'locale': const Locale('en', 'US')},
-  /*{'name': 'Español', 'locale': Locale('es', 'ES')},
-  {'name': 'Français', 'locale': Locale('fr', 'FR')},
+  //{'name': 'Español', 'locale': Locale('es', 'ES')},
+  //{'name': 'Français', 'locale': Locale('fr', 'FR')},
   {'name': 'Norsk', 'locale': Locale('nb', 'NO')},
-  {'name': 'Português', 'locale': Locale('pt', 'PT')},
-  {'name': 'Svenska', 'locale': Locale('sv', 'SE')},*/
+  //{'name': 'Português', 'locale': Locale('pt', 'PT')},
+  {'name': 'Svenska', 'locale': Locale('sv', 'SE')},
 ];
 
 updateLanguage(Locale locale) {

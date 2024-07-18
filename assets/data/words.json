@@ -286,7 +286,7 @@
     }, {
       "word": "Ghostbusters", "category": ["Movies"]
     }, {
-      "word": "Jaws", "category": ["Movies"]
+      "word": "Dødens gab", "category": ["Movies"]
     }, {
       "word": "The Good, the Bad and the Ugly", "category": ["Movies"]
     }, {
@@ -1848,8 +1848,6 @@
     }, {
       "word": "Back to the Future", "category": ["Movies"]
     }, {
-      "word": "The Lion King", "category": ["Movies"]
-    }, {
       "word": "The Jurassic Park", "category": ["Movies"]
     }, {
       "word": "Rocky", "category": ["Movies"]
@@ -1947,6 +1945,8 @@
       "word": "Anja og Viktor", "category": ["Movies"]
     }, {
       "word": "Sorg og glæde", "category": ["Movies"]
+    }, {
+      "word": "Løvernes konge", "category": ["Movies"]
     }, {
       "word": "Antboy", "category": ["Movies"]
     }, {
@@ -2174,6 +2174,8 @@
     {
       "word": "Bærbar", "category": ["Electronics"]
     }, {
+      "word": "Sonos", "category": ["Electronics"]
+    },{
       "word": "Fjensyn", "category": ["Electronics"]
     }, {
       "word": "Højttaler", "category": ["Electronics"]
@@ -2245,6 +2247,8 @@
       "word": "Motorola", "category": ["Electronics"]
     }, {
       "word": "Philips", "category": ["Electronics", "Brands"]
+    },{
+      "word": "Philips Hue", "category": ["Electronics"]
     },
 
     {
@@ -3490,15 +3494,11 @@
     }, {
       "word": "Back to the Future", "category": ["Movies"]
     }, {
-      "word": "The Lion King", "category": ["Movies"]
-    }, {
       "word": "The Jurassic Park", "category": ["Movies"]
     }, {
       "word": "Rocky", "category": ["Movies"]
     }, {
       "word": "Ghostbusters", "category": ["Movies"]
-    }, {
-      "word": "Jaws", "category": ["Movies"]
     }, {
       "word": "The Good, the Bad and the Ugly", "category": ["Movies"]
     }, {
@@ -3576,6 +3576,8 @@
     }, {
       "word": "Flickan som lekte med elden", "category": ["Movies"]
     }, {
+      "word": "Hajen", "category": ["Movies"]
+    }, {
       "word": "Luftslottet som sprängdes", "category": ["Movies"]
     }, {
       "word": "Hundraåringen som klev ut genom fönstret och försvann", "category": ["Movies"]
@@ -3621,6 +3623,8 @@
       "word": "Mio min Mio", "category": ["Movies"]
     }, {
       "word": "Emil i Lönneberga", "category": ["Movies"]
+    }, {
+      "word": "Lejonkungen", "category": ["Movies"]
     }, {
       "word": "Bröderna Lejonhjärta", "category": ["Movies"]
     }, {
@@ -3861,6 +3865,8 @@
       "word": "Motorola", "category": ["Electronics"]
     }, {
       "word": "Philips", "category": ["Electronics", "Brands"]
+    },{
+      "word": "Philips Hue", "category": ["Electronics"]
     },
 
     {
@@ -4978,15 +4984,11 @@
     }, {
       "word": "Back to the Future", "category": ["Movies"]
     }, {
-      "word": "The Lion King", "category": ["Movies"]
-    }, {
       "word": "The Jurassic Park", "category": ["Movies"]
     }, {
       "word": "Rocky", "category": ["Movies"]
     }, {
       "word": "Ghostbusters", "category": ["Movies"]
-    }, {
-      "word": "Jaws", "category": ["Movies"]
     }, {
       "word": "The Good, the Bad and the Ugly", "category": ["Movies"]
     }, {
@@ -5071,6 +5073,10 @@
       "word": "Nokas", "category": ["Movies"]
     }, {
       "word": "Amundsen", "category": ["Movies"]
+    }, {
+      "word": "Haisommer", "category": ["Movies"]
+    }, {
+      "word": "Løvenes konge", "category": ["Movies"]
     }, {
       "word": "Birkebeinerne", "category": ["Movies"]
     }, {
@@ -5311,6 +5317,8 @@
       "word": "Siemens", "category": ["Electronics"]
     }, {
       "word": "Motorola", "category": ["Electronics"]
+    },{
+      "word": "Philips Hue", "category": ["Electronics"]
     },
 
     {
