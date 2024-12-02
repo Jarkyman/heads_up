@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                                       children:
                                           List.generate(listLength, (index) {
                                         bool isLocked = false;
-                                        int amountOfFreeCategories = 3;
+                                        int amountOfFreeCategories = 7;
                                         if (index > amountOfFreeCategories &&
                                             !settingsController.isUnlockAll) {
                                           isLocked = true;
