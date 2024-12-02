@@ -4,7 +4,7 @@ import 'package:heads_up/repos/event_repo.dart';
 
 enum EventStatus { none, halloween, christmas, valentine, easter }
 
-// Thanksgiving, St Patrick's Day, Easter
+// Thanksgiving, St Patrick's Day,
 
 class EventController extends GetxController implements GetxService {
   EventRepo eventRepo;
