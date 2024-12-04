@@ -69,6 +69,16 @@
       "category": "Superhero",
       "iconUrl": "assets/icons/superhero.svg",
       "colorHex": "0xFF0077C0"
+    },
+    {
+      "category": "90s",
+      "iconUrl": "assets/icons/90s.svg",
+      "colorHex": "0xFF2980B9"
+    },
+    {
+      "category": "Cartoons",
+      "iconUrl": "assets/icons/cartoon.svg",
+      "colorHex": "0xFFFEA800"
     }
   ],
   "eventCategories": [
