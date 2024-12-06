@@ -355,7 +355,7 @@ class EventTile extends StatelessWidget {
                 width: Dimensions.iconSize32 * 3,
                 child: SvgPicture.asset(
                   category.iconUrl,
-                  color: Colors.white.withOpacity(0.8),
+                  colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.8), BlendMode.srcIn),
                 ),
               ),
             ),
@@ -431,7 +431,7 @@ class CategoryTile extends StatelessWidget {
                     width: Dimensions.iconSize32 * 2,
                     child: SvgPicture.asset(
                       category.iconUrl,
-                      color: Colors.white.withOpacity(0.8),
+                      colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.8), BlendMode.srcIn),
                     ),
                   ),
                 ),
