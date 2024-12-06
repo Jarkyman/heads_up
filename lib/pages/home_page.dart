@@ -231,6 +231,11 @@ class _HomePageState extends State<HomePage> {
                                         _categoryController.eventCategories[2];
                                     index = 2;
                                     break;
+                                  case EventStatus.easter:
+                                    category =
+                                        _categoryController.eventCategories[3];
+                                    index = 3;
+                                    break;
                                   case EventStatus.none:
                                     showEvent = false;
                                     break;
