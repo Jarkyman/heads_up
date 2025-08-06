@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                                       children:
                                           List.generate(listLength, (index) {
                                         bool isLocked = false;
-                                        int amountOfFreeCategories = 3;
+                                        int amountOfFreeCategories = 7;
                                         if (index > amountOfFreeCategories &&
                                             !settingsController.isUnlockAll) {
                                           isLocked = true;
@@ -222,6 +222,11 @@ class _HomePageState extends State<HomePage> {
                                     category =
                                         _categoryController.eventCategories[2];
                                     index = 2;
+                                    break;
+                                  case EventStatus.easter:
+                                    category =
+                                        _categoryController.eventCategories[3];
+                                    index = 3;
                                     break;
                                   case EventStatus.none:
                                     showEvent = false;
@@ -342,7 +347,7 @@ class EventTile extends StatelessWidget {
                 width: Dimensions.iconSize32 * 3,
                 child: SvgPicture.asset(
                   category.iconUrl,
-                  color: Colors.white.withOpacity(0.8),
+                  colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.8), BlendMode.srcIn),
                 ),
               ),
             ),
@@ -418,7 +423,7 @@ class CategoryTile extends StatelessWidget {
                     width: Dimensions.iconSize32 * 2,
                     child: SvgPicture.asset(
                       category.iconUrl,
-                      color: Colors.white.withOpacity(0.8),
+                      colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.8), BlendMode.srcIn),
                     ),
                   ),
                 ),
