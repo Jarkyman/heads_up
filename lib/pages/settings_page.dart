@@ -7,7 +7,7 @@ import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/widgets/how_to_play_dialog.dart';
-import 'package:launch_review/launch_review.dart';
+import 'package:launch_review_latest/launch_review_latest.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../helper/app_constants.dart';
@@ -201,7 +201,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        LaunchReview.launch(
+                        LaunchReviewLatest.launch(
                             androidAppId: AppConstants.ANDROID_ID,
                             iOSAppId: AppConstants.IOS_ID);
                       },

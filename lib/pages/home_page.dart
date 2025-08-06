@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gdpr_dialog/gdpr_dialog.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/background_image.dart';
@@ -18,6 +17,7 @@ import 'package:heads_up/widgets/icon_button.dart';
 
 import '../helper/ad_helper.dart';
 import '../widgets/buy_or_try_dialog.dart';
+import '../widgets/show_consent_form.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -33,15 +33,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    //GdprDialog.instance.resetDecision(); //For test only
-    GdprDialog.instance
-        .showDialog(isForTest: false, testDeviceId: '')
-        .then((onValue) {
-      setState(() {
-        gdprStatus = 'dialog result == $onValue';
-        print('RESULT = ' + gdprStatus);
-      });
-    });
+    showConsentForm(isForTest: false, testDeviceId: 'TEST_DEVICE_ID');
 
     _loadRewardedAd();
     /*SystemChrome.setPreferredOrientations([

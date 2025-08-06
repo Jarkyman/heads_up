@@ -10,7 +10,7 @@ import 'package:heads_up/controllers/word_controller.dart';
 import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/pages/home_page.dart';
 import 'package:rate_my_app/rate_my_app.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'controllers/review_controller.dart';
 import 'controllers/settings_controller.dart';
@@ -30,7 +30,7 @@ class _SplashPageState extends State<SplashScreen>
   late AnimationController controller;
 
   Future<void> _loadResource() async {
-    Wakelock.enable();
+    WakelockPlus.enable();
     print('loading settings');
     await Get.find<SettingsController>().readSettings();
     print('loaded settings');

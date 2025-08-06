@@ -35,8 +35,13 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 34
+    namespace "com.hartvig.develop.heads_up"
+    compileSdkVersion 35
     ndkVersion flutter.ndkVersion
+
+    defaultConfig {
+        multiDexEnabled true
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -55,8 +60,8 @@ android {
         applicationId "com.hartvig.develop.hint.master"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdkVersion 23
+        targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -72,6 +77,8 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
         }
     }
 }
@@ -86,4 +93,9 @@ dependencies {
     implementation 'com.google.ads.mediation:facebook:6.17.0.0'
 
     implementation "com.android.billingclient:billing:7.0.0"
+
+    implementation 'androidx.window:window:1.3.0'
+    implementation 'androidx.window:window-java:1.3.0'
+    implementation 'com.google.android.play:review:2.0.1'
+    implementation 'com.google.android.play:review-ktx:2.0.1'
 }
