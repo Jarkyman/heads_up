@@ -1,0 +1,50 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "srgb:0.52950,0.06077,0.74821,1.00000",
+      "srgb:0.30864,0.00000,0.56998,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "Icon_full.png",
+          "name" : "Icon_full",
+          "position" : {
+            "scale" : 1.2,
+            "translation-in-points" : [
+              2.0869475694099577,
+              62.66759312163777
+            ]
+          }
+        },
+        {
+          "image-name" : "Text_full.png",
+          "name" : "Text_full",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              2.549518422423507,
+              -16.819291364806567
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
