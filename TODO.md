@@ -3,11 +3,10 @@
 Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og forbedres, sorteret efter prioritet og markeret med ToDoKanban tags. Opgaver omkring egne kategorier er flyttet til [TODO-own_words_category.md](TODO-own_words_category.md).
 // TODO: hero "animationen" fra splash screen til home page virker ikke.
 
-// TODO: Se alle words igennem for stavefejl! 
-
 ---
 
 ## ✅ DONE
+// DONE: Se alle words igennem for stavefejl! (Der blev fundet og rettet over 20 stavefejl via script).
 // DONE: Kan vi lave en splash screen der har den samme bangrund som vores app? (Løst med BackgroundImage-widgeten).
 // DONE: hero "animationen" klipper. Forsøgt løst med Transition.fadeIn. (Pauset for nu).
 // DONE: Jeg har købt appne, men hvis jeg laver en shift+R så skal jeg ind i settings for at "gendane køb" for at få det igen, er det en fejl? (Løst ved at tvinge et kald til `unlockAllRead()` og `updateCustomerStatus()` i SettingsController's readSettings()).
