@@ -87,12 +87,28 @@ class _WordPageState extends State<WordPage> {
                         // — Countdown: 3, 2, 1 —
                         if (game.isStartTimerRunning && !game.isGameStarted)
                           Center(
-                            child: Text(
-                              '${game.startCountdown}',
-                              style: TextStyle(
-                                fontSize: Dimensions.font26 * 3,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                            child: AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 250),
+                              transitionBuilder: (child, animation) =>
+                                  ScaleTransition(
+                                scale: animation,
+                                child: FadeTransition(
+                                    opacity: animation, child: child),
+                              ),
+                              child: Text(
+                                '${game.startCountdown}',
+                                key: ValueKey(game.startCountdown),
+                                style: TextStyle(
+                                  fontSize: Dimensions.font26 * 3,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  shadows: const [
+                                    Shadow(
+                                      blurRadius: 20,
+                                      color: Color(0x88000000),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -126,14 +142,30 @@ class _WordPageState extends State<WordPage> {
                         // — In-game: current word —
                         if (game.isGameStarted)
                           Center(
-                            child: FittedBox(
-                              fit: BoxFit.contain,
-                              child: Text(
-                                game.currentWord,
-                                style: TextStyle(
-                                  fontSize: Dimensions.font26 * 2.5,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: Dimensions.width20),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: AnimatedSwitcher(
+                                  duration: const Duration(milliseconds: 200),
+                                  child: Text(
+                                    game.currentWord,
+                                    key: ValueKey(game.currentWord),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font26 * 2.5,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      shadows: const [
+                                        Shadow(
+                                          blurRadius: 16,
+                                          color: Color(0x66000000),
+                                          offset: Offset(0, 2),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -147,23 +179,60 @@ class _WordPageState extends State<WordPage> {
                             child: Padding(
                               padding: EdgeInsets.only(
                                   bottom: Dimensions.height20 * 2),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: Dimensions.width20,
-                                    vertical: Dimensions.height10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withValues(alpha: 0.25),
-                                  borderRadius: BorderRadius.circular(
-                                      Dimensions.radius30),
+                              child: TweenAnimationBuilder<double>(
+                                tween: Tween(begin: 0.0, end: 1.0),
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.elasticOut,
+                                builder: (context, value, child) =>
+                                    Transform.scale(
+                                  scale: value,
+                                  child: child,
                                 ),
-                                child: Text(
-                                  game.backgroundColor == AppColors.correctColor
-                                      ? 'Correct'.tr
-                                      : 'Pass'.tr,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font26,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: Dimensions.width20 * 1.5,
+                                      vertical: Dimensions.height10),
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        (game.backgroundColor ==
+                                                AppColors.correctColor
+                                            ? AppColors.correctColor
+                                            : AppColors.passColor)
+                                            .withValues(alpha: 0.9),
+                                        (game.backgroundColor ==
+                                                AppColors.correctColor
+                                            ? AppColors.correctColor
+                                            : AppColors.passColor)
+                                            .withValues(alpha: 0.6),
+                                      ],
+                                    ),
+                                    borderRadius: BorderRadius.circular(
+                                        Dimensions.radius30 * 2),
+                                    border: Border.all(
+                                      color: Colors.white.withValues(alpha: 0.4),
+                                      width: 1.5,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: game.backgroundColor
+                                            .withValues(alpha: 0.5),
+                                        blurRadius: 20,
+                                        spreadRadius: 2,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Text(
+                                    game.backgroundColor ==
+                                            AppColors.correctColor
+                                        ? 'Correct'.tr
+                                        : 'Pass'.tr,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font26,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                      letterSpacing: 1.2,
+                                    ),
                                   ),
                                 ),
                               ),

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,6 +9,7 @@ import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/categories_controller.dart';
 import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
+import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/models/category_model.dart';
@@ -34,7 +37,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     showConsentForm(isForTest: false, testDeviceId: 'TEST_DEVICE_ID');
-
     _loadRewardedAd();
     /*SystemChrome.setPreferredOrientations([
       //DeviceOrientation.landscapeRight,
@@ -74,9 +76,6 @@ class _HomePageState extends State<HomePage> {
           );
           setState(() {
             isAdLoaded = true;
-          });
-
-          setState(() {
             _rewardedAd = ad;
           });
         },
@@ -110,20 +109,43 @@ class _HomePageState extends State<HomePage> {
                     child: Center(
                       child: Column(
                         children: [
-                          Hero(
-                            tag: AppConstants.LOGO_TAG,
-                            child: SizedBox(
-                              height: 145,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: Dimensions.width45),
-                                child: Image.asset('assets/images/Icon.png'),
+                          // — Logo + title —
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: Dimensions.height20,
+                              bottom: Dimensions.height10,
+                            ),
+                            child: Hero(
+                              tag: AppConstants.LOGO_TAG,
+                              child: SizedBox(
+                                height: 120,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: Dimensions.width45),
+                                  child: Image.asset('assets/images/Icon.png'),
+                                ),
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: Dimensions.width20,
+                          Text(
+                            'Who Am I?',
+                            style: TextStyle(
+                              fontSize: Dimensions.font26 * 1.1,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 1.5,
+                              shadows: const [
+                                Shadow(
+                                  blurRadius: 12,
+                                  color: Color(0x66000000),
+                                  offset: Offset(0, 2),
+                                ),
+                              ],
+                            ),
                           ),
+                          SizedBox(height: Dimensions.height20 * 1.5),
+
+                          // — Category grid —
                           Padding(
                             padding: EdgeInsets.all(Dimensions.width10),
                             child: GetBuilder<CategoryController>(
@@ -196,6 +218,8 @@ class _HomePageState extends State<HomePage> {
                               },
                             ),
                           ),
+
+                          // — Event tile —
                           GetBuilder<CategoryController>(
                               builder: (categoryController) {
                             return GetBuilder<EventController>(
@@ -232,6 +256,8 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+
+              // — Settings button —
               Positioned(
                 top: 10,
                 left: 10,
@@ -240,6 +266,8 @@ class _HomePageState extends State<HomePage> {
                   icon: Icons.settings_outlined,
                 ),
               ),
+
+              // — Unlock / lock button —
               GetBuilder<SettingsController>(builder: (settingsController) {
                 if (!settingsController.isUnlockAll) {
                   return Positioned(
@@ -280,7 +308,10 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class EventTile extends StatelessWidget {
+// ─────────────────────────────────────────────
+// EventTile
+// ─────────────────────────────────────────────
+class EventTile extends StatefulWidget {
   const EventTile({
     super.key,
     required this.category,
@@ -291,54 +322,107 @@ class EventTile extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
+  State<EventTile> createState() => _EventTileState();
+}
+
+class _EventTileState extends State<EventTile>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  late final Animation<double> _scale;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100),
+    );
+    _scale = Tween<double>(begin: 1.0, end: 0.96).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: Dimensions.height20 * 10,
-        width: double.maxFinite,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(category.colorHex).withValues(alpha: 0.4),
-              Color(category.colorHex).withValues(alpha: 0.6),
-            ],
-          ),
+      onTapDown: (_) => _controller.forward(),
+      onTapUp: (_) {
+        _controller.reverse();
+        widget.onTap();
+      },
+      onTapCancel: () => _controller.reverse(),
+      child: ScaleTransition(
+        scale: _scale,
+        child: ClipRRect(
           borderRadius: BorderRadius.circular(Dimensions.radius20),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(Dimensions.height10),
-              child: SizedBox(
-                height: Dimensions.iconSize32 * 3,
-                width: Dimensions.iconSize32 * 3,
-                child: SvgPicture.asset(
-                  category.iconUrl,
-                  colorFilter: ColorFilter.mode(Colors.white.withValues(alpha: 0.8), BlendMode.srcIn),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+            child: Container(
+              height: Dimensions.height20 * 10,
+              width: double.maxFinite,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(widget.category.colorHex).withValues(alpha: 0.55),
+                    Color(widget.category.colorHex).withValues(alpha: 0.30),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                border: Border.all(
+                  color: AppColors.glassBorder,
+                  width: 1.2,
                 ),
               ),
-            ),
-            Center(
-                child: Text(
-              category.category,
-              style: TextStyle(
-                fontSize: Dimensions.font26,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(Dimensions.height10),
+                    child: SizedBox(
+                      height: Dimensions.iconSize32 * 3,
+                      width: Dimensions.iconSize32 * 3,
+                      child: SvgPicture.asset(
+                        widget.category.iconUrl,
+                        colorFilter: ColorFilter.mode(
+                            Colors.white.withValues(alpha: 0.9),
+                            BlendMode.srcIn),
+                      ),
+                    ),
+                  ),
+                  Center(
+                      child: Text(
+                    widget.category.category,
+                    style: TextStyle(
+                      fontSize: Dimensions.font26,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      shadows: const [
+                        Shadow(blurRadius: 8, color: Color(0x55000000)),
+                      ],
+                    ),
+                  )),
+                ],
               ),
-            )),
-          ],
+            ),
+          ),
         ),
       ),
     );
   }
 }
 
-class CategoryTile extends StatelessWidget {
+// ─────────────────────────────────────────────
+// CategoryTile
+// ─────────────────────────────────────────────
+class CategoryTile extends StatefulWidget {
   const CategoryTile({
     super.key,
     required this.category,
@@ -353,63 +437,124 @@ class CategoryTile extends StatelessWidget {
   final bool isOwn;
 
   @override
+  State<CategoryTile> createState() => _CategoryTileState();
+}
+
+class _CategoryTileState extends State<CategoryTile>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  late final Animation<double> _scale;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 110),
+    );
+    _scale = Tween<double>(begin: 1.0, end: 0.92).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onLongPress: () {
         debugPrint('Edit');
-
       },
-      onTap: onTap,
-      child: Container(
-        height: Dimensions.height10 * 16,
-        width: Dimensions.height10 * 14,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(category.colorHex).withValues(alpha: 0.4),
-              Color(category.colorHex).withValues(alpha: 0.6),
-            ],
-          ),
+      onTapDown: (_) => _controller.forward(),
+      onTapUp: (_) {
+        _controller.reverse();
+        widget.onTap();
+      },
+      onTapCancel: () => _controller.reverse(),
+      child: ScaleTransition(
+        scale: _scale,
+        child: ClipRRect(
           borderRadius: BorderRadius.circular(Dimensions.radius20),
-        ),
-        child: Stack(
-          children: [
-            if (locked)
-              Align(
-                alignment: Alignment.center,
-                child: Icon(
-                  Icons.lock_outline,
-                  size: 100,
-                  color: Colors.grey.withValues(alpha: 0.6),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+            child: Container(
+              height: Dimensions.height10 * 16,
+              width: Dimensions.height10 * 14,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(widget.category.colorHex).withValues(alpha: 0.55),
+                    Color(widget.category.colorHex).withValues(alpha: 0.28),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                border: Border.all(
+                  color: AppColors.glassBorder,
+                  width: 1.2,
                 ),
               ),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(Dimensions.height10),
-                  child: SizedBox(
-                    height: Dimensions.iconSize32 * 2,
-                    width: Dimensions.iconSize32 * 2,
-                    child: SvgPicture.asset(
-                      category.iconUrl,
-                      colorFilter: ColorFilter.mode(Colors.white.withValues(alpha: 0.8), BlendMode.srcIn),
+              child: Stack(
+                children: [
+                  if (widget.locked)
+                    Align(
+                      alignment: Alignment.center,
+                      child: Icon(
+                        Icons.lock_outline,
+                        size: 80,
+                        color: Colors.white.withValues(alpha: 0.2),
+                      ),
                     ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: Dimensions.iconSize32 * 2,
+                        width: double.infinity,
+                        child: Padding(
+                          padding: EdgeInsets.all(Dimensions.height10 * 0.8),
+                          child: SvgPicture.asset(
+                            widget.category.iconUrl,
+                            colorFilter: ColorFilter.mode(
+                              Colors.white
+                                  .withValues(alpha: widget.locked ? 0.35 : 0.9),
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: Dimensions.width10 * 0.5),
+                        child: Text(
+                          widget.category.category.tr,
+                          maxLines: 2,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: Dimensions.font16,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white
+                                .withValues(alpha: widget.locked ? 0.4 : 1.0),
+                            shadows: const [
+                              Shadow(
+                                blurRadius: 6,
+                                color: Color(0x44000000),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Center(
-                    child: Text(
-                  category.category.tr,
-                  style: TextStyle(
-                    fontSize: Dimensions.font20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                )),
-              ],
+                ],
+              ),
             ),
-          ],
+          ),
         ),
       ),
     );

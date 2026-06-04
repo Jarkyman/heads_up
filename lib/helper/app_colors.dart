@@ -5,7 +5,6 @@ class AppColors {
   static const Color textColor = Color(0xFFC5E8E2);
   static const Color mainColor = Color(0xFF271373);
 
-  //static final Color mainColor = const Color(0xFFfa7552);
   static const Color darkPurpleColor = Color(0xFF271373);
   static const Color lightPurpleColor = Color(0xFFEFEBFF);
   static const Color correctColor = Color(0xFF148A06);
@@ -16,4 +15,9 @@ class AppColors {
   static const Color lightGreen2 = Color(0xFFCBEBE6);
   static const Color textColorGray = Color(0xFF7D7D97);
   static const Color mainBlackColor = Color(0xFF332d2b);
+
+  // Glassmorphism
+  static const Color glassWhite = Color(0x26FFFFFF);      // white @ 15%
+  static const Color glassBorder = Color(0x40FFFFFF);     // white @ 25%
+  static const Color glassWhiteStrong = Color(0x40FFFFFF); // white @ 25% for tiles
 }

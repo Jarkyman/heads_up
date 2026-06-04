@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -120,22 +121,48 @@ class _ResultPageState extends State<ResultPage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: Dimensions.height45),
-                      child: Container(
-                        height: Dimensions.height45 * 2,
-                        width: Dimensions.height45 * 2,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.3),
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.radius30 * 3),
-                        ),
-                        child: Center(
-                          child: FittedBox(
-                            fit: BoxFit.contain,
-                            child: Text(
-                              '${Get.arguments[1]}',
-                              style: TextStyle(
-                                  fontSize: Dimensions.font20 * 2.5,
-                                  color: Colors.white),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                            Dimensions.radius30 * 3),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+                          child: Container(
+                            height: Dimensions.height45 * 2,
+                            width: Dimensions.height45 * 2,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0x44FFFFFF),
+                                  Color(0x22FFFFFF),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                  Dimensions.radius30 * 3),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.35),
+                                width: 1.5,
+                              ),
+                            ),
+                            child: Center(
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: Text(
+                                  '${Get.arguments[1]}',
+                                  style: TextStyle(
+                                    fontSize: Dimensions.font20 * 2.5,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    shadows: const [
+                                      Shadow(
+                                        blurRadius: 12,
+                                        color: Color(0x55000000),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),

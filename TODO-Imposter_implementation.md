@@ -13,7 +13,8 @@ Siden "Heads up" er et varemærke/beskyttet navn, og "Imposter" er stærkt forbu
 - *Forehead Fun*
 - *UpWord*
 - *Flip & Guess*
-Find more ideres before disiding.
+- *Who Am I?*
+Who Am I? skal det være
 
 **Mode 2 (Det nye "Imposter" spil):**
 - *Undercover*

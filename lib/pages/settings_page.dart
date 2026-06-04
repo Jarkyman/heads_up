@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -335,15 +337,24 @@ class SettingsBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Dimensions.height10 * 10,
-      width: Dimensions.width30 * 10,
-      decoration: BoxDecoration(
-        color: AppColors.darkPurpleColor.withValues(alpha: 0.8),
-        borderRadius: BorderRadius.circular(Dimensions.radius20),
-        border: Border.all(color: Colors.black, width: 2),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(Dimensions.radius20),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+        child: Container(
+          height: Dimensions.height10 * 10,
+          width: Dimensions.width30 * 10,
+          decoration: BoxDecoration(
+            color: AppColors.glassWhite,
+            borderRadius: BorderRadius.circular(Dimensions.radius20),
+            border: Border.all(
+              color: AppColors.glassBorder,
+              width: 1.2,
+            ),
+          ),
+          child: child,
+        ),
       ),
-      child: child,
     );
   }
 }
