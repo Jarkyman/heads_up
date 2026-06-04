@@ -1,21 +1,15 @@
 PODS:
   - Flutter (1.0.0)
-  - launch_review_latest (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - launch_review_latest (from `.symlinks/plugins/launch_review_latest/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  launch_review_latest:
-    :path: ".symlinks/plugins/launch_review_latest/ios"
 
 SPEC CHECKSUMS:
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
-  launch_review_latest: 28e236fc255d91ec1430c39f951c4db1398c79c1
 
 PODFILE CHECKSUM: 51cd7d2091d6dc883f681595edce8ca1119fada0
 
