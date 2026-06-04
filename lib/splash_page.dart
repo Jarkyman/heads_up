@@ -50,14 +50,14 @@ class _SplashPageState extends State<SplashScreen>
     if (controller.isCompleted) {
       await Future.delayed(const Duration(milliseconds: 4000));
       Get.off(() => const HomePage(),
-          duration: Duration(seconds: 2),
-          transition: Transition.circularReveal);
+          duration: const Duration(milliseconds: 800),
+          transition: Transition.fadeIn);
     } else {
       Timer(
           const Duration(seconds: 3),
           () => Get.off(() => const HomePage(),
-              duration: Duration(seconds: 2),
-              transition: Transition.circularReveal));
+              duration: const Duration(milliseconds: 800),
+              transition: Transition.fadeIn));
       //Timer(Duration(seconds: 3), () => Get.off(TestPage()));
     }
   }

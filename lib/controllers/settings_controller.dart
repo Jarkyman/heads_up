@@ -49,9 +49,13 @@ class SettingsController extends GetxController implements GetxService {
 
     await initPlatformState();
 
+    await unlockAllRead();
+
     Purchases.addCustomerInfoUpdateListener(
       (_) => updateCustomerStatus(),
     );
+    updateCustomerStatus(); // Fetch from RevenueCat immediately on startup
+
     try {
       _products = await Purchases.getProducts(_productsIds,
           productCategory: ProductCategory.nonSubscription);

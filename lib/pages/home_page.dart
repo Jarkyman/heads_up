@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    showConsentForm(isForTest: false, testDeviceId: 'TEST_DEVICE_ID');
+    showConsentForm();
     _loadRewardedAd();
     /*SystemChrome.setPreferredOrientations([
       //DeviceOrientation.landscapeRight,
@@ -51,12 +51,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   dispose() {
-    /*SystemChrome.setPreferredOrientations([
-      //DeviceOrientation.landscapeRight,
-      //DeviceOrientation.landscapeLeft,
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);*/
     _rewardedAd?.dispose();
     super.dispose();
   }
@@ -238,10 +232,6 @@ class _HomePageState extends State<HomePage> {
                                     allCategories.addAll(
                                         categoryController.ownCategories);
                                     int listLength = allCategories.length;
-                                    if (settingsController.isUnlockAll) {
-                                      debugPrint('add one more (add)');
-                                      //listLength += 1;
-                                    }
                                     return Wrap(
                                       spacing: Dimensions.width10,
                                       runSpacing: Dimensions.width10,
@@ -254,22 +244,6 @@ class _HomePageState extends State<HomePage> {
                                             !settingsController.isUnlockAll) {
                                           isLocked = true;
                                         }
-                                        debugPrint('$index/$listLength');
-                                        /*if (index + 1 == listLength &&
-                                              !isLocked) {
-                                            debugPrint('object');
-                                            return CategoryTile(
-                                                locked: false,
-                                                category: CategoryModel(
-                                                  category: 'Add',
-                                                  iconUrl:
-                                                      'assets/icons/add.svg',
-                                                  colorHex: 0xFFE6B400,
-                                                ),
-                                                onTap: () {
-                                                  addCategoryDialog();
-                                                });
-                                          } else {*/
                                         return CategoryTile(
                                             locked: isLocked,
                                             category: allCategories[index],
@@ -294,12 +268,9 @@ class _HomePageState extends State<HomePage> {
                                                   isAdLoaded,
                                                   allCategories[index],
                                                 );
-                                                debugPrint('PopUp');
                                               }
                                             });
-                                      }
-                                              //},
-                                              ),
+                                      }),
                                     );
                                   },
                                 );
@@ -378,19 +349,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 } else {
-                  /*return Positioned(
-                    top: 10,
-                    right: 10,
-                    child: GestureDetector(
-                      onTap: () {
-
-                      },
-                      child: SizedBox(
-                        height: Dimensions.width10 * 3.2,
-                        child: Image.asset('assets/icons/plus.png'),
-                      ),
-                    ),
-                  );*/
                   return Container();
                 }
               }),
@@ -561,7 +519,7 @@ class _CategoryTileState extends State<CategoryTile>
   Widget build(BuildContext context) {
     return GestureDetector(
       onLongPress: () {
-        debugPrint('Edit');
+        // Edit functionality for custom categories
       },
       onTapDown: (_) => _controller.forward(),
       onTapUp: (_) {
