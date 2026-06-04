@@ -9,7 +9,7 @@ import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/widgets/how_to_play_dialog.dart';
-import 'package:launch_review_latest/launch_review_latest.dart';
+import 'package:heads_up/controllers/review_controller.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../helper/app_constants.dart';
@@ -203,9 +203,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        LaunchReviewLatest.launch(
-                            androidAppId: AppConstants.ANDROID_ID,
-                            iOSAppId: AppConstants.IOS_ID);
+                        ReviewController.rateMyApp.launchStore();
                       },
                       child: SettingsBtn(
                         child: Padding(
@@ -250,6 +248,14 @@ class _SettingsPageState extends State<SettingsPage> {
 
                           Get.find<SettingsController>()
                               .unlockAllSave(isUnlockAll);
+
+                          Get.snackbar(
+                            'Restore purchase'.tr,
+                            isUnlockAll ? '✔' : '✖',
+                            snackPosition: SnackPosition.BOTTOM,
+                            backgroundColor: Colors.black.withValues(alpha: 0.6),
+                            colorText: Colors.white,
+                          );
                         } on PlatformException catch (e) {
                           debugPrint(e.toString());
                         }

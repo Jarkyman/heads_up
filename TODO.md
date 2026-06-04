@@ -2,8 +2,7 @@
 
 Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og forbedres, sorteret efter prioritet og markeret med ToDoKanban tags. Opgaver omkring egne kategorier er flyttet til [TODO-own_words_category.md](TODO-own_words_category.md).
 
-## 🚀 Høj Prioritet (H) - Logik & Arkitektur
-// TODO {M} [system, build] (H): Så snart third-party packages (fx `package_info_plus`, `rate_my_app`, `sensors_plus` osv.) understøtter det fuldt ud, skal Android-projektet endeligt migreres til "Built-in Kotlin" (KGP fjernes). Venter på plugin-maintainers.
+
 
 
 ---
@@ -20,3 +19,4 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 // DONE {M} [ui, design] (H): Premium UI/Design løft – Glassmorphism på alle tiles, knapper og settings. Micro-animationer (ScaleTransition, AnimatedSwitcher, TweenAnimationBuilder) på CategoryTile, EventTile, IconBtn, countdown og tilt-badge.
 // DONE {S} [ui, branding] (M): App-titel ændret til "Who Am I?" og vist under logoet på forsiden.
 // DONE {S} [ui, localization] (M): Udskift hardcodede engelske tekster med tr-nøgler ("Who Am I?"), fjernet overflødig TODO i WordController.
+// DONE {M} [system, build] (H): Migreret det mulige af Android-projektet til Built-in Kotlin (bygger nu uden fejl, men har stadig warnings fra plugins som rate_my_app og package_info_plus indtil deres forfattere opdaterer dem).
