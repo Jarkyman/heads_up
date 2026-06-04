@@ -1,0 +1,24 @@
+<en-GB>
+- Brand new game mode: CHAMELEON! A social deduction party game where you must find the imposter among you.
+- Premium unlocked fix: Your purchases now correctly restore on app launch.
+- Design improvements: Enjoy our new glassmorphism UI, smooth transitions, and fresh animations!
+- Spellcheck: Over 20 typos fixed in the word database.
+</en-GB>
+<da-DK>
+- Splinterny game mode: KAMELEON! Et party-spil, hvor I skal finde bedrageren iblandt jer.
+- Premium-køb fixet: Dine køb gendannes nu korrekt automatisk.
+- Design-opgraderinger: Nyd vores nye glassmorphism UI og lækre animationer!
+- Stavekontrol: Over 20 stavefejl rettet i orddatabasen.
+</da-DK>
+<no-NO>
+- Helt ny spillmodus: KAMELEON! Et selskapsspill der dere må finne bedrageren blant dere.
+- Premium-kjøp fikset: Kjøpene dine gjenopprettes nå riktig når appen åpnes.
+- Designforbedringer: Nyt vårt nye glassmorphism UI og mikroanimasjoner!
+- Over 20 stavefeil rettet i orddatabasen.
+</no-NO>
+<sv-SE>
+- Helt nytt spelläge: KAMELEONT! Ett partyspel där ni måste hitta bedragaren bland er.
+- Premium-köp fixat: Dina köp återställs nu korrekt när appen öppnas.
+- Designförbättringar: Njut av vårt nya glassmorphism UI och smidiga övergångar!
+- Över 20 stavfel rättade i orddatabasen.
+</sv-SE>
