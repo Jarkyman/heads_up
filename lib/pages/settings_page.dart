@@ -167,7 +167,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        buildHowToDialog();
+                        buildHowToSelectionDialog();
                       },
                       child: SettingsBtn(
                         child: Padding(

@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../helper/app_constants.dart';
+import '../models/game_mode.dart';
 import '../repos/settings_repo.dart';
 
 class SettingsController extends GetxController implements GetxService {
@@ -21,6 +22,14 @@ class SettingsController extends GetxController implements GetxService {
   bool _unlockAll = false;
 
   bool get isUnlockAll => _unlockAll;
+
+  GameMode _gameMode = GameMode.whoAmI;
+  GameMode get gameMode => _gameMode;
+
+  void setGameMode(GameMode mode) {
+    _gameMode = mode;
+    update();
+  }
 
   int _tries = 0;
 

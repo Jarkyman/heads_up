@@ -13,7 +13,9 @@ import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/models/category_model.dart';
+import 'package:heads_up/models/game_mode.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
+import 'package:heads_up/pages/game%20pages/chameleon_setup_page.dart';
 import 'package:heads_up/pages/settings_page.dart';
 import 'package:heads_up/widgets/buy_dialog.dart';
 import 'package:heads_up/widgets/icon_button.dart';
@@ -127,23 +129,101 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          Text(
-                            'Who Am I?'.tr,
-                            style: TextStyle(
-                              fontSize: Dimensions.font26 * 1.1,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                              letterSpacing: 1.5,
-                              shadows: const [
-                                Shadow(
-                                  blurRadius: 12,
-                                  color: Color(0x66000000),
-                                  offset: Offset(0, 2),
-                                ),
-                              ],
-                            ),
+                          GetBuilder<SettingsController>(
+                            builder: (settingsController) {
+                              return Column(
+                                children: [
+                                  Text(
+                                    settingsController.gameMode == GameMode.whoAmI
+                                        ? 'Who Am I?'.tr
+                                        : 'Chameleon'.tr,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font26 * 1.1,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                      letterSpacing: 1.5,
+                                      shadows: const [
+                                        Shadow(
+                                          blurRadius: 12,
+                                          color: Color(0x66000000),
+                                          offset: Offset(0, 2),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: Dimensions.height20),
+                                  Container(
+                                    height: Dimensions.height45 * 1.2,
+                                    width: Dimensions.width30 * 11,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withValues(alpha: 0.3),
+                                      borderRadius: BorderRadius.circular(Dimensions.radius15),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        // Sliding pale green pill
+                                        AnimatedAlign(
+                                          duration: const Duration(milliseconds: 500),
+                                          curve: Curves.elasticOut, // Fun bounce animation!
+                                          alignment: settingsController.gameMode == GameMode.whoAmI
+                                              ? Alignment.centerLeft
+                                              : Alignment.centerRight,
+                                          child: Container(
+                                            width: Dimensions.width30 * 5.5,
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFA5D6A7).withValues(alpha: 0.9), // Pale green
+                                              borderRadius: BorderRadius.circular(Dimensions.radius15),
+                                            ),
+                                          ),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: GestureDetector(
+                                                onTap: () => settingsController.setGameMode(GameMode.whoAmI),
+                                                behavior: HitTestBehavior.opaque,
+                                                child: Center(
+                                                  child: AnimatedDefaultTextStyle(
+                                                    duration: const Duration(milliseconds: 250),
+                                                    style: TextStyle(
+                                                      color: settingsController.gameMode == GameMode.whoAmI ? Colors.black87 : Colors.white,
+                                                      fontSize: Dimensions.font16,
+                                                      fontWeight: settingsController.gameMode == GameMode.whoAmI ? FontWeight.w800 : FontWeight.w600,
+                                                      fontFamily: 'Montserrat', // Ensuring same font family if any
+                                                    ),
+                                                    child: Text('Who Am I?'.tr),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: GestureDetector(
+                                                onTap: () => settingsController.setGameMode(GameMode.chameleon),
+                                                behavior: HitTestBehavior.opaque,
+                                                child: Center(
+                                                  child: AnimatedDefaultTextStyle(
+                                                    duration: const Duration(milliseconds: 250),
+                                                    style: TextStyle(
+                                                      color: settingsController.gameMode == GameMode.chameleon ? Colors.black87 : Colors.white,
+                                                      fontSize: Dimensions.font16,
+                                                      fontWeight: settingsController.gameMode == GameMode.chameleon ? FontWeight.w800 : FontWeight.w600,
+                                                      fontFamily: 'Montserrat',
+                                                    ),
+                                                    child: Text('Chameleon'.tr),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: Dimensions.height20),
+                                ],
+                              );
+                            }
                           ),
-                          SizedBox(height: Dimensions.height20 * 1.5),
 
                           // — Category grid —
                           Padding(
@@ -195,11 +275,19 @@ class _HomePageState extends State<HomePage> {
                                             category: allCategories[index],
                                             onTap: () {
                                               if (!isLocked) {
-                                                Get.to(() => const WordPage(),
-                                                    arguments: [
-                                                      allCategories[index],
-                                                      true,
-                                                    ]);
+                                                if (settingsController.gameMode == GameMode.whoAmI) {
+                                                  Get.to(() => const WordPage(),
+                                                      arguments: [
+                                                        allCategories[index],
+                                                        true,
+                                                      ]);
+                                                } else {
+                                                  Get.to(() => const ChameleonSetupPage(),
+                                                      arguments: [
+                                                        allCategories[index],
+                                                        true,
+                                                      ]);
+                                                }
                                               } else {
                                                 buildBuyOrTryDialog(
                                                   _rewardedAd,
@@ -238,9 +326,15 @@ class _HomePageState extends State<HomePage> {
                                       padding:
                                           EdgeInsets.all(Dimensions.width20),
                                       child: EventTile(
-                                        onTap: () => Get.to(
-                                            () => const WordPage(),
-                                            arguments: [category, true]),
+                                        onTap: () {
+                                          if (Get.find<SettingsController>().gameMode == GameMode.whoAmI) {
+                                            Get.to(() => const WordPage(),
+                                                arguments: [category, true]);
+                                          } else {
+                                            Get.to(() => const ChameleonSetupPage(),
+                                                arguments: [category, true]);
+                                          }
+                                        },
                                         category: category!,
                                       ),
                                     )

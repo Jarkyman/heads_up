@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
+import 'package:heads_up/pages/game%20pages/chameleon_setup_page.dart';
+import 'package:heads_up/models/game_mode.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../../controllers/settings_controller.dart';
@@ -140,8 +142,13 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
                     settingsController
                         .triesPerDaySave(settingsController.getTries + 1);
                     Get.close(1);
-                    Get.to(() => const WordPage(),
-                        arguments: [widget.categoryData, false]);
+                    if (Get.find<SettingsController>().gameMode == GameMode.whoAmI) {
+                      Get.to(() => const WordPage(),
+                          arguments: [widget.categoryData, false]);
+                    } else {
+                      Get.to(() => const ChameleonSetupPage(),
+                          arguments: [widget.categoryData, false]);
+                    }
                   },
                 );
               }
