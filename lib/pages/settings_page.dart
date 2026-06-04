@@ -15,7 +15,7 @@ import '../widgets/change_language_dialog.dart';
 import '../widgets/icon_button.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -55,7 +55,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -101,14 +101,14 @@ class _SettingsPageState extends State<SettingsPage> {
                                   style: TextStyle(
                                     fontSize: Dimensions.font26,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white.withOpacity(0.8),
+                                    color: Colors.white.withValues(alpha: 0.8),
                                   ),
                                 ),
                               ),
                             ),
                             GetBuilder<SettingsController>(
                               builder: (settingsController) {
-                                print(settingsController.getRoundTime);
+                                debugPrint(settingsController.getRoundTime.toString());
                                 int time = settingsController.getRoundTime;
                                 int index = 0;
                                 switch (time) {
@@ -135,13 +135,13 @@ class _SettingsPageState extends State<SettingsPage> {
                                   options: GroupButtonOptions(
                                     selectedTextStyle: TextStyle(
                                       fontSize: Dimensions.font16,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                     selectedColor: AppColors.correctColor,
                                     unselectedColor: AppColors.textColorGray,
                                     unselectedTextStyle: TextStyle(
                                       fontSize: Dimensions.font16,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                     selectedBorderColor: Colors.black,
                                     unselectedBorderColor: Colors.black,
@@ -185,7 +185,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -223,7 +223,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -249,7 +249,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           Get.find<SettingsController>()
                               .unlockAllSave(isUnlockAll);
                         } on PlatformException catch (e) {
-                          print(e);
+                          debugPrint(e.toString());
                         }
                       },
                       child: SettingsBtn(
@@ -270,7 +270,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -305,9 +305,9 @@ class _SettingsPageState extends State<SettingsPage> {
 class IconIndicator extends StatelessWidget {
   final IconData icon;
   const IconIndicator({
-    Key? key,
+    super.key,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -329,9 +329,9 @@ class IconIndicator extends StatelessWidget {
 class SettingsBtn extends StatelessWidget {
   final Widget child;
   const SettingsBtn({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -339,7 +339,7 @@ class SettingsBtn extends StatelessWidget {
       height: Dimensions.height10 * 10,
       width: Dimensions.width30 * 10,
       decoration: BoxDecoration(
-        color: AppColors.darkPurpleColor.withOpacity(0.8),
+        color: AppColors.darkPurpleColor.withValues(alpha: 0.8),
         borderRadius: BorderRadius.circular(Dimensions.radius20),
         border: Border.all(color: Colors.black, width: 2),
       ),

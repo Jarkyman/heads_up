@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class ApiClient extends GetConnect implements GetxService {
@@ -19,9 +20,9 @@ class ApiClient extends GetConnect implements GetxService {
   }
 
   Future<Response> getData(String uri, {Map<String, String>? headers}) async {
-    final _connect = GetConnect();
+    final connect = GetConnect();
     try {
-      Response response = await _connect.get(uri, headers: _mainHeaders);
+      Response response = await connect.get(uri, headers: _mainHeaders);
       return response;
     } catch (e) {
       return Response(statusCode: 1, statusText: e.toString());
@@ -29,13 +30,13 @@ class ApiClient extends GetConnect implements GetxService {
   }
 
   Future<Response> postData(String uri, dynamic body) async {
-    print(body.toString());
+    debugPrint(body.toString());
     try {
       Response response = await post(uri, body, headers: _mainHeaders);
-      print(response.toString());
+      debugPrint(response.toString());
       return response;
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
       return Response(statusCode: 1, statusText: e.toString());
     }
   }

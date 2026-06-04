@@ -14,14 +14,14 @@ import '../../controllers/review_controller.dart';
 import '../../helper/ad_helper.dart';
 
 class ResultPage extends StatefulWidget {
-  const ResultPage({Key? key}) : super(key: key);
+  const ResultPage({super.key});
 
   @override
   State<ResultPage> createState() => _ResultPageState();
 }
 
 class _ResultPageState extends State<ResultPage> {
-  ScrollController _controller = ScrollController();
+  final ScrollController _controller = ScrollController();
   InterstitialAd? _interstitialAd;
 
   @override
@@ -66,7 +66,7 @@ class _ResultPageState extends State<ResultPage> {
             });
           },
           onAdFailedToLoad: (err) {
-            print('Failed to load an interstitial ad: ${err.message}');
+            debugPrint('Failed to load an interstitial ad: ${err.message}');
           },
         ),
       );
@@ -124,7 +124,7 @@ class _ResultPageState extends State<ResultPage> {
                         height: Dimensions.height45 * 2,
                         width: Dimensions.height45 * 2,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.white.withValues(alpha: 0.3),
                           borderRadius:
                               BorderRadius.circular(Dimensions.radius30 * 3),
                         ),
@@ -193,7 +193,7 @@ class _ResultPageState extends State<ResultPage> {
                                               color: Get.arguments[2][index]
                                                       .contains('#')
                                                   ? Colors.white
-                                                      .withOpacity(0.4)
+                                                      .withValues(alpha: 0.4)
                                                   : Colors.white),
                                         ),
                                       ),

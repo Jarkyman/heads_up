@@ -18,7 +18,7 @@ final List locale = [
   {'name': 'Svenska', 'locale': Locale('sv', 'SE')},
 ];
 
-updateLanguage(Locale locale) {
+void updateLanguage(Locale locale) {
   Get.find<SettingsController>().languageSettingsSave(locale.toString());
   Get.back();
 }
@@ -28,7 +28,7 @@ void buildLanguageDialog() {
     title: 'Choose Your Language'.tr,
     middleText: "",
     backgroundColor: AppColors.lightGreen,
-    content: Container(
+    content: SizedBox(
       height: Dimensions.screenHeight / 2,
       width: Dimensions.width45 * 6,
       child: SingleChildScrollView(

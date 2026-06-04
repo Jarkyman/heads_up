@@ -10,9 +10,9 @@ class LocaleHandler extends Translations {
   Map<String, Map<String, String>> get keys => {};
 
   static Future<void> initLanguages() async {
-    final _keys = await readJson();
+    final keys = await readJson();
     Get.clearTranslations();
-    Get.addTranslations(_keys);
+    Get.addTranslations(keys);
   }
 
   static Future<Map<String, Map<String, String>>> readJson() async {
@@ -20,11 +20,11 @@ class LocaleHandler extends Translations {
         await rootBundle.loadString('assets/locale/translate/locale.json');
     List<dynamic> data = jsonDecode(res);
     final listData = data.map((j) => I18nModel.fromJson(j)).toList();
-    final keys = Map<String, Map<String, String>>();
-    listData.forEach((value) {
+    final keys = <String, Map<String, String>>{};
+    for (var value in listData) {
       final String translationKey = value.code!;
       keys.addAll({translationKey: value.texts!});
-    });
+    }
     return keys;
   }
 }

@@ -96,11 +96,10 @@ class _HowToWidgetState extends State<HowToWidget> {
 
 class PageIndicatorDots extends StatelessWidget {
   const PageIndicatorDots({
-    Key? key,
+    super.key,
     required this.length,
     required int currentPage,
-  })  : _currentPage = currentPage,
-        super(key: key);
+  })  : _currentPage = currentPage;
 
   final int length;
   final int _currentPage;

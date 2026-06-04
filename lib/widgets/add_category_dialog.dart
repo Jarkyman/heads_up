@@ -203,9 +203,9 @@ void buildIconDialog() {
 
 class ColorSelectCircle extends StatefulWidget {
   const ColorSelectCircle({
-    Key? key,
+    super.key,
     required this.index,
-  }) : super(key: key);
+  });
 
   final int index;
 
@@ -232,9 +232,9 @@ class _ColorSelectCircleState extends State<ColorSelectCircle> {
 
 class IconSelectCircle extends StatefulWidget {
   const IconSelectCircle({
-    Key? key,
+    super.key,
     required this.index,
-  }) : super(key: key);
+  });
 
   final int index;
 
@@ -262,8 +262,8 @@ class _IconSelectCircleState extends State<IconSelectCircle> {
 
 class IconAndColorRow extends StatefulWidget {
   const IconAndColorRow({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<IconAndColorRow> createState() => _IconAndColorRowState();
@@ -281,8 +281,8 @@ class _IconAndColorRowState extends State<IconAndColorRow> {
             buildIconDialog();
           },
           child: CircleAvatar(
-            child: SvgPicture.asset(icon),
             backgroundColor: Colors.transparent,
+            child: SvgPicture.asset(icon),
           ),
         ),
         SizedBox(
@@ -304,13 +304,13 @@ class _IconAndColorRowState extends State<IconAndColorRow> {
 
 class CustomIconButton extends StatefulWidget {
   const CustomIconButton({
-    Key? key,
+    super.key,
     required this.title,
     required this.onTap,
     required this.color,
     this.textColor = Colors.black,
     this.isTimer = false,
-  }) : super(key: key);
+  });
 
   final VoidCallback onTap;
   final String title;

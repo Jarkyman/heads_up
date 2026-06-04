@@ -25,7 +25,7 @@ Future<void> init() async {
   await LocaleHandler.initLanguages();
 
   Get.lazyPut(
-      () => ApiClient(appBaseUrl: AppConstants.TIME_API + 'Europe/Copenhagen'));
+      () => ApiClient(appBaseUrl: '${AppConstants.TIME_API}Europe/Copenhagen'));
 
   //Repo
   Get.lazyPut(() => SettingsRepo(

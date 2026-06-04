@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/models/word_model.dart';
 import 'package:heads_up/repos/word_repo.dart';
@@ -20,7 +21,6 @@ class WordController extends GetxController implements GetxService {
     //List<WordModel> words = await wordRepo.getWords();
     List<WordModel> langWords = await _readLangWords();
     _words = [];
-    _words.addAll(words);
     _words.addAll(langWords);
   }
 
@@ -60,7 +60,7 @@ class WordController extends GetxController implements GetxService {
       }
     }
     wordsList.shuffle();
-    print('Amout of word: ${wordsList.length}');
+    debugPrint('Amout of word: ${wordsList.length}');
     return wordsList;
   }
 }

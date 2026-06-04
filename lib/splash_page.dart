@@ -18,7 +18,7 @@ import 'helper/app_colors.dart';
 import 'helper/dimensions.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashPageState();
@@ -31,28 +31,28 @@ class _SplashPageState extends State<SplashScreen>
 
   Future<void> _loadResource() async {
     WakelockPlus.enable();
-    print('loading settings');
+    debugPrint('loading settings');
     await Get.find<SettingsController>().readSettings();
-    print('loaded settings');
-    print('loading Events');
+    debugPrint('loaded settings');
+    debugPrint('loading Events');
     await Get.find<EventController>().getDate();
-    print('loaded Events');
-    print('loading Categories');
+    debugPrint('loaded Events');
+    debugPrint('loading Categories');
     await Get.find<CategoryController>().readAllCategories();
-    print('Loaded Categories');
-    print('loading Words');
+    debugPrint('Loaded Categories');
+    debugPrint('loading Words');
     await Get.find<WordController>().readAllWords();
-    print('Loaded Words');
-    print('loading review');
+    debugPrint('Loaded Words');
+    debugPrint('loading review');
     ReviewController.rateMyApp.init().then((_) {
       for (var condition in ReviewController.rateMyApp.conditions) {
         if (condition is DebuggableCondition) {
-          //print(condition.valuesAsString);
+          //debugPrint(condition.valuesAsString);
         }
       }
     });
-    print('loaded review');
-    print('Flutter phone locale = ${Platform.localeName}');
+    debugPrint('loaded review');
+    debugPrint('Flutter phone locale = ${Platform.localeName}');
     if (controller.isCompleted) {
       await Future.delayed(const Duration(milliseconds: 4000));
       Get.off(() => const HomePage(),

@@ -7,10 +7,10 @@ class IconBtn extends StatelessWidget {
   final IconData icon;
 
   const IconBtn({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class IconBtn extends StatelessWidget {
         height: Dimensions.width10 * 3.2,
         width: Dimensions.width10 * 3.2,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.white.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(Dimensions.radius10 * 3.2),
         ),
         child: Icon(

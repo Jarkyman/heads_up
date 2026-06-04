@@ -38,11 +38,11 @@ void buildBuyOrTryDialog(
 
 class BuyOrTryWidget extends StatefulWidget {
   const BuyOrTryWidget({
-    Key? key,
+    super.key,
     this.rewardedAd,
     required this.isAdLoaded,
     required this.categoryData,
-  }) : super(key: key);
+  });
 
   final RewardedAd? rewardedAd;
   final bool isAdLoaded;
@@ -100,14 +100,15 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
             onTap: () async {
               if (!settingsController.isUnlockAll) {
                 try {
-                  CustomerInfo customerInfo = await Purchases.purchaseProduct(
-                      AppConstants.UNLOCK_ALL_ID,
-                      type: PurchaseType.inapp);
+              if (product != null) {
+                PurchaseResult result = await Purchases.purchase(PurchaseParams.storeProduct(product));
+                  CustomerInfo customerInfo = result.customerInfo;
                   debugPrint('Purchase info: $customerInfo');
                   settingsController.unlockAllSave(true);
                   debugPrint('Levels unlocked');
                   Get.back();
-                } on PlatformException catch (e) {
+                }
+              } on PlatformException catch (e) {
                   var errorCode = PurchasesErrorHelper.getErrorCode(e);
                   if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
                     debugPrint('Failed to purchase product. ');
@@ -128,10 +129,10 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
           height: Dimensions.height20,
         ),
         GetBuilder<SettingsController>(builder: (settingsController) {
-          print('Trys = ' + settingsController.getTries.toString());
+          debugPrint('Trys = ${settingsController.getTries}');
           return CustomIconButton(
             onTap: () {
-              print(settingsController.getTries);
+              debugPrint(settingsController.getTries.toString());
               if (widget.isAdLoaded &&
                   settingsController.getTries < AppConstants.TRYS_PR_DAY) {
                 widget.rewardedAd?.show(
@@ -147,8 +148,7 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
             },
             title: settingsController.getTries < AppConstants.TRYS_PR_DAY
                 ? widget.isAdLoaded
-                    ? 'GET A FREE TRY'.tr +
-                        ' ${settingsController.getTries}/${AppConstants.TRYS_PR_DAY}'
+                    ? '${'GET A FREE TRY'.tr} ${settingsController.getTries}/${AppConstants.TRYS_PR_DAY}'
                     : 'AD NOT AVAILABLE'.tr
                 : 'TRY AGAIN IN'.tr,
             isTimer: settingsController.getTries >= AppConstants.TRYS_PR_DAY,
@@ -167,7 +167,7 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
 
 class CustomIconButton extends StatefulWidget {
   const CustomIconButton({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     required this.onTap,
@@ -175,7 +175,7 @@ class CustomIconButton extends StatefulWidget {
     this.price = '',
     this.textColor = Colors.black,
     this.isTimer = false,
-  }) : super(key: key);
+  });
 
   final VoidCallback onTap;
   final String title;
@@ -216,7 +216,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
     setState(() {
       final seconds = myDuration.inSeconds - reduceSecondsBy;
       if (seconds < 0) {
-        print('Reset from sec');
+        debugPrint('Reset from sec');
         _countdownTimer!.cancel();
         Get.find<SettingsController>().resetTries();
       } else {

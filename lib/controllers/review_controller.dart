@@ -29,13 +29,13 @@ class ReviewController {
           // The button click listener (useful if you want to cancel the click event).
           switch (button) {
             case RateMyAppDialogButton.rate:
-              print('Clicked on "Rate".');
+              debugPrint('Clicked on "Rate".');
               break;
             case RateMyAppDialogButton.later:
-              print('Clicked on "Later".');
+              debugPrint('Clicked on "Later".');
               break;
             case RateMyAppDialogButton.no:
-              print('Clicked on "No".');
+              debugPrint('Clicked on "No".');
               break;
           }
 

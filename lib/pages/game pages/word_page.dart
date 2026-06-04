@@ -48,6 +48,7 @@ class _WordPageState extends State<WordPage> {
     wordsList = Get.find<WordController>()
         .generateWordsListByCategory(Get.arguments[0]);
     _roundTime = Get.find<SettingsController>().getRoundTime;
+    initPhoneListener();
   }
 
   @override
@@ -89,46 +90,45 @@ class _WordPageState extends State<WordPage> {
 
   ///This check if the phone is tipped up or down on the side.
   /// Use z to listen on.
-  void tipPhoneListener() {
-    if (_isStarted) {
-      //print('buffer = $delayBuffer\nTip = $tipReset\nz = $z');
-      _streamSubscriptions.add(
-        accelerometerEvents.listen((AccelerometerEvent event) {
-          if (!delayBuffer && tipReset) {
-            setState(() {
-              z = event.z;
-              if (z > 5) {
-                callTipFunction(false, AppColors.passColor);
-              } else if (z < -5) {
-                callTipFunction(true, AppColors.correctColor);
-              } else {
-                backgroundColor = Colors.transparent;
-                delayBuffer = false;
-              }
-            });
-          }
-        }),
-      );
-      _streamSubscriptions
-          .add(accelerometerEvents.listen((AccelerometerEvent event) {
-        if (!tipReset && !delayBuffer) {
+  void initPhoneListener() {
+    _streamSubscriptions.add(
+      accelerometerEventStream().listen((AccelerometerEvent event) {
+        if (!_isStarted) return;
+        if (!delayBuffer && tipReset) {
           setState(() {
             z = event.z;
-            if (z < 3 && z > -3) {
+            if (z > 5) {
+              callTipFunction(false, AppColors.passColor);
+            } else if (z < -5) {
+              callTipFunction(true, AppColors.correctColor);
+            } else {
               backgroundColor = Colors.transparent;
               delayBuffer = false;
-              tipReset = true;
-              if (wordsPassed.isNotEmpty) {
-                _nextWord(cpState);
-              }
-              if (!isFirstWordGenerated) {
-                generateFirstWord();
-              }
             }
           });
         }
-      }));
-    }
+      }),
+    );
+    _streamSubscriptions
+        .add(accelerometerEventStream().listen((AccelerometerEvent event) {
+      if (!_isStarted) return;
+      if (!tipReset && !delayBuffer) {
+        setState(() {
+          z = event.z;
+          if (z < 3 && z > -3) {
+            backgroundColor = Colors.transparent;
+            delayBuffer = false;
+            tipReset = true;
+            if (wordsPassed.isNotEmpty) {
+              _nextWord(cpState);
+            }
+            if (!isFirstWordGenerated) {
+              generateFirstWord();
+            }
+          }
+        });
+      }
+    }));
   }
 
   /// This is needed because the first word never gets set, to avoid this i generate the first word by this method.
@@ -194,7 +194,6 @@ class _WordPageState extends State<WordPage> {
         });
       }
     });
-    tipPhoneListener();
     return Scaffold(
       body: GestureDetector(
         onTap: () {
@@ -202,7 +201,6 @@ class _WordPageState extends State<WordPage> {
             startTimerForGameplay();
           }
           if (!isFirstWordGenerated && _isStarted) {
-            //TODO: test på en telefon
             generateFirstWord();
           }
         },

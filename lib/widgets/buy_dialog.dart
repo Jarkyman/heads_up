@@ -8,7 +8,7 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import '../../controllers/settings_controller.dart';
 import '../../helper/app_colors.dart';
 import '../../helper/dimensions.dart';
-import '../helper/app_constants.dart';
+
 
 void buildBuyDialog() {
   Get.bottomSheet(
@@ -131,13 +131,14 @@ class _BuyButtonState extends State<BuyButton> {
         onTap: () async {
           if (!settingsController.isUnlockAll) {
             try {
-              CustomerInfo customerInfo = await Purchases.purchaseProduct(
-                  AppConstants.UNLOCK_ALL_ID,
-                  type: PurchaseType.inapp);
-              debugPrint('Purchase info: $customerInfo');
-              settingsController.unlockAllSave(true);
-              debugPrint('Levels unlocked');
-              Get.back();
+              if (product != null) {
+                PurchaseResult result = await Purchases.purchase(PurchaseParams.storeProduct(product));
+                CustomerInfo customerInfo = result.customerInfo;
+                debugPrint('Purchase info: $customerInfo');
+                settingsController.unlockAllSave(true);
+                debugPrint('Levels unlocked');
+                Get.back();
+              }
             } on PlatformException catch (e) {
               var errorCode = PurchasesErrorHelper.getErrorCode(e);
               if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
@@ -159,7 +160,7 @@ class _BuyButtonState extends State<BuyButton> {
 
 class CustomIconButton extends StatefulWidget {
   const CustomIconButton({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     required this.onTap,
@@ -167,7 +168,7 @@ class CustomIconButton extends StatefulWidget {
     this.price = "",
     this.textColor = Colors.black,
     this.isTimer = false,
-  }) : super(key: key);
+  });
 
   final VoidCallback onTap;
   final String title;

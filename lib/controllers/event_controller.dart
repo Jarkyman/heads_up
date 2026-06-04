@@ -1,3 +1,4 @@
+import "package:flutter/foundation.dart";
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/repos/event_repo.dart';
@@ -17,17 +18,17 @@ class EventController extends GetxController implements GetxService {
   EventController({required this.eventRepo});
 
   Future<void> getDate() async {
-    final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
+    final String currentTimeZone = (await FlutterTimezone.getLocalTimezone()).identifier;
     Response response = await eventRepo.getTime(currentTimeZone);
-    //print(response.body);
+    //debugPrint(response.body);
     if (response.statusCode == 200) {
-      await setDate(response.body['dateTime']);
+      setDate(response.body['dateTime']);
       //await setDate('2024-03-31 17:35:22.895127'); //2023-02-14 / 2023-10-31 / 2023-12-24 / 2024-03-31
       setEventStatus();
     }
   }
 
-  setDate(String date) {
+  void setDate(String date) {
     _eventDate = DateTime.parse(date);
   }
 
@@ -48,7 +49,7 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isChristmas(DateTime date, int year) {
-    print(date);
+    debugPrint(date.toString());
     DateTime christmasStart = DateTime(year, 12, 1);
     DateTime christmasEnd = DateTime(year, 1, 5);
     if (date.isAfter(christmasStart) || date.isBefore(christmasEnd)) {
@@ -58,7 +59,7 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isHalloween(DateTime date, int year) {
-    print(date);
+    debugPrint(date.toString());
     DateTime halloweenStart = DateTime(year, 10, 25);
     DateTime halloweenEnd = DateTime(year, 11, 5);
     if (date.isAfter(halloweenStart) && date.isBefore(halloweenEnd)) {
@@ -68,7 +69,7 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isValentine(DateTime date, int year) {
-    print(date);
+    debugPrint(date.toString());
     DateTime valentineStart = DateTime(year, 02, 10);
     DateTime valentineEnd = DateTime(year, 02, 16);
     if (date.isAfter(valentineStart) && date.isBefore(valentineEnd)) {
@@ -78,7 +79,7 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isEaster(DateTime date, int year) {
-    print(date);
+    debugPrint(date.toString());
     DateTime easterSunday = _calculateEaster(year);
     DateTime easterStart = easterSunday.subtract(Duration(days: 3)); // Skærtorsdag
     DateTime easterEnd = easterSunday.add(Duration(days: 1)); // 2. Påskedag

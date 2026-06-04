@@ -20,7 +20,7 @@ import '../widgets/buy_or_try_dialog.dart';
 import '../widgets/show_consent_form.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
           setState(() {
             isAdLoaded = false;
           });
-          print('Failed to load a rewarded ad: ${err.message}');
+          debugPrint('Failed to load a rewarded ad: ${err.message}');
         },
       ),
     );
@@ -127,17 +127,17 @@ class _HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.all(Dimensions.width10),
                             child: GetBuilder<CategoryController>(
-                              builder: (_categoryController) {
+                              builder: (categoryController) {
                                 return GetBuilder<SettingsController>(
                                   builder: (settingsController) {
                                     List<CategoryModel> allCategories = [];
                                     allCategories
-                                        .addAll(_categoryController.categories);
+                                        .addAll(categoryController.categories);
                                     allCategories.addAll(
-                                        _categoryController.ownCategories);
+                                        categoryController.ownCategories);
                                     int listLength = allCategories.length;
                                     if (settingsController.isUnlockAll) {
-                                      print('add one more (add)');
+                                      debugPrint('add one more (add)');
                                       //listLength += 1;
                                     }
                                     return Wrap(
@@ -152,10 +152,10 @@ class _HomePageState extends State<HomePage> {
                                             !settingsController.isUnlockAll) {
                                           isLocked = true;
                                         }
-                                        print('$index/$listLength');
+                                        debugPrint('$index/$listLength');
                                         /*if (index + 1 == listLength &&
                                               !isLocked) {
-                                            print('object');
+                                            debugPrint('object');
                                             return CategoryTile(
                                                 locked: false,
                                                 category: CategoryModel(
@@ -184,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                                                   isAdLoaded,
                                                   allCategories[index],
                                                 );
-                                                print('PopUp');
+                                                debugPrint('PopUp');
                                               }
                                             });
                                       }
@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           GetBuilder<CategoryController>(
-                              builder: (_categoryController) {
+                              builder: (categoryController) {
                             return GetBuilder<EventController>(
                                 builder: (eventController) {
                               eventController.getDate();
@@ -210,22 +210,22 @@ class _HomePageState extends State<HomePage> {
                                 switch (eventController.getEventStatus) {
                                   case EventStatus.christmas:
                                     category =
-                                        _categoryController.eventCategories[1];
+                                        categoryController.eventCategories[1];
                                     index = 1;
                                     break;
                                   case EventStatus.halloween:
                                     category =
-                                        _categoryController.eventCategories[0];
+                                        categoryController.eventCategories[0];
                                     index = 0;
                                     break;
                                   case EventStatus.valentine:
                                     category =
-                                        _categoryController.eventCategories[2];
+                                        categoryController.eventCategories[2];
                                     index = 2;
                                     break;
                                   case EventStatus.easter:
                                     category =
-                                        _categoryController.eventCategories[3];
+                                        categoryController.eventCategories[3];
                                     index = 3;
                                     break;
                                   case EventStatus.none:
@@ -242,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                                         onTap: () => Get.to(
                                             () => const WordPage(),
                                             arguments: [
-                                              _categoryController
+                                              categoryController
                                                   .eventCategories[index],
                                               true
                                             ]),
@@ -311,10 +311,10 @@ class _HomePageState extends State<HomePage> {
 
 class EventTile extends StatelessWidget {
   const EventTile({
-    Key? key,
+    super.key,
     required this.category,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   final CategoryModel category;
   final VoidCallback onTap;
@@ -331,8 +331,8 @@ class EventTile extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Color(category.colorHex).withOpacity(0.4),
-              Color(category.colorHex).withOpacity(0.6),
+              Color(category.colorHex).withValues(alpha: 0.4),
+              Color(category.colorHex).withValues(alpha: 0.6),
             ],
           ),
           borderRadius: BorderRadius.circular(Dimensions.radius20),
@@ -347,7 +347,7 @@ class EventTile extends StatelessWidget {
                 width: Dimensions.iconSize32 * 3,
                 child: SvgPicture.asset(
                   category.iconUrl,
-                  colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.8), BlendMode.srcIn),
+                  colorFilter: ColorFilter.mode(Colors.white.withValues(alpha: 0.8), BlendMode.srcIn),
                 ),
               ),
             ),
@@ -369,12 +369,12 @@ class EventTile extends StatelessWidget {
 
 class CategoryTile extends StatelessWidget {
   const CategoryTile({
-    Key? key,
+    super.key,
     required this.category,
     required this.onTap,
     required this.locked,
     this.isOwn = false,
-  }) : super(key: key);
+  });
 
   final CategoryModel category;
   final VoidCallback onTap;
@@ -385,7 +385,7 @@ class CategoryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onLongPress: () {
-        print('Edit');
+        debugPrint('Edit');
         //TODO: Open edit popup
       },
       onTap: onTap,
@@ -397,8 +397,8 @@ class CategoryTile extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Color(category.colorHex).withOpacity(0.4),
-              Color(category.colorHex).withOpacity(0.6),
+              Color(category.colorHex).withValues(alpha: 0.4),
+              Color(category.colorHex).withValues(alpha: 0.6),
             ],
           ),
           borderRadius: BorderRadius.circular(Dimensions.radius20),
@@ -411,7 +411,7 @@ class CategoryTile extends StatelessWidget {
                 child: Icon(
                   Icons.lock_outline,
                   size: 100,
-                  color: Colors.grey.withOpacity(0.6),
+                  color: Colors.grey.withValues(alpha: 0.6),
                 ),
               ),
             Column(
@@ -423,7 +423,7 @@ class CategoryTile extends StatelessWidget {
                     width: Dimensions.iconSize32 * 2,
                     child: SvgPicture.asset(
                       category.iconUrl,
-                      colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.8), BlendMode.srcIn),
+                      colorFilter: ColorFilter.mode(Colors.white.withValues(alpha: 0.8), BlendMode.srcIn),
                     ),
                   ),
                 ),

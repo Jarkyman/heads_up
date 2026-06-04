@@ -1,3 +1,4 @@
+import "package:flutter/foundation.dart";
 import 'dart:io';
 import 'dart:ui';
 
@@ -43,10 +44,10 @@ class SettingsController extends GetxController implements GetxService {
       (_) => updateCustomerStatus(),
     );
     try {
-      _products =
-          await Purchases.getProducts(_productsIds, type: PurchaseType.inapp);
+      _products = await Purchases.getProducts(_productsIds,
+          productCategory: ProductCategory.nonSubscription);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       _products = [];
     }
     await triesPerDayRead();
@@ -57,7 +58,7 @@ class SettingsController extends GetxController implements GetxService {
 
   Future<List<StoreProduct>> get getProducts async {
     _products =
-        await Purchases.getProducts(_productsIds, type: PurchaseType.inapp);
+        await Purchases.getProducts(_productsIds, productCategory: ProductCategory.nonSubscription);
     return _products;
   }
 
@@ -85,7 +86,7 @@ class SettingsController extends GetxController implements GetxService {
       bool isUnlockAll = entitlementAds == true;
       unlockAllSave(isUnlockAll);
     } on PlatformException catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
@@ -130,7 +131,7 @@ class SettingsController extends GetxController implements GetxService {
     _tries = tries;
     await settingsRepo.triesPerDaySave(tries);
     DateTime today = await getDateNow();
-    //print('now $today');
+    //debugPrint('now $today');
     await settingsRepo.triesDateSave(today.toString());
     update();
   }
@@ -138,33 +139,33 @@ class SettingsController extends GetxController implements GetxService {
   Future<void> resetTries() async {
     DateTime today = await getDateNow();
     String loadRead = await settingsRepo.triesDateRead();
-    //print('read $loadRead');
+    //debugPrint('read $loadRead');
     DateTime old = DateTime.parse(loadRead).add(const Duration(days: 1));
     //DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1)); //TEST ONLY
-    //print('Dif = ${old.difference(today)}');
-    //print('?? = ${old.isBefore(today)}');
+    //debugPrint('Dif = ${old.difference(today)}');
+    //debugPrint('?? = ${old.isBefore(today)}');
     if (old.isBefore(today)) {
       _tries = 0;
       settingsRepo.triesPerDaySave(0);
     }
-    //print('Trys reset');
+    //debugPrint('Trys reset');
     update();
   }
 
   Future<Duration> getTimeToNewTry() async {
     DateTime today = await getDateNow();
     String loadRead = await settingsRepo.triesDateRead();
-    //print('read $loadRead');
+    //debugPrint('read $loadRead');
     DateTime old = DateTime.parse(loadRead).add(Duration(days: 1));
     //DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1)); //TEST ONLY
-    //print('Dif = ${old.difference(today)}');
+    //debugPrint('Dif = ${old.difference(today)}');
     return old.difference(today);
   }
 
   Future<DateTime> getDateNow() async {
-    final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
+    final String currentTimeZone = (await FlutterTimezone.getLocalTimezone()).identifier;
     Response response = await settingsRepo.getTime(currentTimeZone);
-    //print(response.body);
+    //debugPrint(response.body);
     if (response.statusCode == 200) {
       return DateTime.parse(response.body['dateTime']);
     } else {

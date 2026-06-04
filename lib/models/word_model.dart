@@ -26,7 +26,7 @@ class WordModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['word'] = word;
     data['category'] = category.map((category) => category.category).toList();
     return data;

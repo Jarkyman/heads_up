@@ -11,7 +11,7 @@ class AdHelper {
       } else if (Platform.isIOS) {
         return '';
       } else {
-        throw new UnsupportedError('Unsupported platform');
+        throw UnsupportedError('Unsupported platform');
       }
     } else {
       return 'No ad banner';
@@ -25,7 +25,7 @@ class AdHelper {
       } else if (Platform.isIOS) {
         return 'ca-app-pub-9894760850635221/3551941316';
       } else {
-        throw new UnsupportedError("Unsupported platform");
+        throw UnsupportedError("Unsupported platform");
       }
     } else {
       return "no ad interstitialAd";
@@ -39,7 +39,7 @@ class AdHelper {
       } else if (Platform.isIOS) {
         return 'ca-app-pub-9894760850635221/4268188814';
       } else {
-        throw new UnsupportedError("Unsupported platform");
+        throw UnsupportedError("Unsupported platform");
       }
     } else {
       return "no ad rewardedAd";
