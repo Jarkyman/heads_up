@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            'Who Am I?',
+                            'Who Am I?'.tr,
                             style: TextStyle(
                               fontSize: Dimensions.font26 * 1.1,
                               fontWeight: FontWeight.w800,

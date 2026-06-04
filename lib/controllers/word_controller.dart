@@ -27,7 +27,7 @@ class WordController extends GetxController implements GetxService {
   Future<List<WordModel>> _readLangWords() async {
     List<WordModel> result = [];
     switch (Get.locale.toString()) {
-      //TODO: Det her kan nok gøres anderledes måske bruge Locale('da')
+
       case ('da_DK'):
         List<WordModel> temp = await wordRepo.getDaWords();
         result.addAll(temp);
