@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:heads_up/controllers/event_controller.dart';
 
 import '../models/category_model.dart';
 import '../repos/category_repo.dart';
@@ -44,5 +45,25 @@ class CategoryController extends GetxController implements GetxService {
     _ownCategories.add(category);
     await categoryRepo.saveOwnCategories(_ownCategories);
     update();
+  }
+
+  /// Returns the event category matching [eventStatus] by name, or null.
+  CategoryModel? categoryForEvent(EventStatus eventStatus) {
+    // Map EventStatus enum to its category name string as it appears in the assets.
+    final nameMap = {
+      EventStatus.halloween: 'halloween',
+      EventStatus.christmas: 'christmas',
+      EventStatus.valentine: 'valentine',
+      EventStatus.easter: 'easter',
+    };
+    final name = nameMap[eventStatus];
+    if (name == null) return null;
+    try {
+      return _eventCategories.firstWhere(
+        (c) => c.category.toLowerCase().contains(name),
+      );
+    } catch (_) {
+      return null;
+    }
   }
 }

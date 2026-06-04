@@ -203,36 +203,11 @@ class _HomePageState extends State<HomePage> {
                               eventController.getDate();
                               bool showEvent = false;
                               CategoryModel? category;
-                              int index = 0;
                               if (eventController.getEventStatus !=
                                   EventStatus.none) {
-                                //TODO: Det her kan gøres mere dynamisk
-                                switch (eventController.getEventStatus) {
-                                  case EventStatus.christmas:
-                                    category =
-                                        categoryController.eventCategories[1];
-                                    index = 1;
-                                    break;
-                                  case EventStatus.halloween:
-                                    category =
-                                        categoryController.eventCategories[0];
-                                    index = 0;
-                                    break;
-                                  case EventStatus.valentine:
-                                    category =
-                                        categoryController.eventCategories[2];
-                                    index = 2;
-                                    break;
-                                  case EventStatus.easter:
-                                    category =
-                                        categoryController.eventCategories[3];
-                                    index = 3;
-                                    break;
-                                  case EventStatus.none:
-                                    showEvent = false;
-                                    break;
-                                }
-                                showEvent = true;
+                                category = categoryController.categoryForEvent(
+                                    eventController.getEventStatus);
+                                showEvent = category != null;
                               }
                               return showEvent
                                   ? Padding(
@@ -241,11 +216,7 @@ class _HomePageState extends State<HomePage> {
                                       child: EventTile(
                                         onTap: () => Get.to(
                                             () => const WordPage(),
-                                            arguments: [
-                                              categoryController
-                                                  .eventCategories[index],
-                                              true
-                                            ]),
+                                            arguments: [category, true]),
                                         category: category!,
                                       ),
                                     )

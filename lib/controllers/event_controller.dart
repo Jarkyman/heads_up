@@ -1,4 +1,4 @@
-import "package:flutter/foundation.dart";
+
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/repos/event_repo.dart';
@@ -49,7 +49,6 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isChristmas(DateTime date, int year) {
-    debugPrint(date.toString());
     DateTime christmasStart = DateTime(year, 12, 1);
     DateTime christmasEnd = DateTime(year, 1, 5);
     if (date.isAfter(christmasStart) || date.isBefore(christmasEnd)) {
@@ -59,7 +58,6 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isHalloween(DateTime date, int year) {
-    debugPrint(date.toString());
     DateTime halloweenStart = DateTime(year, 10, 25);
     DateTime halloweenEnd = DateTime(year, 11, 5);
     if (date.isAfter(halloweenStart) && date.isBefore(halloweenEnd)) {
@@ -69,7 +67,6 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isValentine(DateTime date, int year) {
-    debugPrint(date.toString());
     DateTime valentineStart = DateTime(year, 02, 10);
     DateTime valentineEnd = DateTime(year, 02, 16);
     if (date.isAfter(valentineStart) && date.isBefore(valentineEnd)) {
@@ -79,7 +76,6 @@ class EventController extends GetxController implements GetxService {
   }
 
   bool _isEaster(DateTime date, int year) {
-    debugPrint(date.toString());
     DateTime easterSunday = _calculateEaster(year);
     DateTime easterStart = easterSunday.subtract(Duration(days: 3)); // Skærtorsdag
     DateTime easterEnd = easterSunday.add(Duration(days: 1)); // 2. Påskedag
