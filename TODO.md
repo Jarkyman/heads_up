@@ -5,8 +5,6 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 ## 🚀 Høj Prioritet (H) - Logik & Arkitektur
 // TODO {M} [system, build] (H): Så snart third-party packages (fx `package_info_plus`, `rate_my_app`, `sensors_plus` osv.) understøtter det fuldt ud, skal Android-projektet endeligt migreres til "Built-in Kotlin" (KGP fjernes). Venter på plugin-maintainers.
 
-## 🟢 Lav Prioritet (L) - Code Quality
-// TODO {C} [ui, dimensions] (L): `Dimensions.dart` benytter multiplikation (f.eks. `Dimensions.height10 * 16`). Det kan gøres renere ved at generere de specifikke størrelser dynamisk baseret på skærmens højde/bredde.
 
 ---
 
