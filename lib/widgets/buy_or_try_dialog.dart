@@ -112,7 +112,7 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
                   var errorCode = PurchasesErrorHelper.getErrorCode(e);
                   if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
                     debugPrint('Failed to purchase product. ');
-                    //purchaseErrorSnackbar(); TODO: Error popup
+                    //purchaseErrorSnackbar();
                   }
                 }
               }

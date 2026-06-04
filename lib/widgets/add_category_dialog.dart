@@ -130,9 +130,9 @@ void addCategoryDialog() {
                       category: categoryName, iconUrl: icon, colorHex: color);
                   categoryController.saveOwnCategory(newCategory);
                   categoryName = "";
-                  Get.back(); //TODO: Skal føre til en ny popup hvor man udfylder ord
+                  Get.back();
                 } else {
-                  //TODO: Måske en fejl meddelse;
+
                 }
               },
               title: 'Add Category'.tr,

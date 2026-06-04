@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,28 +31,22 @@ class _SplashPageState extends State<SplashScreen>
 
   Future<void> _loadResource() async {
     WakelockPlus.enable();
-    debugPrint('loading settings');
     await Get.find<SettingsController>().readSettings();
-    debugPrint('loaded settings');
-    debugPrint('loading Events');
+
     await Get.find<EventController>().getDate();
-    debugPrint('loaded Events');
-    debugPrint('loading Categories');
+
     await Get.find<CategoryController>().readAllCategories();
-    debugPrint('Loaded Categories');
-    debugPrint('loading Words');
+
     await Get.find<WordController>().readAllWords();
-    debugPrint('Loaded Words');
-    debugPrint('loading review');
+
     ReviewController.rateMyApp.init().then((_) {
       for (var condition in ReviewController.rateMyApp.conditions) {
         if (condition is DebuggableCondition) {
-          //debugPrint(condition.valuesAsString);
+          //condition.valuesAsString;
         }
       }
     });
-    debugPrint('loaded review');
-    debugPrint('Flutter phone locale = ${Platform.localeName}');
+
     if (controller.isCompleted) {
       await Future.delayed(const Duration(milliseconds: 4000));
       Get.off(() => const HomePage(),

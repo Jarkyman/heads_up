@@ -10,7 +10,7 @@ class CategoryController extends GetxController implements GetxService {
   List<CategoryModel> _categories = [];
   List<CategoryModel> get categories => _categories;
 
-  List<CategoryModel> _eventCategories = []; //TODO: Add own til events
+  List<CategoryModel> _eventCategories = [];
   List<CategoryModel> get eventCategories => _eventCategories;
 
   List<CategoryModel> _ownCategories = [];

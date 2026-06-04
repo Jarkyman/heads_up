@@ -86,7 +86,7 @@ void buildBuyDialog() {
                       fontSize: Dimensions.font16,
                       color: AppColors.textColorGray,
                       fontWeight: FontWeight.w600),
-                ),*/ //TODO: Skal på når man kan oprette selv
+                ),*/
                 Text(
                   'Experience the full functionality of the game.'.tr,
                   textAlign: TextAlign.center,
@@ -143,7 +143,7 @@ class _BuyButtonState extends State<BuyButton> {
               var errorCode = PurchasesErrorHelper.getErrorCode(e);
               if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
                 debugPrint('Failed to purchase product. ');
-                //purchaseErrorSnackbar(); TODO: Error popup
+                //purchaseErrorSnackbar();
               }
             }
           }

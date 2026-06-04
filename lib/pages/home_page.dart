@@ -290,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                     right: 10,
                     child: GestureDetector(
                       onTap: () {
-                        //TODO: Add new word dialog
+
                       },
                       child: SizedBox(
                         height: Dimensions.width10 * 3.2,
@@ -386,7 +386,7 @@ class CategoryTile extends StatelessWidget {
     return GestureDetector(
       onLongPress: () {
         debugPrint('Edit');
-        //TODO: Open edit popup
+
       },
       onTap: onTap,
       child: Container(
