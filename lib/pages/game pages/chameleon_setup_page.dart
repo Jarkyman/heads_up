@@ -295,15 +295,23 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                       ),
                       child: Column(
                         children: [
-                          Text(
-                            'Chameleon setup'.tr,
-                            style: TextStyle(
-                              fontSize: Dimensions.font26 * 1.2,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                              shadows: const [
-                                Shadow(blurRadius: 10, color: Colors.black54),
-                              ],
+                          SizedBox(
+                            width: double.maxFinite,
+                            child: Text(
+                              'Chameleon setup'.tr,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: Dimensions.font26 * 1.2,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                height: 1.08,
+                                shadows: const [
+                                  Shadow(
+                                    blurRadius: 10,
+                                    color: Colors.black54,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(height: Dimensions.height20),

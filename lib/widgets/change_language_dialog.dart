@@ -61,13 +61,17 @@ void buildLanguageDialog() {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  'Choose Your Language'.tr,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: Dimensions.font26,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'Choose Your Language'.tr,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: Dimensions.font26,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                      height: 1.08,
+                    ),
                   ),
                 ),
                 SizedBox(height: Dimensions.height20),

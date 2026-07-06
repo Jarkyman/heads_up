@@ -67,12 +67,17 @@ void buildHowToSelectionDialog() {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  'How to play'.tr,
-                  style: TextStyle(
-                    fontSize: Dimensions.font26,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'How to play'.tr,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: Dimensions.font26,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                      height: 1.08,
+                    ),
                   ),
                 ),
                 SizedBox(height: Dimensions.height20),
@@ -223,12 +228,17 @@ class _HowToWidgetState extends State<HowToWidget> {
                   ),
                 ),
                 SizedBox(height: Dimensions.height20),
-                Text(
-                  'How to play'.tr,
-                  style: TextStyle(
-                    fontSize: Dimensions.font26,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'How to play'.tr,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: Dimensions.font26,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                      height: 1.08,
+                    ),
                   ),
                 ),
                 SizedBox(height: Dimensions.height20),
