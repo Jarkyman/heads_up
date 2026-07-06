@@ -33,6 +33,20 @@ class SettingsRepo {
     await sharedPreferences.setInt(AppConstants.ROUND_TIME, time);
   }
 
+  Future<List<String>> chameleonPlayerNamesRead() async {
+    return sharedPreferences.getStringList(
+          AppConstants.CHAMELEON_PLAYER_NAMES,
+        ) ??
+        [];
+  }
+
+  Future<bool> chameleonPlayerNamesSave(List<String> playerNames) async {
+    return await sharedPreferences.setStringList(
+      AppConstants.CHAMELEON_PLAYER_NAMES,
+      playerNames,
+    );
+  }
+
   Future<bool> unlockAllRead() async {
     bool unlockAll =
         sharedPreferences.getBool(AppConstants.UNLOCK_ALL) ?? false;

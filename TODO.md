@@ -3,9 +3,28 @@
 Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og forbedres, sorteret efter prioritet og markeret med ToDoKanban tags. Opgaver omkring egne kategorier er flyttet til [TODO-own_words_category.md](TODO-own_words_category.md).
 // TODO: hero "animationen" fra splash screen til home page virker ikke.
 
+// TODO: why do we not have sv and no in "LOCALE_LIST" in AppConstants, we have the languages or what?
+
+// TODO: Add glassy effect on game mode toggler.
+
+// TODO: Play again button need to go to player naming screen, not directly to the game start.
+
+// TODO: Look throw all words and check for spelling errors. (Can it be done with a script?)
+
+// TODO: Fix design on rules, ugly white bagckground is not good. (Maybe use glassy effect on the rules popup also?)
+
+// TODO: Reduce reveal word timer, and use a more beautefull spinner then we have now.
+
+// TODO: Add small "(hold)" on the reveal button under Reveal text (without moving the text possition we have now)
+
+// FIXME: Remove back option on chamelion result. It should not be possible to go back to the rule/reveal screen after reveal is trickert and we are navigated.
+
 ---
 
 ## ✅ DONE
+// DONE: move reveal/play again buttons so they do not share the same screen position and prevent accidental clicking play again.
+// DONE: Add extra reveal button at the end, to prevent acedently revealing the world and imposters. (Løst med 2 sekunders hold-to-reveal knap).
+// DONE: Add player naming and new startup flow.
 // DONE: Se alle words igennem for stavefejl! (Der blev fundet og rettet over 20 stavefejl via script).
 // DONE: Kan vi lave en splash screen der har den samme bangrund som vores app? (Løst med BackgroundImage-widgeten).
 // DONE: hero "animationen" klipper. Forsøgt løst med Transition.fadeIn. (Pauset for nu).

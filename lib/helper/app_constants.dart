@@ -19,6 +19,7 @@ class AppConstants {
   static const String UNLOCK_ALL = 'unlock_all';
   static const String UNLOCK_ALL_ID = 'hint_master_unlock_all_19';
   static const String UNLOCK_ALL_ID_ENT = 'unlock_all';
+  static const String CHAMELEON_PLAYER_NAMES = 'chameleon-player-names';
 
   //Game
   static const String CATEGORIES = 'categories';

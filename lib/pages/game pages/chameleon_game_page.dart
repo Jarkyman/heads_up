@@ -16,27 +16,73 @@ class ChameleonGamePage extends StatefulWidget {
   State<ChameleonGamePage> createState() => _ChameleonGamePageState();
 }
 
-class _ChameleonGamePageState extends State<ChameleonGamePage> {
+class _ChameleonGamePageState extends State<ChameleonGamePage>
+    with SingleTickerProviderStateMixin {
   late String secretWord;
   late List<String> roles;
   late CategoryModel category;
-  late int playersCount;
+  late List<String> playerNames;
   late int impostersCount;
   late bool canReplay;
+  late AnimationController _revealHoldController;
+  bool _hasOpenedReveal = false;
+
+  double get _gameButtonWidth => Dimensions.width45 * 5.5;
+  double get _gameButtonHeight => Dimensions.height20 * 3.4;
+  double get _gameButtonBorderWidth => 1.4;
 
   @override
   void initState() {
     super.initState();
     secretWord = Get.arguments[0];
-    roles = Get.arguments[1];
+    roles = List<String>.from(Get.arguments[1]);
     category = Get.arguments[2];
-    playersCount = Get.arguments[3];
+    playerNames = List<String>.from(Get.arguments[3]);
     impostersCount = Get.arguments[4];
     canReplay = Get.arguments[5];
+
+    _revealHoldController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    )..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _openRevealPage();
+        }
+      });
   }
 
   void _showRulesDialog() {
     buildHowToDialog(isChameleon: true);
+  }
+
+  void _openRevealPage() {
+    if (_hasOpenedReveal) return;
+    _hasOpenedReveal = true;
+
+    Get.to(() => const ChameleonRevealPage(), arguments: [
+      secretWord,
+      roles,
+      category,
+      playerNames,
+      impostersCount,
+      canReplay,
+    ]);
+  }
+
+  void _startRevealHold() {
+    if (_hasOpenedReveal) return;
+    _revealHoldController.forward(from: 0);
+  }
+
+  void _cancelRevealHold() {
+    if (_revealHoldController.isCompleted) return;
+    _revealHoldController.reset();
+  }
+
+  @override
+  void dispose() {
+    _revealHoldController.dispose();
+    super.dispose();
   }
 
   @override
@@ -50,20 +96,25 @@ class _ChameleonGamePageState extends State<ChameleonGamePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Find the Chameleon!'.tr,
-                      style: TextStyle(
-                        fontSize: Dimensions.font26 * 1.5,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        shadows: const [
-                          Shadow(blurRadius: 10, color: Colors.black54),
-                        ],
+                    SizedBox(
+                      width: Dimensions.screenWidth,
+                      child: Text(
+                        'Find the Chameleon!'.tr,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: Dimensions.font26 * 1.5,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          shadows: const [
+                            Shadow(blurRadius: 10, color: Colors.black54),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: Dimensions.height20),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: Dimensions.width20 * 2),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Dimensions.width20 * 2),
                       child: Text(
                         'Say a word related to the secret word.'.tr,
                         textAlign: TextAlign.center,
@@ -75,32 +126,13 @@ class _ChameleonGamePageState extends State<ChameleonGamePage> {
                       ),
                     ),
                     SizedBox(height: Dimensions.height45 * 2),
-
-                    // Rules button
+                    _buildHoldRevealButton(),
+                    SizedBox(height: Dimensions.height30),
                     _buildGameButton(
                       text: 'Rules'.tr,
                       icon: Icons.menu_book,
                       color: AppColors.glassWhite,
                       onTap: _showRulesDialog,
-                    ),
-
-                    SizedBox(height: Dimensions.height30),
-
-                    // End game and Reveal button
-                    _buildGameButton(
-                      text: 'Reveal'.tr,
-                      icon: Icons.visibility,
-                      color: Colors.redAccent.withValues(alpha: 0.8),
-                      onTap: () {
-                        Get.to(() => const ChameleonRevealPage(), arguments: [
-                          secretWord,
-                          roles,
-                          category,
-                          playersCount,
-                          impostersCount,
-                          canReplay,
-                        ]);
-                      },
                     ),
                   ],
                 ),
@@ -133,6 +165,101 @@ class _ChameleonGamePageState extends State<ChameleonGamePage> {
     );
   }
 
+  Widget _buildHoldRevealButton() {
+    return Listener(
+      onPointerDown: (_) => _startRevealHold(),
+      onPointerUp: (_) => _cancelRevealHold(),
+      onPointerCancel: (_) => _cancelRevealHold(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+          child: AnimatedBuilder(
+            animation: _revealHoldController,
+            builder: (context, child) {
+              return Container(
+                width: _gameButtonWidth,
+                height: _gameButtonHeight,
+                decoration: BoxDecoration(
+                  color: Colors.redAccent.withValues(alpha: 0.28),
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(
+                    color: Colors.redAccent.withValues(alpha: 0.55),
+                    width: _gameButtonBorderWidth,
+                  ),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.black26, blurRadius: 8, spreadRadius: 1),
+                  ],
+                ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned.fill(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          return Align(
+                            alignment: Alignment.centerLeft,
+                            child: SizedBox(
+                              width: constraints.maxWidth *
+                                  _revealHoldController.value,
+                              height: double.infinity,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Colors.red.shade900
+                                          .withValues(alpha: 0.55),
+                                      Colors.red.shade900
+                                          .withValues(alpha: 0.34),
+                                      Colors.red.shade900.withValues(alpha: 0),
+                                    ],
+                                    stops: const [0, 0.82, 1],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: Dimensions.width20,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.visibility,
+                                  color: Colors.white,
+                                  size: Dimensions.iconSize24 * 1.2),
+                              SizedBox(width: Dimensions.width10),
+                              Text(
+                                'Reveal'.tr,
+                                style: TextStyle(
+                                  fontSize: Dimensions.font20 * 1.2,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildGameButton({
     required String text,
     required IconData icon,
@@ -146,22 +273,25 @@ class _ChameleonGamePageState extends State<ChameleonGamePage> {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
-            width: Dimensions.width45 * 5.5,
-            padding: EdgeInsets.symmetric(
-              vertical: Dimensions.height20,
-            ),
+            width: _gameButtonWidth,
+            height: _gameButtonHeight,
             decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(100),
-              border: Border.all(color: Colors.white, width: 2),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.55),
+                width: _gameButtonBorderWidth,
+              ),
               boxShadow: const [
-                BoxShadow(color: Colors.black26, blurRadius: 8, spreadRadius: 1),
+                BoxShadow(
+                    color: Colors.black26, blurRadius: 8, spreadRadius: 1),
               ],
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon, color: Colors.white, size: Dimensions.iconSize24 * 1.2),
+                Icon(icon,
+                    color: Colors.white, size: Dimensions.iconSize24 * 1.2),
                 SizedBox(width: Dimensions.width10),
                 Text(
                   text,

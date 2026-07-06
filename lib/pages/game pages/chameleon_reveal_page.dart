@@ -16,10 +16,12 @@ class ChameleonRevealPage extends StatefulWidget {
 }
 
 class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
+  static const double _glassBorderWidth = 1.4;
+
   late String secretWord;
   late List<String> roles;
   late CategoryModel category;
-  late int playersCount;
+  late List<String> playerNames;
   late int impostersCount;
   late bool canReplay;
 
@@ -27,76 +29,108 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
   void initState() {
     super.initState();
     secretWord = Get.arguments[0];
-    roles = Get.arguments[1];
+    roles = List<String>.from(Get.arguments[1]);
     category = Get.arguments[2];
-    playersCount = Get.arguments[3];
+    playerNames = List<String>.from(Get.arguments[3]);
     impostersCount = Get.arguments[4];
     canReplay = Get.arguments[5];
   }
 
-  List<int> _getChameleonIndices() {
-    List<int> indices = [];
+  List<String> _getChameleonNames() {
+    List<String> names = [];
     for (int i = 0; i < roles.length; i++) {
       if (roles[i] == "Chameleon") {
-        indices.add(i + 1); // Player numbers are 1-indexed
+        names.add(playerNames[i]);
       }
     }
-    return indices;
+    return names;
   }
 
   @override
   Widget build(BuildContext context) {
-    List<int> chameleons = _getChameleonIndices();
-    String chameleonsText = chameleons.map((e) => "${'Player'.tr} $e").join(", ");
+    List<String> chameleons = _getChameleonNames();
+    String chameleonsText = chameleons.join(", ");
 
     return Scaffold(
       body: BackgroundImage(
         child: SafeArea(
           child: Stack(
             children: [
-              Center(
+              Align(
+                alignment: Alignment.topCenter,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: Dimensions.width20),
+                  padding: EdgeInsets.fromLTRB(
+                    Dimensions.width20,
+                    Dimensions.height45 * 1.4,
+                    Dimensions.width20,
+                    Dimensions.height20,
+                  ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       // Secret Word Card
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(Dimensions.radius20),
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
                           child: Container(
                             width: double.maxFinite,
                             padding: EdgeInsets.all(Dimensions.height30),
                             decoration: BoxDecoration(
-                              color: AppColors.correctColor.withValues(alpha: 0.5),
-                              borderRadius: BorderRadius.circular(Dimensions.radius20),
-                              border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  AppColors.glassWhiteStrong,
+                                  AppColors.correctColor
+                                      .withValues(alpha: 0.28),
+                                ],
+                              ),
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius20),
+                              border: Border.all(
+                                  color: AppColors.correctColor
+                                      .withValues(alpha: 0.58),
+                                  width: _glassBorderWidth),
                               boxShadow: const [
-                                BoxShadow(color: Colors.black26, blurRadius: 10, spreadRadius: 2),
+                                BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 10,
+                                    spreadRadius: 2),
                               ],
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text(
-                                  'The secret word was:'.tr,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white70,
+                                SizedBox(
+                                  width: double.maxFinite,
+                                  child: Text(
+                                    'The secret word was:'.tr,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white70,
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: Dimensions.height10),
-                                Text(
-                                  secretWord,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font26 * 1.5,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    shadows: const [
-                                      Shadow(blurRadius: 8, color: Colors.black54),
-                                    ],
+                                SizedBox(
+                                  width: double.maxFinite,
+                                  child: Text(
+                                    secretWord,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font26 * 1.5,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      shadows: const [
+                                        Shadow(
+                                            blurRadius: 8,
+                                            color: Colors.black54),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -108,122 +142,90 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
 
                       // Chameleons Card
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(Dimensions.radius20),
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
                           child: Container(
                             width: double.maxFinite,
                             padding: EdgeInsets.all(Dimensions.height30),
                             decoration: BoxDecoration(
-                              color: Colors.redAccent.withValues(alpha: 0.5),
-                              borderRadius: BorderRadius.circular(Dimensions.radius20),
-                              border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  AppColors.glassWhiteStrong,
+                                  Colors.redAccent.withValues(alpha: 0.28),
+                                ],
+                              ),
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius20),
+                              border: Border.all(
+                                  color:
+                                      Colors.redAccent.withValues(alpha: 0.58),
+                                  width: _glassBorderWidth),
                               boxShadow: const [
-                                BoxShadow(color: Colors.black26, blurRadius: 10, spreadRadius: 2),
+                                BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 10,
+                                    spreadRadius: 2),
                               ],
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text(
-                                  chameleons.length > 1 ? 'The Chameleons were:'.tr : 'The Chameleon was:'.tr,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white70,
+                                SizedBox(
+                                  width: double.maxFinite,
+                                  child: Text(
+                                    chameleons.length > 1
+                                        ? 'The Chameleons were:'.tr
+                                        : 'The Chameleon was:'.tr,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white70,
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: Dimensions.height10),
-                                Text(
-                                  chameleonsText,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font26 * 1.2,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    shadows: const [
-                                      Shadow(blurRadius: 8, color: Colors.black54),
-                                    ],
+                                SizedBox(
+                                  width: double.maxFinite,
+                                  child: Text(
+                                    chameleonsText,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: Dimensions.font26 * 1.2,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      shadows: const [
+                                        Shadow(
+                                            blurRadius: 8,
+                                            color: Colors.black54),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      SizedBox(height: Dimensions.height45 * 1.5),
-
-                      if (canReplay)
-                        GestureDetector(
-                          onTap: () {
-                            Get.until((route) => route.isFirst);
-                            Get.to(() => const ChameleonRolePage(), arguments: [
-                              category,
-                              playersCount,
-                              impostersCount,
-                              canReplay,
-                            ]);
-                          },
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: Dimensions.width45,
-                                  vertical: Dimensions.height20,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: AppColors.correctColor.withValues(alpha: 0.8),
-                                  borderRadius: BorderRadius.circular(100),
-                                  border: Border.all(color: Colors.white, width: 2),
-                                ),
-                                child: Text(
-                                  'Play again'.tr,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font26,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      if (canReplay) SizedBox(height: Dimensions.height20),
-                      // Home button
-                      GestureDetector(
-                        onTap: () {
-                          Get.until((route) => route.isFirst);
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: Dimensions.width45,
-                                vertical: Dimensions.height20,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.glassWhite,
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(color: Colors.white, width: 2),
-                              ),
-                              child: Text(
-                                'Main menu'.tr,
-                                style: TextStyle(
-                                  fontSize: Dimensions.font26,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
+                ),
+              ),
+              Positioned(
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+                bottom: Dimensions.height20,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (canReplay) _buildPlayAgainButton(),
+                    if (canReplay) SizedBox(height: Dimensions.height20),
+                    _buildMainMenuButton(),
+                  ],
                 ),
               ),
               Positioned(
@@ -237,6 +239,98 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPlayAgainButton() {
+    return GestureDetector(
+      onTap: () {
+        Get.until((route) => route.isFirst);
+        Get.to(() => const ChameleonRolePage(), arguments: [
+          category,
+          playerNames,
+          impostersCount,
+          canReplay,
+        ]);
+      },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.width45,
+              vertical: Dimensions.height20,
+            ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  AppColors.glassWhiteStrong,
+                  AppColors.correctColor.withValues(alpha: 0.28),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(
+                color: AppColors.correctColor.withValues(alpha: 0.58),
+                width: _glassBorderWidth,
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 8,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+            child: Text(
+              'Play again'.tr,
+              style: TextStyle(
+                fontSize: Dimensions.font26,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMainMenuButton() {
+    return GestureDetector(
+      onTap: () {
+        Get.until((route) => route.isFirst);
+      },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.width45,
+              vertical: Dimensions.height20,
+            ),
+            decoration: BoxDecoration(
+              color: AppColors.glassWhite,
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(
+                color: AppColors.glassBorder,
+                width: _glassBorderWidth,
+              ),
+            ),
+            child: Text(
+              'Main menu'.tr,
+              style: TextStyle(
+                fontSize: Dimensions.font26,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
       ),

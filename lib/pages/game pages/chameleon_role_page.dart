@@ -16,9 +16,10 @@ class ChameleonRolePage extends StatefulWidget {
   State<ChameleonRolePage> createState() => _ChameleonRolePageState();
 }
 
-class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTickerProviderStateMixin {
+class _ChameleonRolePageState extends State<ChameleonRolePage>
+    with SingleTickerProviderStateMixin {
   late CategoryModel category;
-  late int playersCount;
+  late List<String> playerNames;
   late int impostersCount;
   late bool canReplay;
 
@@ -36,7 +37,7 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
   void initState() {
     super.initState();
     category = Get.arguments[0];
-    playersCount = Get.arguments[1];
+    playerNames = List<String>.from(Get.arguments[1]);
     impostersCount = Get.arguments[2];
     canReplay = Get.arguments[3];
 
@@ -58,14 +59,15 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
   }
 
   void _generateRoles() {
-    List<String> categoryWords = Get.find<WordController>().generateWordsListByCategory(category);
+    List<String> categoryWords =
+        Get.find<WordController>().generateWordsListByCategory(category);
     if (categoryWords.isNotEmpty) {
       secretWord = categoryWords.first;
     } else {
       secretWord = "Word missing";
     }
 
-    for (int i = 0; i < playersCount - impostersCount; i++) {
+    for (int i = 0; i < playerNames.length - impostersCount; i++) {
       roles.add(secretWord);
     }
     for (int i = 0; i < impostersCount; i++) {
@@ -82,7 +84,7 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
   }
 
   void _nextPlayer() {
-    if (currentPlayerIndex < playersCount - 1) {
+    if (currentPlayerIndex < playerNames.length - 1) {
       setState(() {
         currentPlayerIndex++;
         isRevealed = false;
@@ -96,7 +98,7 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
         secretWord,
         roles,
         category,
-        playersCount,
+        playerNames,
         impostersCount,
         canReplay,
       ]);
@@ -113,15 +115,21 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
               Column(
                 children: [
                   SizedBox(height: Dimensions.height45 * 2),
-                  Text(
-                    '${'Player'.tr} ${currentPlayerIndex + 1} - ${'Your turn'.tr}',
-                    style: TextStyle(
-                      fontSize: Dimensions.font26 * 1.5,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
-                      shadows: const [
-                        Shadow(blurRadius: 10, color: Colors.black54),
-                      ],
+                  SizedBox(
+                    width: Dimensions.screenWidth * 0.9,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        '${playerNames[currentPlayerIndex]} - ${'Your turn'.tr}',
+                        style: TextStyle(
+                          fontSize: Dimensions.font26 * 1.5,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          shadows: const [
+                            Shadow(blurRadius: 10, color: Colors.black54),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
 
@@ -152,7 +160,10 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
                           duration: const Duration(milliseconds: 200),
                           height: isRevealed ? null : Dimensions.height20 * 12,
                           width: isRevealed ? null : Dimensions.width30 * 10,
-                          padding: isRevealed ? EdgeInsets.symmetric(horizontal: Dimensions.width20) : null,
+                          padding: isRevealed
+                              ? EdgeInsets.symmetric(
+                                  horizontal: Dimensions.width20)
+                              : null,
                           alignment: Alignment.center,
                           child: isRevealed
                               ? Column(
@@ -164,21 +175,28 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
                                         fit: BoxFit.scaleDown,
                                         alignment: Alignment.center,
                                         child: Text(
-                                          roles[currentPlayerIndex] == "Chameleon"
+                                          roles[currentPlayerIndex] ==
+                                                  "Chameleon"
                                               ? 'You are the Chameleon!'.tr
                                               : roles[currentPlayerIndex],
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                            fontSize: roles[currentPlayerIndex] == "Chameleon" ? Dimensions.font26 * 1.5 : Dimensions.font26 * 2.5,
+                                            fontSize:
+                                                roles[currentPlayerIndex] ==
+                                                        "Chameleon"
+                                                    ? Dimensions.font26 * 1.5
+                                                    : Dimensions.font26 * 2.5,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.white,
                                           ),
                                         ),
                                       ),
                                     ),
-                                    if (roles[currentPlayerIndex] != "Chameleon")
+                                    if (roles[currentPlayerIndex] !=
+                                        "Chameleon")
                                       Padding(
-                                        padding: EdgeInsets.only(top: Dimensions.height10),
+                                        padding: EdgeInsets.only(
+                                            top: Dimensions.height10),
                                         child: Text(
                                           'Find out who the Chameleon is!'.tr,
                                           style: TextStyle(
@@ -195,7 +213,8 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
                                     AnimatedBuilder(
                                       animation: _animationController,
                                       builder: (context, child) {
-                                        if (!isHolding && _animationController.value == 0) {
+                                        if (!isHolding &&
+                                            _animationController.value == 0) {
                                           return const SizedBox.shrink();
                                         }
                                         return SizedBox(
@@ -204,8 +223,11 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
                                           child: CircularProgressIndicator(
                                             value: _animationController.value,
                                             strokeWidth: 8,
-                                            valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
-                                            backgroundColor: Colors.white.withValues(alpha: 0.2),
+                                            valueColor:
+                                                const AlwaysStoppedAnimation<
+                                                    Color>(Colors.white),
+                                            backgroundColor: Colors.white
+                                                .withValues(alpha: 0.2),
                                           ),
                                         );
                                       },
@@ -241,43 +263,45 @@ class _ChameleonRolePageState extends State<ChameleonRolePage> with SingleTicker
                   ),
 
                   // Next button
-                    if (hasRevealedOnce)
-                      GestureDetector(
-                        onTap: _nextPlayer,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: Dimensions.width45,
-                                vertical: Dimensions.height20,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.glassWhite,
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(color: Colors.white, width: 2),
-                              ),
-                              child: Text(
-                                currentPlayerIndex < playersCount - 1
-                                    ? 'Next player'.tr
-                                    : 'Start game'.tr,
-                                style: TextStyle(
-                                  fontSize: Dimensions.font26,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                  if (hasRevealedOnce)
+                    GestureDetector(
+                      onTap: _nextPlayer,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: Dimensions.width45,
+                              vertical: Dimensions.height20,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.glassWhite,
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(color: Colors.white, width: 2),
+                            ),
+                            child: Text(
+                              currentPlayerIndex < playerNames.length - 1
+                                  ? 'Next player'.tr
+                                  : 'Start game'.tr,
+                              style: TextStyle(
+                                fontSize: Dimensions.font26,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
                               ),
                             ),
                           ),
                         ),
-                      )
-                    else
-                      SizedBox(height: Dimensions.height20 * 3 + 4), // Placeholder height to prevent jumping
-                    
-                    SizedBox(height: Dimensions.height45),
-                  ],
-                ),
+                      ),
+                    )
+                  else
+                    SizedBox(
+                        height: Dimensions.height20 * 3 +
+                            4), // Placeholder height to prevent jumping
+
+                  SizedBox(height: Dimensions.height45),
+                ],
+              ),
               Positioned(
                 top: 10,
                 left: 10,
