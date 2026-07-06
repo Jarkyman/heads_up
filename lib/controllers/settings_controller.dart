@@ -70,8 +70,8 @@ class SettingsController extends GetxController implements GetxService {
   }
 
   Future<List<StoreProduct>> get getProducts async {
-    _products =
-        await Purchases.getProducts(_productsIds, productCategory: ProductCategory.nonSubscription);
+    _products = await Purchases.getProducts(_productsIds,
+        productCategory: ProductCategory.nonSubscription);
     return _products;
   }
 
@@ -123,7 +123,8 @@ class SettingsController extends GetxController implements GetxService {
 
   Future<void> roundTimeSave(int time) async {
     _roundTime = time;
-    settingsRepo.roundTimeSettingsSave(time);
+    await settingsRepo.roundTimeSettingsSave(time);
+    update();
   }
 
   Future<void> unlockAllRead() async {
@@ -176,7 +177,8 @@ class SettingsController extends GetxController implements GetxService {
   }
 
   Future<DateTime> getDateNow() async {
-    final String currentTimeZone = (await FlutterTimezone.getLocalTimezone()).identifier;
+    final String currentTimeZone =
+        (await FlutterTimezone.getLocalTimezone()).identifier;
     Response response = await settingsRepo.getTime(currentTimeZone);
     //debugPrint(response.body);
     if (response.statusCode == 200) {

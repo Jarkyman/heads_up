@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:group_button/group_button.dart';
 import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
@@ -57,7 +56,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(alpha: 0.8),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -110,51 +110,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             ),
                             GetBuilder<SettingsController>(
                               builder: (settingsController) {
-                                debugPrint(settingsController.getRoundTime.toString());
-                                int time = settingsController.getRoundTime;
-                                int index = 0;
-                                switch (time) {
-                                  case 60:
-                                    index = 0;
-                                    break;
-                                  case 90:
-                                    index = 1;
-                                    break;
-                                  case 120:
-                                    index = 2;
-                                    break;
-                                  default:
-                                    index = 0;
-                                }
-                                return GroupButton(
-                                  controller: GroupButtonController(
-                                      selectedIndex: index),
-                                  buttons: const ['60', '90', '120'],
-                                  onSelected: (value, index, selected) {
-                                    settingsController
-                                        .roundTimeSave(int.parse(value));
-                                  },
-                                  options: GroupButtonOptions(
-                                    selectedTextStyle: TextStyle(
-                                      fontSize: Dimensions.font16,
-                                      color: Colors.white.withValues(alpha: 0.8),
-                                    ),
-                                    selectedColor: AppColors.correctColor,
-                                    unselectedColor: AppColors.textColorGray,
-                                    unselectedTextStyle: TextStyle(
-                                      fontSize: Dimensions.font16,
-                                      color: Colors.white.withValues(alpha: 0.8),
-                                    ),
-                                    selectedBorderColor: Colors.black,
-                                    unselectedBorderColor: Colors.black,
-                                    borderRadius: BorderRadius.circular(100),
-                                    spacing: Dimensions.width10 / 3,
-                                    runSpacing: Dimensions.width10 / 3,
-                                    groupingType: GroupingType.row,
-                                    direction: Axis.horizontal,
-                                    buttonHeight: Dimensions.height45,
-                                    buttonWidth: Dimensions.width45,
-                                  ),
+                                return RoundTimeSelector(
+                                  selectedTime: settingsController.getRoundTime,
+                                  onSelected: settingsController.roundTimeSave,
                                 );
                               },
                             ),
@@ -187,7 +145,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(alpha: 0.8),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -223,7 +182,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(alpha: 0.8),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -253,7 +213,8 @@ class _SettingsPageState extends State<SettingsPage> {
                             'Restore purchase'.tr,
                             isUnlockAll ? '✔' : '✖',
                             snackPosition: SnackPosition.BOTTOM,
-                            backgroundColor: Colors.black.withValues(alpha: 0.6),
+                            backgroundColor:
+                                Colors.black.withValues(alpha: 0.6),
                             colorText: Colors.white,
                           );
                         } on PlatformException catch (e) {
@@ -278,7 +239,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(alpha: 0.8),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -330,6 +292,105 @@ class IconIndicator extends StatelessWidget {
         Shadow(blurRadius: 6, color: Colors.black),
         Shadow(blurRadius: 6, color: Colors.black),
       ],
+    );
+  }
+}
+
+class RoundTimeSelector extends StatelessWidget {
+  const RoundTimeSelector({
+    super.key,
+    required this.selectedTime,
+    required this.onSelected,
+  });
+
+  final int selectedTime;
+  final ValueChanged<int> onSelected;
+
+  static const List<int> _times = [60, 90, 120];
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(_times.length, (index) {
+        final time = _times[index];
+        final isSelected = time == selectedTime;
+
+        return Padding(
+          padding: EdgeInsets.only(
+            left: index == 0 ? 0 : Dimensions.width10 / 2,
+          ),
+          child: _RoundTimeButton(
+            time: time,
+            isSelected: isSelected,
+            onTap: () => onSelected(time),
+          ),
+        );
+      }),
+    );
+  }
+}
+
+class _RoundTimeButton extends StatelessWidget {
+  const _RoundTimeButton({
+    required this.time,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  final int time;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 180),
+            curve: Curves.easeOut,
+            height: Dimensions.height45,
+            width: Dimensions.width45,
+            decoration: BoxDecoration(
+              color: isSelected
+                  ? AppColors.greenColor.withValues(alpha: 0.32)
+                  : AppColors.glassWhite,
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(
+                color: isSelected
+                    ? AppColors.greenColor.withValues(alpha: 0.68)
+                    : AppColors.glassBorder,
+                width: 1.2,
+              ),
+              boxShadow: isSelected
+                  ? [
+                      BoxShadow(
+                        color: AppColors.greenColor.withValues(alpha: 0.18),
+                        blurRadius: 12,
+                        spreadRadius: 1,
+                      ),
+                    ]
+                  : null,
+            ),
+            child: Center(
+              child: Text(
+                '$time',
+                style: TextStyle(
+                  fontSize: Dimensions.font16,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white.withValues(
+                    alpha: isSelected ? 0.95 : 0.72,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
