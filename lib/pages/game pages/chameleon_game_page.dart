@@ -59,7 +59,7 @@ class _ChameleonGamePageState extends State<ChameleonGamePage>
     if (_hasOpenedReveal) return;
     _hasOpenedReveal = true;
 
-    Get.to(() => const ChameleonRevealPage(), arguments: [
+    Get.off(() => const ChameleonRevealPage(), arguments: [
       secretWord,
       roles,
       category,
