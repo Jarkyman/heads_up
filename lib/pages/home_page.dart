@@ -124,100 +124,166 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           GetBuilder<SettingsController>(
-                            builder: (settingsController) {
-                              return Column(
-                                children: [
-                                  Text(
-                                    settingsController.gameMode == GameMode.whoAmI
-                                        ? 'Who Am I?'.tr
-                                        : 'Chameleon'.tr,
-                                    style: TextStyle(
-                                      fontSize: Dimensions.font26 * 1.1,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white,
-                                      letterSpacing: 1.5,
-                                      shadows: const [
-                                        Shadow(
-                                          blurRadius: 12,
-                                          color: Color(0x66000000),
-                                          offset: Offset(0, 2),
-                                        ),
-                                      ],
-                                    ),
+                              builder: (settingsController) {
+                            return Column(
+                              children: [
+                                Text(
+                                  settingsController.gameMode == GameMode.whoAmI
+                                      ? 'Who Am I?'.tr
+                                      : 'Chameleon'.tr,
+                                  style: TextStyle(
+                                    fontSize: Dimensions.font26 * 1.1,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                    letterSpacing: 1.5,
+                                    shadows: const [
+                                      Shadow(
+                                        blurRadius: 12,
+                                        color: Color(0x66000000),
+                                        offset: Offset(0, 2),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: Dimensions.height20),
-                                  Container(
-                                    height: Dimensions.height45 * 1.2,
-                                    width: Dimensions.width30 * 11,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black.withValues(alpha: 0.3),
-                                      borderRadius: BorderRadius.circular(Dimensions.radius15),
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        // Sliding pale green pill
-                                        AnimatedAlign(
-                                          duration: const Duration(milliseconds: 500),
-                                          curve: Curves.elasticOut, // Fun bounce animation!
-                                          alignment: settingsController.gameMode == GameMode.whoAmI
-                                              ? Alignment.centerLeft
-                                              : Alignment.centerRight,
-                                          child: Container(
-                                            width: Dimensions.width30 * 5.5,
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xFFA5D6A7).withValues(alpha: 0.9), // Pale green
-                                              borderRadius: BorderRadius.circular(Dimensions.radius15),
+                                ),
+                                SizedBox(height: Dimensions.height20),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(
+                                      Dimensions.radius15),
+                                  child: BackdropFilter(
+                                    filter: ImageFilter.blur(
+                                        sigmaX: 14, sigmaY: 14),
+                                    child: Container(
+                                      height: Dimensions.height45 * 1.2,
+                                      width: Dimensions.width30 * 11,
+                                      padding: EdgeInsets.all(
+                                          Dimensions.height10 * 0.35),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.glassWhite,
+                                        borderRadius: BorderRadius.circular(
+                                            Dimensions.radius15),
+                                        border: Border.all(
+                                          color: AppColors.glassBorder,
+                                          width: 1.4,
+                                        ),
+                                        boxShadow: const [
+                                          BoxShadow(
+                                            color: Colors.black26,
+                                            blurRadius: 8,
+                                            spreadRadius: 1,
+                                          ),
+                                        ],
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          AnimatedAlign(
+                                            duration: const Duration(
+                                                milliseconds: 500),
+                                            curve: Curves.elasticOut,
+                                            alignment:
+                                                settingsController.gameMode ==
+                                                        GameMode.whoAmI
+                                                    ? Alignment.centerLeft
+                                                    : Alignment.centerRight,
+                                            child: Container(
+                                              width: Dimensions.width30 * 5.25,
+                                              decoration: BoxDecoration(
+                                                gradient:
+                                                    LinearGradient(colors: [
+                                                  AppColors.glassWhiteStrong,
+                                                  AppColors.greenColor
+                                                      .withValues(alpha: 0.34),
+                                                ]),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        Dimensions.radius15),
+                                                border: Border.all(
+                                                  color: AppColors.greenColor
+                                                      .withValues(alpha: 0.52),
+                                                  width: 1.2,
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                              child: GestureDetector(
-                                                onTap: () => settingsController.setGameMode(GameMode.whoAmI),
-                                                behavior: HitTestBehavior.opaque,
-                                                child: Center(
-                                                  child: AnimatedDefaultTextStyle(
-                                                    duration: const Duration(milliseconds: 250),
-                                                    style: TextStyle(
-                                                      color: settingsController.gameMode == GameMode.whoAmI ? Colors.black87 : Colors.white,
-                                                      fontSize: Dimensions.font16,
-                                                      fontWeight: settingsController.gameMode == GameMode.whoAmI ? FontWeight.w800 : FontWeight.w600,
-                                                      fontFamily: 'Montserrat', // Ensuring same font family if any
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: GestureDetector(
+                                                  onTap: () =>
+                                                      settingsController
+                                                          .setGameMode(
+                                                              GameMode.whoAmI),
+                                                  behavior:
+                                                      HitTestBehavior.opaque,
+                                                  child: Center(
+                                                    child:
+                                                        AnimatedDefaultTextStyle(
+                                                      duration: const Duration(
+                                                          milliseconds: 250),
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize:
+                                                            Dimensions.font16,
+                                                        fontWeight:
+                                                            settingsController
+                                                                        .gameMode ==
+                                                                    GameMode
+                                                                        .whoAmI
+                                                                ? FontWeight
+                                                                    .w800
+                                                                : FontWeight
+                                                                    .w600,
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                      ),
+                                                      child:
+                                                          Text('Who Am I?'.tr),
                                                     ),
-                                                    child: Text('Who Am I?'.tr),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                            Expanded(
-                                              child: GestureDetector(
-                                                onTap: () => settingsController.setGameMode(GameMode.chameleon),
-                                                behavior: HitTestBehavior.opaque,
-                                                child: Center(
-                                                  child: AnimatedDefaultTextStyle(
-                                                    duration: const Duration(milliseconds: 250),
-                                                    style: TextStyle(
-                                                      color: settingsController.gameMode == GameMode.chameleon ? Colors.black87 : Colors.white,
-                                                      fontSize: Dimensions.font16,
-                                                      fontWeight: settingsController.gameMode == GameMode.chameleon ? FontWeight.w800 : FontWeight.w600,
-                                                      fontFamily: 'Montserrat',
+                                              Expanded(
+                                                child: GestureDetector(
+                                                  onTap: () =>
+                                                      settingsController
+                                                          .setGameMode(GameMode
+                                                              .chameleon),
+                                                  behavior:
+                                                      HitTestBehavior.opaque,
+                                                  child: Center(
+                                                    child:
+                                                        AnimatedDefaultTextStyle(
+                                                      duration: const Duration(
+                                                          milliseconds: 250),
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize:
+                                                            Dimensions.font16,
+                                                        fontWeight: settingsController
+                                                                    .gameMode ==
+                                                                GameMode
+                                                                    .chameleon
+                                                            ? FontWeight.w800
+                                                            : FontWeight.w600,
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                      ),
+                                                      child:
+                                                          Text('Chameleon'.tr),
                                                     ),
-                                                    child: Text('Chameleon'.tr),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                  SizedBox(height: Dimensions.height20),
-                                ],
-                              );
-                            }
-                          ),
+                                ),
+                                SizedBox(height: Dimensions.height20),
+                              ],
+                            );
+                          }),
 
                           // — Category grid —
                           Padding(
@@ -249,14 +315,18 @@ class _HomePageState extends State<HomePage> {
                                             category: allCategories[index],
                                             onTap: () {
                                               if (!isLocked) {
-                                                if (settingsController.gameMode == GameMode.whoAmI) {
+                                                if (settingsController
+                                                        .gameMode ==
+                                                    GameMode.whoAmI) {
                                                   Get.to(() => const WordPage(),
                                                       arguments: [
                                                         allCategories[index],
                                                         true,
                                                       ]);
                                                 } else {
-                                                  Get.to(() => const ChameleonSetupPage(),
+                                                  Get.to(
+                                                      () =>
+                                                          const ChameleonSetupPage(),
                                                       arguments: [
                                                         allCategories[index],
                                                         true,
@@ -298,11 +368,15 @@ class _HomePageState extends State<HomePage> {
                                           EdgeInsets.all(Dimensions.width20),
                                       child: EventTile(
                                         onTap: () {
-                                          if (Get.find<SettingsController>().gameMode == GameMode.whoAmI) {
+                                          if (Get.find<SettingsController>()
+                                                  .gameMode ==
+                                              GameMode.whoAmI) {
                                             Get.to(() => const WordPage(),
                                                 arguments: [category, true]);
                                           } else {
-                                            Get.to(() => const ChameleonSetupPage(),
+                                            Get.to(
+                                                () =>
+                                                    const ChameleonSetupPage(),
                                                 arguments: [category, true]);
                                           }
                                         },
@@ -573,8 +647,8 @@ class _CategoryTileState extends State<CategoryTile>
                           child: SvgPicture.asset(
                             widget.category.iconUrl,
                             colorFilter: ColorFilter.mode(
-                              Colors.white
-                                  .withValues(alpha: widget.locked ? 0.35 : 0.9),
+                              Colors.white.withValues(
+                                  alpha: widget.locked ? 0.35 : 0.9),
                               BlendMode.srcIn,
                             ),
                           ),
