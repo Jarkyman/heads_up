@@ -1,24 +1,24 @@
 <en-GB>
-- Brand new game mode: CHAMELEON! A social deduction party game where you must find the imposter among you.
-- Premium unlocked fix: Your purchases now correctly restore on app launch.
-- Design improvements: Enjoy our new glassmorphism UI, smooth transitions, and fresh animations!
-- Spellcheck: Over 20 typos fixed in the word database.
+- Chameleon now has a smoother setup flow with player names, saved players, and better Chameleon count handling.
+- Rules have been expanded and polished, including the Chameleon's final chance to guess the secret word.
+- Refreshed glass-style dialogs, buttons, language picker, purchase screens, and settings controls.
+- Improved Danish, Norwegian, and Swedish support, plus fixes for restore purchase messages, orientation handling, and several small UI issues.
 </en-GB>
 <da-DK>
-- Splinterny game mode: KAMELEON! Et party-spil, hvor I skal finde bedrageren iblandt jer.
-- Premium-køb fixet: Dine køb gendannes nu korrekt automatisk.
-- Design-opgraderinger: Nyd vores nye glassmorphism UI og lækre animationer!
-- Stavekontrol: Over 20 stavefejl rettet i orddatabasen.
+- Kamæleon har nu et bedre setup-flow med spillernavne, gemte spillere og bedre håndtering af antal kamæleoner.
+- Reglerne er udvidet og forbedret, inkl. kamæleonens sidste chance for at gætte det hemmelige ord.
+- Opdateret glass-design på dialoger, knapper, sprogvalg, købsskærme og indstillinger.
+- Forbedret dansk, norsk og svensk support samt fixes til gendan køb-beskeder, skærmrotation og flere små UI-fejl.
 </da-DK>
 <no-NO>
-- Helt ny spillmodus: KAMELEON! Et selskapsspill der dere må finne bedrageren blant dere.
-- Premium-kjøp fikset: Kjøpene dine gjenopprettes nå riktig når appen åpnes.
-- Designforbedringer: Nyt vårt nye glassmorphism UI og mikroanimasjoner!
-- Over 20 stavefeil rettet i orddatabasen.
+- Kameleon har nå en bedre oppsett-flyt med spillernavn, lagrede spillere og bedre håndtering av antall kameleoner.
+- Reglene er utvidet og forbedret, inkludert kameleonens siste sjanse til å gjette det hemmelige ordet.
+- Oppdatert glass-design på dialoger, knapper, språkvalg, kjøpsskjermer og innstillinger.
+- Forbedret dansk, norsk og svensk støtte samt feilrettinger for gjenopprett kjøp-meldinger, skjermrotasjon og flere små UI-feil.
 </no-NO>
 <sv-SE>
-- Helt nytt spelläge: KAMELEONT! Ett partyspel där ni måste hitta bedragaren bland er.
-- Premium-köp fixat: Dina köp återställs nu korrekt när appen öppnas.
-- Designförbättringar: Njut av vårt nya glassmorphism UI och smidiga övergångar!
-- Över 20 stavfel rättade i orddatabasen.
+- Kameleont har nu ett bättre uppstartsflöde med spelarnamn, sparade spelare och bättre hantering av antal kameleonter.
+- Reglerna har utökats och förbättrats, inklusive kameleontens sista chans att gissa det hemliga ordet.
+- Uppdaterad glass-design på dialoger, knappar, språkval, köpskärmar och inställningar.
+- Förbättrat stöd för danska, norska och svenska samt fixar för återställ köp-meddelanden, skärmrotation och flera små UI-problem.
 </sv-SE>
