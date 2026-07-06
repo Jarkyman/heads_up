@@ -19,6 +19,10 @@ void buildHowToDialog({bool isChameleon = false}) {
               .tr,
           'After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!'
               .tr,
+          'If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.'
+              .tr,
+          'The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.'
+              .tr,
         ]
       : [
           'Choose a category, such as food, animals, technology, etc. Then select a person to hold the phone to their forehead.'
@@ -28,8 +32,6 @@ void buildHowToDialog({bool isChameleon = false}) {
           'If the word is guessed correctly, the person holding the phone tilts the phone down to get points. The person can skip the word by tilting the phone up.'
               .tr,
           'The game continues with new words until time runs out. At the end of the game, you can see all the words and see how many correct guesses you got.'
-              .tr,
-          'It\'s a simple but fun and challenging game that can be played by people of all ages and can be a fun activity with friends and family or a challenging competition with a group of colleagues or classmates.'
               .tr,
         ];
 

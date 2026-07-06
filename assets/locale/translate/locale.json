@@ -103,7 +103,9 @@
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead."
     }
   },
   {
@@ -210,7 +212,9 @@
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Gibt das Telefon weiter, damit jeder Spieler heimlich seine Rolle sehen kann. Achte darauf, dass niemand anderes deinen Bildschirm sieht!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Sobald jeder seine Rolle kennt, sagt jeder Spieler nacheinander genau ein Wort, das mit dem geheimen Wort zusammenhängt.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "Das Chamäleon kennt das Wort nicht, also muss es genau zuhören und versuchen, nicht aufzufallen, indem es ein Wort sagt, das zu den Aussagen der anderen passt.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Nachdem jeder sein Wort gesagt hat, diskutiert und stimmt ab, wer das Chamäleon ist. Dann deckt die Rollen auf, um zu sehen, ob ihr recht hattet!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Nachdem jeder sein Wort gesagt hat, diskutiert und stimmt ab, wer das Chamäleon ist. Dann deckt die Rollen auf, um zu sehen, ob ihr recht hattet!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Wenn die Mehrheit für das Chamäleon gestimmt hat, verliert das Chamäleon und alle anderen gewinnen.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "Das Chamäleon bekommt eine letzte Chance zu gewinnen: Wenn es das geheime Wort errät, gewinnt stattdessen das Chamäleon."
     }
   },
   {
@@ -284,21 +288,21 @@
       "Valentine": "Valentinsdag",
       "Easter": "Påske",
       "_Chameleon": "-----------------------------------------------------",
-      "Chameleon": "Chameleon",
-      "Chameleon setup": "Chameleon opsætning",
+      "Chameleon": "Kamæleon",
+      "Chameleon setup": "Kamæleon-opsætning",
       "Players": "Spillere",
-      "Imposters": "Chameleons",
+      "Imposters": "Kamæleoner",
       "Start game": "Start spil",
       "Player": "Spiller",
       "Your turn": "Din tur",
       "Hold to reveal": "Hold inde for at se",
-      "You are the Chameleon!": "Du er Chameleon!",
-      "Find out who the Chameleon is!": "Find ud af hvem Chameleon er!",
+      "You are the Chameleon!": "Du er kamæleonen!",
+      "Find out who the Chameleon is!": "Find ud af hvem kamæleonen er!",
       "Next player": "Næste spiller",
       "Rules": "Regler",
-      "Each player takes turns saying one word related to the secret word.\nThe Chameleon must try to blend in.\nAfter everyone has spoken, vote on who you think the Chameleon is!": "Hver spiller skiftes til at sige et ord relateret til det hemmelige ord.\nChameleon skal forsøge at falde ind.\nNår alle har talt, stemmer I om, hvem I tror Chameleon er!",
+      "Each player takes turns saying one word related to the secret word.\nThe Chameleon must try to blend in.\nAfter everyone has spoken, vote on who you think the Chameleon is!": "Hver spiller skiftes til at sige et ord relateret til det hemmelige ord.\nKamæleonen skal forsøge at falde ind.\nNår alle har talt, stemmer I om, hvem I tror kamæleonen er!",
       "Got it": "Forstået",
-      "Find the Chameleon!": "Find Chameleon!",
+      "Find the Chameleon!": "Find kamæleonen!",
       "Discuss and vote!": "Diskuter og stem!",
       "Reveal": "Afslør",
       "Quit Game?": "Afslut spil?",
@@ -306,18 +310,20 @@
       "Yes": "Ja",
       "No": "Nej",
       "The secret word was:": "Det hemmelige ord var:",
-      "The Chameleons were:": "Chameleons var:",
-      "The Chameleon was:": "Chameleon var:",
+      "The Chameleons were:": "Kamæleonerne var:",
+      "The Chameleon was:": "Kamæleonen var:",
       "Main menu": "Hovedmenu",
       "Play again": "Spil igen",
       "Hold to reveal your word": "Hold inde for at se dit ord",
       "Say a word related to the secret word.": "Sig et ord relateret til det hemmelige ord.",
       "Who Am I": "Hvem er jeg",
-      "Choose a category and set up the number of players and Chameleons. Everyone will get a secret word, but the Chameleon will only see \"You are the Chameleon!\".": "Vælg en kategori og indstil antallet af spillere og Chameleons. Alle får et hemmeligt ord, men Chameleon ser kun \"Du er Chameleon!\".",
+      "Choose a category and set up the number of players and Chameleons. Everyone will get a secret word, but the Chameleon will only see \"You are the Chameleon!\".": "Vælg en kategori og indstil antallet af spillere og kamæleoner. Alle får et hemmeligt ord, men kamæleonen ser kun \"Du er kamæleonen!\".",
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Send telefonen rundt, så hver spiller i hemmelighed kan se deres rolle. Sørg for at ingen andre ser din skærm!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Når alle kender deres rolle, skiftes hver spiller til at sige præcis ét ord relateret til det hemmelige ord.",
-      "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "Chameleon kender ikke ordet, så de må lytte godt efter og prøve at falde ind ved at sige et ord, der passer til det, de andre siger.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Når alle har sagt deres ord, diskuter og stem på hvem I tror Chameleon er. Afslør derefter rollerne for at se om I havde ret!"
+      "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "Kamæleonen kender ikke ordet, så de må lytte godt efter og prøve at falde ind ved at sige et ord, der passer til det, de andre siger.",
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Når alle har sagt deres ord, diskuter og stem på hvem I tror kamæleonen er. Afslør derefter rollerne for at se om I havde ret!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Hvis flertallet stemmer på kamæleonen, taber kamæleonen, og alle andre vinder.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "Kamæleonen får en sidste chance for at vinde: Hvis kamæleonen kan gætte det hemmelige ord, vinder kamæleonen i stedet."
     }
   },
   {
@@ -394,18 +400,18 @@
       "Chameleon": "Kameleont",
       "Chameleon setup": "Kameleont-inställning",
       "Players": "Spelare",
-      "Imposters": "Kameleont",
+      "Imposters": "Kameleonter",
       "Start game": "Starta spel",
       "Player": "Spelare",
       "Your turn": "Din tur",
       "Hold to reveal": "Håll för att visa",
-      "You are the Chameleon!": "Du är Kameleonten!",
-      "Find out who the Chameleon is!": "Ta reda på vem Kameleonten är!",
+      "You are the Chameleon!": "Du är kameleonten!",
+      "Find out who the Chameleon is!": "Ta reda på vem kameleonten är!",
       "Next player": "Nästa spelare",
       "Rules": "Regler",
-      "Each player takes turns saying one word related to the secret word.\nThe Chameleon must try to blend in.\nAfter everyone has spoken, vote on who you think the Chameleon is!": "Varje spelare turas om att säga ett ord relaterat till det hemliga ordet.\nKameleonten måste försöka smälta in.\nNär alla har talat, rösta på vem ni tror Kameleonten är!",
+      "Each player takes turns saying one word related to the secret word.\nThe Chameleon must try to blend in.\nAfter everyone has spoken, vote on who you think the Chameleon is!": "Varje spelare turas om att säga ett ord relaterat till det hemliga ordet.\nKameleonten måste försöka smälta in.\nNär alla har talat, rösta på vem ni tror kameleonten är!",
       "Got it": "Förstått",
-      "Find the Chameleon!": "Hitta Kameleonten!",
+      "Find the Chameleon!": "Hitta kameleonten!",
       "Discuss and vote!": "Diskutera och rösta!",
       "Reveal": "Avslöja",
       "Quit Game?": "Avsluta spel?",
@@ -413,18 +419,20 @@
       "Yes": "Ja",
       "No": "Nej",
       "The secret word was:": "Det hemliga ordet var:",
-      "The Chameleons were:": "Kameleontarna var:",
+      "The Chameleons were:": "Kameleonterna var:",
       "The Chameleon was:": "Kameleonten var:",
       "Main menu": "Huvudmeny",
       "Play again": "Spela igen",
       "Hold to reveal your word": "Håll för att visa ditt ord",
       "Say a word related to the secret word.": "Säg ett ord relaterat till det hemliga ordet.",
       "Who Am I": "Vem är jag",
-      "Choose a category and set up the number of players and Chameleons. Everyone will get a secret word, but the Chameleon will only see \"You are the Chameleon!\".": "Välj en kategori och ställ in antalet spelare och kameleontar. Alla får ett hemligt ord, men kameleonten ser bara \"Du är Kameleonten!\".",
+      "Choose a category and set up the number of players and Chameleons. Everyone will get a secret word, but the Chameleon will only see \"You are the Chameleon!\".": "Välj en kategori och ställ in antalet spelare och kameleonter. Alla får ett hemligt ord, men kameleonten ser bara \"Du är kameleonten!\".",
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Skicka runt telefonen så att varje spelare hemligt kan se sin roll. Se till att ingen annan ser din skärm!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "När alla känner till sin roll, turas varje spelare om att säga exakt ett ord relaterat till det hemliga ordet.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "Kameleonten känner inte till ordet, så de måste lyssna noga och försöka smälta in genom att säga ett ord som passar ihop med vad andra säger.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "När alla har sagt sitt ord, diskutera och rösta på vem ni tror att kameleonten är. Avslöja sedan rollerna för att se om ni hade rätt!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "När alla har sagt sitt ord, diskutera och rösta på vem ni tror att kameleonten är. Avslöja sedan rollerna för att se om ni hade rätt!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Om majoriteten röstar på kameleonten förlorar kameleonten och alla andra vinner.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "Kameleonten får en sista chans att vinna: Om kameleonten kan gissa det hemliga ordet vinner kameleonten i stället."
     }
   },
   {
@@ -499,20 +507,20 @@
       "Easter": "Påske",
       "_Chameleon": "-----------------------------------------------------",
       "Chameleon": "Kameleon",
-      "Chameleon setup": "Kameleon oppsett",
+      "Chameleon setup": "Kameleon-oppsett",
       "Players": "Spillere",
-      "Imposters": "Kameleon",
+      "Imposters": "Kameleoner",
       "Start game": "Start spill",
       "Player": "Spiller",
       "Your turn": "Din tur",
       "Hold to reveal": "Hold for å avsløre",
-      "You are the Chameleon!": "Du er Kameleonen!",
-      "Find out who the Chameleon is!": "Finn ut hvem Kameleonen er!",
+      "You are the Chameleon!": "Du er kameleonen!",
+      "Find out who the Chameleon is!": "Finn ut hvem kameleonen er!",
       "Next player": "Neste spiller",
       "Rules": "Regler",
-      "Each player takes turns saying one word related to the secret word.\nThe Chameleon must try to blend in.\nAfter everyone has spoken, vote on who you think the Chameleon is!": "Hver spiller bytter på å si ett ord relatert til det hemmelige ordet.\nKameleonen må prøve å gli inn.\nEtter at alle har snakket, stem på hvem dere tror Kameleonen er!",
+      "Each player takes turns saying one word related to the secret word.\nThe Chameleon must try to blend in.\nAfter everyone has spoken, vote on who you think the Chameleon is!": "Hver spiller bytter på å si ett ord relatert til det hemmelige ordet.\nKameleonen må prøve å gli inn.\nEtter at alle har snakket, stem på hvem dere tror kameleonen er!",
       "Got it": "Forstått",
-      "Find the Chameleon!": "Finn Kameleonen!",
+      "Find the Chameleon!": "Finn kameleonen!",
       "Discuss and vote!": "Diskuter og stem!",
       "Reveal": "Avslør",
       "Quit Game?": "Avslutt spill?",
@@ -527,11 +535,13 @@
       "Hold to reveal your word": "Hold for å avsløre ordet ditt",
       "Say a word related to the secret word.": "Si et ord relatert til det hemmelige ordet.",
       "Who Am I": "Hvem er jeg",
-      "Choose a category and set up the number of players and Chameleons. Everyone will get a secret word, but the Chameleon will only see \"You are the Chameleon!\".": "Velg en kategori og angi antall spillere og kameleoner. Alle får et hemmelig ord, men kameleonen ser bare \"Du er Kameleonen!\".",
+      "Choose a category and set up the number of players and Chameleons. Everyone will get a secret word, but the Chameleon will only see \"You are the Chameleon!\".": "Velg en kategori og angi antall spillere og kameleoner. Alle får et hemmelig ord, men kameleonen ser bare \"Du er kameleonen!\".",
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Send telefonen rundt slik at hver spiller i hemmelighet kan se sin rolle. Sørg for at ingen andre ser skjermen din!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Når alle kjenner sin rolle, bytter hver spiller på å si nøyaktig ett ord relatert til det hemmelige ordet.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "Kameleonen kjenner ikke ordet, så de må lytte nøye og prøve å gli inn ved å si et ord som passer til det de andre sier.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Etter at alle har sagt sitt ord, diskuter og stem på hvem dere tror kameleonen er. Avslør deretter rollene for å se om dere hadde rett!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Etter at alle har sagt sitt ord, diskuter og stem på hvem dere tror kameleonen er. Avslør deretter rollene for å se om dere hadde rett!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Hvis flertallet stemmer på kameleonen, taper kameleonen, og alle andre vinner.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "Kameleonen får én siste sjanse til å vinne: Hvis kameleonen kan gjette det hemmelige ordet, vinner kameleonen i stedet."
     }
   },
   {
@@ -638,7 +648,9 @@
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Pasa el teléfono para que cada jugador pueda ver su rol en secreto. ¡Asegúrate de que nadie más vea tu pantalla!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Una vez que todos conozcan su rol, cada jugador se turna para decir exactamente una palabra relacionada con la palabra secreta.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "El Camaleón no conoce la palabra, por lo que debe escuchar con atención e intentar mezclarse diciendo una palabra que encaje con lo que dicen los demás.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Después de que todos hayan dicho su palabra, discutan y voten sobre quién creen que es el Camaleón. ¡Luego revelen los roles para ver si tenían razón!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Después de que todos hayan dicho su palabra, discutan y voten sobre quién creen que es el Camaleón. ¡Luego revelen los roles para ver si tenían razón!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Si la mayoría votó por el Camaleón, el Camaleón pierde y todos los demás ganan.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "El Camaleón tiene una última oportunidad de ganar: si puede adivinar la palabra secreta, el Camaleón gana en su lugar."
     }
   },
   {
@@ -745,7 +757,9 @@
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Faites passer le téléphone pour que chaque joueur puisse voir secrètement son rôle. Assurez-vous que personne d'autre ne voit votre écran !",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Une fois que chacun connaît son rôle, chaque joueur dit à tour de rôle exactement un mot lié au mot secret.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "Le Caméléon ne connaît pas le mot, il doit donc écouter attentivement et essayer de se fondre dans la masse en disant un mot qui correspond à ce que disent les autres.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Une fois que tout le monde a dit son mot, discutez et votez sur qui vous pensez être le Caméléon. Ensuite, révélez les rôles pour voir si vous aviez raison !"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Une fois que tout le monde a dit son mot, discutez et votez sur qui vous pensez être le Caméléon. Ensuite, révélez les rôles pour voir si vous aviez raison !",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Si la majorité a voté pour le Caméléon, le Caméléon perd et tous les autres gagnent.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "Le Caméléon a une dernière chance de gagner : s'il devine le mot secret, le Caméléon gagne à la place."
     }
   },
   {
@@ -852,7 +866,9 @@
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Passe o telefone para que cada jogador possa ver secretamente o seu papel. Certifique-se de que mais ninguém vê a sua ecrã!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Assim que todos souberem o seu papel, cada jogador, à vez, diz exatamente uma palavra relacionada com a palavra secreta.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "O Camaleão não sabe a palavra, por isso tem de ouvir com atenção e tentar misturar-se dizendo uma palavra que se enquadre no que os outros estão a dizer.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Depois de todos terem dito a sua palavra, discutam e votem em quem pensam que é o Camaleão. Em seguida, revelem os papéis para ver se tinham razão!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Depois de todos terem dito a sua palavra, discutam e votem em quem pensam que é o Camaleão. Em seguida, revelem os papéis para ver se tinham razão!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Se a maioria votou no Camaleão, o Camaleão perde e todos os outros ganham.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "O Camaleão tem uma última chance de ganhar: se conseguir adivinhar a palavra secreta, o Camaleão ganha."
     }
   },
   {
@@ -959,7 +975,9 @@
       "Pass the phone around so each player can secretly view their role. Make sure no one else sees your screen!": "Passe o telefone para que cada jogador possa ver secretamente o seu papel. Certifique-se de que mais ninguém vê a sua tela!",
       "Once everyone knows their role, each player takes turns saying exactly one word related to the secret word.": "Assim que todos souberem o seu papel, cada jogador, à vez, diz exatamente uma palavra relacionada à palavra secreta.",
       "The Chameleon doesn't know the word, so they must listen carefully and try to blend in by saying a word that fits with what others are saying.": "O Camaleão não sabe a palavra, por isso tem de ouvir com atenção e tentar misturar-se dizendo uma palavra que se enquadre no que os outros estão a dizer.",
-      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Depois de todos terem dito a sua palavra, discutam e votem em quem pensam que é o Camaleão. Em seguida, revelem os papéis para ver se tinham razão!"
+      "After everyone has said their word, discuss and vote on who you think the Chameleon is. Then reveal the roles to see if you were right!": "Depois de todos terem dito a sua palavra, discutam e votem em quem pensam que é o Camaleão. Em seguida, revelem os papéis para ver se tinham razão!",
+      "If the majority voted for the Chameleon, the Chameleon loses and everyone else wins.": "Se a maioria votou no Camaleão, o Camaleão perde e todos os outros ganham.",
+      "The Chameleon gets one final chance to win: if they can guess the secret word, the Chameleon wins instead.": "O Camaleão tem uma última chance de ganhar: se conseguir adivinhar a palavra secreta, o Camaleão ganha."
     }
   }
 ]
