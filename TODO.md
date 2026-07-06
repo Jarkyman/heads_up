@@ -1,8 +1,6 @@
 # Who Am I? - TODO & Code Review
 
 Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og forbedres, sorteret efter prioritet og markeret med ToDoKanban tags. Opgaver omkring egne kategorier er flyttet til [TODO-own_words_category.md](TODO-own_words_category.md).
-// TODO: hero "animationen" fra splash screen til home page virker ikke.
-
 // TODO: Look throw all words and check for spelling errors. (Can it be done with a script?)
 
 // TODO: Search words and remove the word "Chameleon" from the list, as it is not a word that should be used in the game. (Maybe also remove "Imposter" and "Spy" from the list?)
@@ -10,6 +8,7 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 ---
 
 ## ✅ DONE
+// DONE: hero "animationen" fra splash screen til home page virker ikke. (Splash og home bruger nu samme `AppLogoHero`, route fade er fjernet fra overgangen, og splash animation-controlleren initialiseres før resource loading).
 // DONE: why do we not have sv and no in "LOCALE_LIST" in AppConstants, we have the languages or what? (Tilføjet `nb_NO` og `sv_SE`, da appen allerede har orddata, oversættelser og WordController support for dem).
 // DONE: when watcing a reward add to "Who am i" it will accept hoizontal orientation, but we only support vertical orientation on this game. (Orientation styres nu via lifecycle-helper; Who Am I låses til landscape, øvrige sider til portrait, og rewarded-ad navigation sker først efter ad dismiss).
 // DONE: Fix design for purchase also, after rules design is done. Also the other purchase dialog with ads need new design. (Purchase og buy-or-try bruger nu fælles glassy bottom sheet, glass icon header og glassy action buttons).

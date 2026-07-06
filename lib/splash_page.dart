@@ -1,14 +1,11 @@
-import 'dart:async';
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/categories_controller.dart';
 import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/controllers/word_controller.dart';
-import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/pages/home_page.dart';
+import 'package:heads_up/widgets/app_logo_hero.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
@@ -16,6 +13,8 @@ import 'controllers/review_controller.dart';
 import 'controllers/settings_controller.dart';
 import 'helper/app_colors.dart';
 import 'helper/dimensions.dart';
+
+const Duration _homeRouteDuration = Duration(milliseconds: 850);
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,6 +27,17 @@ class _SplashPageState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
+  bool _hasOpenedHome = false;
+
+  void _openHome() {
+    if (_hasOpenedHome || !mounted) return;
+    _hasOpenedHome = true;
+    Get.off(
+      () => const HomePage(),
+      duration: _homeRouteDuration,
+      transition: Transition.noTransition,
+    );
+  }
 
   Future<void> _loadResource() async {
     WakelockPlus.enable();
@@ -48,28 +58,31 @@ class _SplashPageState extends State<SplashScreen>
     });
 
     if (controller.isCompleted) {
-      await Future.delayed(const Duration(milliseconds: 4000));
-      Get.off(() => const HomePage(),
-          duration: const Duration(milliseconds: 800),
-          transition: Transition.fadeIn);
+      await Future.delayed(const Duration(milliseconds: 400));
+      _openHome();
     } else {
-      Timer(
-          const Duration(seconds: 3),
-          () => Get.off(() => const HomePage(),
-              duration: const Duration(milliseconds: 800),
-              transition: Transition.fadeIn));
-      //Timer(Duration(seconds: 3), () => Get.off(TestPage()));
+      controller.addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _openHome();
+        }
+      });
     }
   }
 
   @override
   void initState() {
     super.initState();
-    _loadResource();
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 3))
           ..forward();
     animation = CurvedAnimation(parent: controller, curve: Curves.linear);
+    _loadResource();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -89,17 +102,7 @@ class _SplashPageState extends State<SplashScreen>
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Hero(
-                            tag: AppConstants.LOGO_TAG,
-                            child: SizedBox(
-                              height: 75,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: Dimensions.width45),
-                                child: Image.asset('assets/images/Icon.png'),
-                              ),
-                            ),
-                          ),
+                          const AppLogoHero(height: 75),
                           SizedBox(
                             height: 145,
                             child: Padding(

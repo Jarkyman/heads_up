@@ -9,7 +9,6 @@ import 'package:heads_up/controllers/categories_controller.dart';
 import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
-import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/helper/orientation_helper.dart';
 import 'package:heads_up/models/category_model.dart';
@@ -17,6 +16,7 @@ import 'package:heads_up/models/game_mode.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
 import 'package:heads_up/pages/game%20pages/chameleon_setup_page.dart';
 import 'package:heads_up/pages/settings_page.dart';
+import 'package:heads_up/widgets/app_logo_hero.dart';
 import 'package:heads_up/widgets/buy_dialog.dart';
 import 'package:heads_up/widgets/icon_button.dart';
 
@@ -111,17 +111,7 @@ class _HomePageState extends State<HomePage> {
                               top: Dimensions.height20,
                               bottom: Dimensions.height10,
                             ),
-                            child: Hero(
-                              tag: AppConstants.LOGO_TAG,
-                              child: SizedBox(
-                                height: 120,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: Dimensions.width45),
-                                  child: Image.asset('assets/images/Icon.png'),
-                                ),
-                              ),
-                            ),
+                            child: const AppLogoHero(height: 120),
                           ),
                           GetBuilder<SettingsController>(
                               builder: (settingsController) {
