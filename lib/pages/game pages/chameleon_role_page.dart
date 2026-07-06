@@ -17,7 +17,7 @@ class ChameleonRolePage extends StatefulWidget {
 }
 
 class _ChameleonRolePageState extends State<ChameleonRolePage>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late CategoryModel category;
   late List<String> playerNames;
   late int impostersCount;
@@ -32,6 +32,8 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
   bool hasRevealedOnce = false;
 
   late AnimationController _animationController;
+  late AnimationController _revealPopController;
+  late Animation<double> _revealPopAnimation;
 
   @override
   void initState() {
@@ -45,7 +47,7 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 700),
     );
 
     _animationController.addStatusListener((status) {
@@ -54,8 +56,18 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
           isRevealed = true;
           hasRevealedOnce = true;
         });
+        _revealPopController.forward(from: 0);
       }
     });
+
+    _revealPopController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 420),
+    );
+    _revealPopAnimation = CurvedAnimation(
+      parent: _revealPopController,
+      curve: Curves.elasticOut,
+    );
   }
 
   void _generateRoles() {
@@ -80,6 +92,7 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
   @override
   void dispose() {
     _animationController.dispose();
+    _revealPopController.dispose();
     super.dispose();
   }
 
@@ -91,6 +104,7 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
         isHolding = false;
         hasRevealedOnce = false;
         _animationController.reset();
+        _revealPopController.reset();
       });
     } else {
       // Go to game page
@@ -166,46 +180,57 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
                               : null,
                           alignment: Alignment.center,
                           child: isRevealed
-                              ? Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      width: Dimensions.screenWidth * 0.9,
-                                      child: FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          roles[currentPlayerIndex] ==
-                                                  "Chameleon"
-                                              ? 'You are the Chameleon!'.tr
-                                              : roles[currentPlayerIndex],
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize:
-                                                roles[currentPlayerIndex] ==
-                                                        "Chameleon"
-                                                    ? Dimensions.font26 * 1.5
-                                                    : Dimensions.font26 * 2.5,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
+                              ? FadeTransition(
+                                  opacity: _revealPopController,
+                                  child: ScaleTransition(
+                                    scale: Tween<double>(begin: 0.82, end: 1)
+                                        .animate(_revealPopAnimation),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        SizedBox(
+                                          width: Dimensions.screenWidth * 0.9,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              roles[currentPlayerIndex] ==
+                                                      "Chameleon"
+                                                  ? 'You are the Chameleon!'.tr
+                                                  : roles[currentPlayerIndex],
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize:
+                                                    roles[currentPlayerIndex] ==
+                                                            "Chameleon"
+                                                        ? Dimensions.font26 *
+                                                            1.5
+                                                        : Dimensions.font26 *
+                                                            2.5,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                        if (roles[currentPlayerIndex] !=
+                                            "Chameleon")
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: Dimensions.height10),
+                                            child: Text(
+                                              'Find out who the Chameleon is!'
+                                                  .tr,
+                                              style: TextStyle(
+                                                fontSize: Dimensions.font16,
+                                                color: Colors.white70,
+                                              ),
+                                            ),
+                                          ),
+                                      ],
                                     ),
-                                    if (roles[currentPlayerIndex] !=
-                                        "Chameleon")
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: Dimensions.height10),
-                                        child: Text(
-                                          'Find out who the Chameleon is!'.tr,
-                                          style: TextStyle(
-                                            fontSize: Dimensions.font16,
-                                            color: Colors.white70,
-                                          ),
-                                        ),
-                                      ),
-                                  ],
+                                  ),
                                 )
                               : Stack(
                                   alignment: Alignment.center,
@@ -213,47 +238,35 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
                                     AnimatedBuilder(
                                       animation: _animationController,
                                       builder: (context, child) {
-                                        if (!isHolding &&
-                                            _animationController.value == 0) {
-                                          return const SizedBox.shrink();
-                                        }
-                                        return SizedBox(
-                                          height: Dimensions.height20 * 8,
-                                          width: Dimensions.height20 * 8,
-                                          child: CircularProgressIndicator(
-                                            value: _animationController.value,
-                                            strokeWidth: 8,
-                                            valueColor:
-                                                const AlwaysStoppedAnimation<
-                                                    Color>(Colors.white),
-                                            backgroundColor: Colors.white
-                                                .withValues(alpha: 0.2),
-                                          ),
+                                        return _RevealHoldIndicator(
+                                          progress: _animationController.value,
+                                          isHolding: isHolding,
+                                          child: child!,
                                         );
                                       },
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text(
-                                          '????????',
-                                          style: TextStyle(
-                                            fontSize: Dimensions.font26 * 1.5,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            letterSpacing: 2,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            '????????',
+                                            style: TextStyle(
+                                              fontSize: Dimensions.font26 * 1.5,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                              letterSpacing: 2,
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(height: Dimensions.height10),
-                                        Text(
-                                          'Hold to reveal your word'.tr,
-                                          style: TextStyle(
-                                            fontSize: Dimensions.font16,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.white70,
+                                          SizedBox(height: Dimensions.height10),
+                                          Text(
+                                            'Hold to reveal your word'.tr,
+                                            style: TextStyle(
+                                              fontSize: Dimensions.font16,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.white70,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -318,5 +331,89 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
         ),
       ),
     );
+  }
+}
+
+class _RevealHoldIndicator extends StatelessWidget {
+  const _RevealHoldIndicator({
+    required this.progress,
+    required this.isHolding,
+    required this.child,
+  });
+
+  final double progress;
+  final bool isHolding;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final size = Dimensions.height20 * 12.8;
+
+    return AnimatedScale(
+      scale: isHolding ? 1.04 : 1,
+      duration: const Duration(milliseconds: 160),
+      curve: Curves.easeOut,
+      child: SizedBox(
+        height: size,
+        width: size,
+        child: CustomPaint(
+          painter: _RevealHoldPainter(progress: progress),
+          child: Center(child: child),
+        ),
+      ),
+    );
+  }
+}
+
+class _RevealHoldPainter extends CustomPainter {
+  const _RevealHoldPainter({required this.progress});
+
+  final double progress;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = size.center(Offset.zero);
+    final radius = size.shortestSide / 2;
+
+    final fillPaint = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          Colors.white.withValues(alpha: 0.20),
+          Colors.white.withValues(alpha: 0.08),
+          Colors.white.withValues(alpha: 0.03),
+        ],
+      ).createShader(Rect.fromCircle(center: center, radius: radius));
+    canvas.drawCircle(center, radius, fillPaint);
+
+    final ringRect = Rect.fromCircle(
+      center: center,
+      radius: radius - 4,
+    );
+    final trackPaint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 8.5
+      ..strokeCap = StrokeCap.round
+      ..color = Colors.white.withValues(alpha: 0.16);
+    canvas.drawArc(ringRect, -1.5708, 6.28319, false, trackPaint);
+
+    if (progress <= 0) return;
+
+    final progressPaint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 8.5
+      ..strokeCap = StrokeCap.round
+      ..color = AppColors.greenColor.withValues(alpha: 0.96);
+    canvas.drawArc(
+      ringRect,
+      -1.5708,
+      6.28319 * progress,
+      false,
+      progressPaint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant _RevealHoldPainter oldDelegate) {
+    return oldDelegate.progress != progress;
   }
 }

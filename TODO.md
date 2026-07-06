@@ -13,13 +13,14 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 
 // TODO: Fix design for purchase also, after rules design is done. Also the other purchase dialog with ads need new design.
 
-// TODO: Reduce reveal word timer, and use a more beautefull spinner then we have now.
-
 // TODO: Search words and remove the word "Chameleon" from the list, as it is not a word that should be used in the game. (Maybe also remove "Imposter" and "Spy" from the list?)
+
+// TODO: check buttons for "who am i" and make sure it have same design as Chamelion buttons.
 
 ---
 
 ## ✅ DONE
+// DONE: Reduce reveal word timer, and use a more beautiful spinner then we have now. (Reveal er nu 700ms med custom glass progress-ring).
 // DONE: Play again button need to go to player naming screen, not directly to the game start.
 // DONE: Remove back option on chamelion result. It should not be possible to go back to the rule/reveal screen after reveal is trickert and we are navigated.
 // DONE: Add small "(hold)" on the reveal button under Reveal text (without moving the text possition we have now).
