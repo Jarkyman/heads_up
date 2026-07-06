@@ -7,8 +7,6 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 
 // TODO: Look throw all words and check for spelling errors. (Can it be done with a script?)
 
-// TODO: Fix design on rules, ugly white bagckground is not good. (Maybe use glassy effect on the rules popup also?)
-
 // TODO: Fix design for purchase also, after rules design is done. Also the other purchase dialog with ads need new design.
 
 // TODO: Search words and remove the word "Chameleon" from the list, as it is not a word that should be used in the game. (Maybe also remove "Imposter" and "Spy" from the list?)
@@ -18,6 +16,7 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 ---
 
 ## ✅ DONE
+// DONE: Fix design on rules, ugly white bagckground is not good. (Rules dialogs now use glassy bottom sheet/dialog styling).
 // DONE: Add glassy effect on game mode toggler.
 // DONE: Reduce reveal word timer, and use a more beautiful spinner then we have now. (Reveal er nu 700ms med custom glass progress-ring).
 // DONE: Play again button need to go to player naming screen, not directly to the game start.
