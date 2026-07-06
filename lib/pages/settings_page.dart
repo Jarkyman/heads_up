@@ -7,6 +7,7 @@ import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/dimensions.dart';
+import 'package:heads_up/helper/app_snackbar.dart';
 import 'package:heads_up/widgets/how_to_play_dialog.dart';
 import 'package:heads_up/controllers/review_controller.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -23,6 +24,8 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  bool _isRestoringPurchase = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -199,6 +202,12 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     GestureDetector(
                       onTap: () async {
+                        if (_isRestoringPurchase) return;
+
+                        setState(() {
+                          _isRestoringPurchase = true;
+                        });
+
                         try {
                           CustomerInfo restoredInfo =
                               await Purchases.restorePurchases();
@@ -209,16 +218,24 @@ class _SettingsPageState extends State<SettingsPage> {
                           Get.find<SettingsController>()
                               .unlockAllSave(isUnlockAll);
 
-                          Get.snackbar(
-                            'Restore purchase'.tr,
-                            isUnlockAll ? '✔' : '✖',
-                            snackPosition: SnackPosition.BOTTOM,
+                          AppSnackbar.showUnique(
+                            title: 'Restore purchase'.tr,
+                            message: isUnlockAll
+                                ? 'Purchase restored'.tr
+                                : 'No purchase found'.tr,
+                            key: 'restore-purchase-result',
                             backgroundColor:
                                 Colors.black.withValues(alpha: 0.6),
                             colorText: Colors.white,
                           );
                         } on PlatformException catch (e) {
                           debugPrint(e.toString());
+                        } finally {
+                          if (mounted) {
+                            setState(() {
+                              _isRestoringPurchase = false;
+                            });
+                          }
                         }
                       },
                       child: SettingsBtn(
