@@ -15,13 +15,12 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 
 // TODO: Reduce reveal word timer, and use a more beautefull spinner then we have now.
 
-// TODO: Add small "(hold)" on the reveal button under Reveal text (without moving the text possition we have now)
-
 // FIXME: Remove back option on chamelion result. It should not be possible to go back to the rule/reveal screen after reveal is trickert and we are navigated.
 
 ---
 
 ## ✅ DONE
+// DONE: Add small "(hold)" on the reveal button under Reveal text (without moving the text possition we have now).
 // DONE: move reveal/play again buttons so they do not share the same screen position and prevent accidental clicking play again.
 // DONE: Add extra reveal button at the end, to prevent acedently revealing the world and imposters. (Løst med 2 sekunders hold-to-reveal knap).
 // DONE: Add player naming and new startup flow.

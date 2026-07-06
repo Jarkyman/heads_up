@@ -223,32 +223,46 @@ class _ChameleonGamePageState extends State<ChameleonGamePage>
                         },
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: Dimensions.width20,
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.visibility,
-                                  color: Colors.white,
-                                  size: Dimensions.iconSize24 * 1.2),
-                              SizedBox(width: Dimensions.width10),
-                              Text(
-                                'Reveal'.tr,
-                                style: TextStyle(
-                                  fontSize: Dimensions.font20 * 1.2,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Dimensions.width20,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Transform.translate(
+                            offset: Offset(0, Dimensions.height10 * 0.35),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.visibility,
+                                    color: Colors.white,
+                                    size: Dimensions.iconSize24 * 1.2),
+                                SizedBox(width: Dimensions.width10),
+                                Text(
+                                  'Reveal'.tr,
+                                  style: TextStyle(
+                                    fontSize: Dimensions.font20 * 1.2,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: Dimensions.height10 * 0.1),
+                          Text(
+                            '(hold)',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: Dimensions.font16 * 0.72,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white.withValues(alpha: 0.72),
+                              height: 1,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
