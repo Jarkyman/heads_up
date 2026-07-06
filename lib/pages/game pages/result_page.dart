@@ -96,71 +96,52 @@ class _ResultPageState extends State<ResultPage> {
     return Scaffold(
       body: BackgroundImage(
         child: SafeArea(
-          child: Center(
-            child: Stack(
-              children: [
-                Positioned(
-                  top: Dimensions.height20,
-                  left: Dimensions.width20,
-                  child: IconBtn(
-                    onTap: () => Get.back(),
-                    icon: Icons.close,
-                  ),
-                ),
-                if (Get.arguments[3])
-                  Positioned(
-                    top: Dimensions.height20,
-                    right: Dimensions.width20,
-                    child: IconBtn(
-                      onTap: () => Get.off(() => const WordPage(),
-                          arguments: [Get.arguments[0], Get.arguments[3]]),
-                      icon: Icons.refresh,
-                    ),
-                  ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: Dimensions.height45),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(
-                            Dimensions.radius30 * 3),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
-                          child: Container(
-                            height: Dimensions.height45 * 2,
-                            width: Dimensions.height45 * 2,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [
-                                  Color(0x44FFFFFF),
-                                  Color(0x22FFFFFF),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                  Dimensions.radius30 * 3),
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.35),
-                                width: 1.5,
-                              ),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: Dimensions.height45),
+                    child: ClipRRect(
+                      borderRadius:
+                          BorderRadius.circular(Dimensions.radius30 * 3),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+                        child: Container(
+                          height: Dimensions.height45 * 2,
+                          width: Dimensions.height45 * 2,
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color(0x44FFFFFF),
+                                Color(0x22FFFFFF),
+                              ],
                             ),
-                            child: Center(
-                              child: FittedBox(
-                                fit: BoxFit.contain,
-                                child: Text(
-                                  '${Get.arguments[1]}',
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font20 * 2.5,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    shadows: const [
-                                      Shadow(
-                                        blurRadius: 12,
-                                        color: Color(0x55000000),
-                                      ),
-                                    ],
-                                  ),
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.radius30 * 3),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.35),
+                              width: 1.5,
+                            ),
+                          ),
+                          child: Center(
+                            child: FittedBox(
+                              fit: BoxFit.contain,
+                              child: Text(
+                                '${Get.arguments[1]}',
+                                style: TextStyle(
+                                  fontSize: Dimensions.font20 * 2.5,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  shadows: const [
+                                    Shadow(
+                                      blurRadius: 12,
+                                      color: Color(0x55000000),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -168,7 +149,9 @@ class _ResultPageState extends State<ResultPage> {
                         ),
                       ),
                     ),
-                    Expanded(
+                  ),
+                  Expanded(
+                    child: Center(
                       child: Container(
                         width: Dimensions.screenWidth / 2,
                         padding: EdgeInsets.only(
@@ -233,10 +216,28 @@ class _ResultPageState extends State<ResultPage> {
                         ),
                       ),
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              Positioned(
+                top: Dimensions.height20,
+                left: Dimensions.width20,
+                child: IconBtn(
+                  onTap: () => Get.back(),
+                  icon: Icons.close,
                 ),
-              ],
-            ),
+              ),
+              if (Get.arguments[3])
+                Positioned(
+                  top: Dimensions.height20,
+                  right: Dimensions.width20,
+                  child: IconBtn(
+                    onTap: () => Get.off(() => const WordPage(),
+                        arguments: [Get.arguments[0], Get.arguments[3]]),
+                    icon: Icons.refresh,
+                  ),
+                ),
+            ],
           ),
         ),
       ),
