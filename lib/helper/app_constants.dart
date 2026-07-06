@@ -30,14 +30,9 @@ class AppConstants {
 
   //Lists
   static const List<String> LOCALE_LIST = [
-    //'pt_BR',
     'da_DK',
-    //'de_DE',
     'en_US',
-    //'es_ES',
-    //'fr_FR',
-    //'nb_NO',
-    //'pt_PT',
-    //'sv_SE'
+    'nb_NO',
+    'sv_SE',
   ];
 }
