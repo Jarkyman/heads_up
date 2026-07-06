@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/splash_page.dart';
+import 'helper/app_constants.dart';
 import 'helper/dependencies.dart' as dep;
 import 'helper/locale_handler.dart';
 import 'helper/orientation_helper.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: AppConstants.APP_NAME,
       debugShowCheckedModeBanner: false,
       translations: LocaleHandler(),
       locale: const Locale('en', 'US'),

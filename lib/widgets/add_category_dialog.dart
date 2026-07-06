@@ -131,9 +131,7 @@ void addCategoryDialog() {
                   categoryController.saveOwnCategory(newCategory);
                   categoryName = "";
                   Get.back();
-                } else {
-
-                }
+                } else {}
               },
               title: 'Add Category'.tr,
               color: AppColors.greenColor,
@@ -275,7 +273,7 @@ class _IconAndColorRowState extends State<IconAndColorRow> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Icon: '),
+        Text('${'Icon'.tr}: '),
         GestureDetector(
           onTap: () {
             buildIconDialog();
@@ -288,7 +286,7 @@ class _IconAndColorRowState extends State<IconAndColorRow> {
         SizedBox(
           width: Dimensions.width30,
         ),
-        Text('Color: '),
+        Text('${'Color'.tr}: '),
         GestureDetector(
           onTap: () {
             buildColorDialog();
