@@ -6,7 +6,6 @@ import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/widgets/icon_button.dart';
 import 'package:heads_up/models/category_model.dart';
-import 'package:heads_up/pages/game%20pages/chameleon_role_page.dart';
 
 class ChameleonRevealPage extends StatefulWidget {
   const ChameleonRevealPage({super.key});
@@ -248,13 +247,7 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
   Widget _buildPlayAgainButton() {
     return GestureDetector(
       onTap: () {
-        Get.until((route) => route.isFirst);
-        Get.to(() => const ChameleonRolePage(), arguments: [
-          category,
-          playerNames,
-          impostersCount,
-          canReplay,
-        ]);
+        Get.back();
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100),
