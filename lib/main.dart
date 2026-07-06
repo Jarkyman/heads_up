@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/splash_page.dart';
 import 'helper/dependencies.dart' as dep;
 import 'helper/locale_handler.dart';
+import 'helper/orientation_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
 
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]).then((value) => runApp(const MyApp()));
+  await OrientationHelper.setPortrait();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

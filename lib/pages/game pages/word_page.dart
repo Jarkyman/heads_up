@@ -1,11 +1,11 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/game_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/dimensions.dart';
+import 'package:heads_up/helper/orientation_helper.dart';
 import 'package:heads_up/models/category_model.dart';
 
 import '../../controllers/settings_controller.dart';
@@ -23,6 +23,7 @@ class _WordPageState extends State<WordPage> {
   @override
   void initState() {
     super.initState();
+    OrientationHelper.setLandscape();
     final CategoryModel category = Get.arguments[0];
     final bool canReplay = Get.arguments[1];
     final int roundTime = Get.find<SettingsController>().getRoundTime;
@@ -36,20 +37,12 @@ class _WordPageState extends State<WordPage> {
   void dispose() {
     // Delete the controller so it is fully disposed (sensors + timers cleaned up).
     Get.delete<GameController>();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    OrientationHelper.setPortrait();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-    ]);
-
     return GetBuilder<GameController>(
       builder: (game) {
         return Scaffold(
@@ -116,8 +109,7 @@ class _WordPageState extends State<WordPage> {
                         // — In-game: timer ring —
                         if (game.isGameStarted)
                           Padding(
-                            padding:
-                                EdgeInsets.only(top: Dimensions.height30),
+                            padding: EdgeInsets.only(top: Dimensions.height30),
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: CircularCountDownTimer(
@@ -196,21 +188,22 @@ class _WordPageState extends State<WordPage> {
                                     gradient: LinearGradient(
                                       colors: [
                                         (game.backgroundColor ==
-                                                AppColors.correctColor
-                                            ? AppColors.correctColor
-                                            : AppColors.passColor)
+                                                    AppColors.correctColor
+                                                ? AppColors.correctColor
+                                                : AppColors.passColor)
                                             .withValues(alpha: 0.9),
                                         (game.backgroundColor ==
-                                                AppColors.correctColor
-                                            ? AppColors.correctColor
-                                            : AppColors.passColor)
+                                                    AppColors.correctColor
+                                                ? AppColors.correctColor
+                                                : AppColors.passColor)
                                             .withValues(alpha: 0.6),
                                       ],
                                     ),
                                     borderRadius: BorderRadius.circular(
                                         Dimensions.radius30 * 2),
                                     border: Border.all(
-                                      color: Colors.white.withValues(alpha: 0.4),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.4),
                                       width: 1.5,
                                     ),
                                     boxShadow: [

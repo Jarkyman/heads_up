@@ -17,14 +17,16 @@ import 'premium_dialog_components.dart';
 void buildBuyOrTryDialog(
   RewardedAd? rewardedAd,
   bool isAdLoaded,
-  CategoryModel categoryData,
-) {
+  CategoryModel categoryData, {
+  required VoidCallback onRewardedAdClosed,
+}) {
   Get.bottomSheet(
     PremiumBottomSheet(
       child: BuyOrTryWidget(
         rewardedAd: rewardedAd,
         isAdLoaded: isAdLoaded,
         categoryData: categoryData,
+        onRewardedAdClosed: onRewardedAdClosed,
       ),
     ),
     backgroundColor: Colors.transparent,
@@ -39,17 +41,36 @@ class BuyOrTryWidget extends StatefulWidget {
     this.rewardedAd,
     required this.isAdLoaded,
     required this.categoryData,
+    required this.onRewardedAdClosed,
   });
 
   final RewardedAd? rewardedAd;
   final bool isAdLoaded;
   final CategoryModel categoryData;
+  final VoidCallback onRewardedAdClosed;
 
   @override
   State<BuyOrTryWidget> createState() => _BuyOrTryWidgetState();
 }
 
 class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
+  bool _earnedReward = false;
+
+  void _openCategory() {
+    Get.close(1);
+    if (Get.find<SettingsController>().gameMode == GameMode.whoAmI) {
+      Get.to(
+        () => const WordPage(),
+        arguments: [widget.categoryData, false],
+      );
+    } else {
+      Get.to(
+        () => const ChameleonSetupPage(),
+        arguments: [widget.categoryData, false],
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -117,25 +138,32 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
           return PremiumActionButton(
             onTap: () {
               debugPrint(settingsController.getTries.toString());
-              if (canWatchAd) {
-                widget.rewardedAd?.show(
+              final rewardedAd = widget.rewardedAd;
+              if (canWatchAd && rewardedAd != null) {
+                _earnedReward = false;
+                rewardedAd.fullScreenContentCallback =
+                    FullScreenContentCallback(
+                  onAdDismissedFullScreenContent: (ad) {
+                    ad.dispose();
+                    widget.onRewardedAdClosed();
+                    if (_earnedReward) {
+                      _openCategory();
+                    }
+                  },
+                  onAdFailedToShowFullScreenContent: (ad, error) {
+                    debugPrint(
+                      'Failed to show rewarded ad: ${error.message}',
+                    );
+                    ad.dispose();
+                    widget.onRewardedAdClosed();
+                  },
+                );
+                rewardedAd.show(
                   onUserEarnedReward: (_, reward) {
+                    _earnedReward = true;
                     settingsController.triesPerDaySave(
                       settingsController.getTries + 1,
                     );
-                    Get.close(1);
-                    if (Get.find<SettingsController>().gameMode ==
-                        GameMode.whoAmI) {
-                      Get.to(
-                        () => const WordPage(),
-                        arguments: [widget.categoryData, false],
-                      );
-                    } else {
-                      Get.to(
-                        () => const ChameleonSetupPage(),
-                        arguments: [widget.categoryData, false],
-                      );
-                    }
                   },
                 );
               }

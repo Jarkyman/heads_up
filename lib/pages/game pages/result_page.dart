@@ -2,12 +2,12 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/dimensions.dart';
+import 'package:heads_up/helper/orientation_helper.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
 import 'package:heads_up/widgets/icon_button.dart';
 
@@ -27,10 +27,7 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   void initState() {
-    /*SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);*/
+    OrientationHelper.setPortrait();
     _loadInterstitialAd();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       int sec = (Get.arguments[2].length / 2).ceil();
@@ -42,10 +39,6 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   dispose() {
-    /*SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);*/
     _interstitialAd?.dispose();
     super.dispose();
   }
@@ -80,10 +73,6 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
     Duration(seconds: 2).delay(() {
       Random random = Random();
       int randomInt = random.nextInt(6);

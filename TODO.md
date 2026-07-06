@@ -11,11 +11,10 @@ Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og f
 
 // TODO: check buttons for "who am i" and make sure it have same design as Chamelion buttons.
 
-// BUG: Low prio, when watcing a reward add to "Who am i" it will accept hoizontal orientation, but we only support vertical orientation on this game.
-
 ---
 
 ## ✅ DONE
+// DONE: when watcing a reward add to "Who am i" it will accept hoizontal orientation, but we only support vertical orientation on this game. (Orientation styres nu via lifecycle-helper; Who Am I låses til landscape, øvrige sider til portrait, og rewarded-ad navigation sker først efter ad dismiss).
 // DONE: Fix design for purchase also, after rules design is done. Also the other purchase dialog with ads need new design. (Purchase og buy-or-try bruger nu fælles glassy bottom sheet, glass icon header og glassy action buttons).
 // DONE: Fix design on rules, ugly white bagckground is not good. (Rules dialogs now use glassy bottom sheet/dialog styling).
 // DONE: Add glassy effect on game mode toggler.

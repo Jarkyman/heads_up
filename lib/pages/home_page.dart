@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -12,6 +11,7 @@ import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/app_colors.dart';
 import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/helper/dimensions.dart';
+import 'package:heads_up/helper/orientation_helper.dart';
 import 'package:heads_up/models/category_model.dart';
 import 'package:heads_up/models/game_mode.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
@@ -38,15 +38,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    super.initState();
+    OrientationHelper.setPortrait();
     showConsentForm();
     _loadRewardedAd();
-    /*SystemChrome.setPreferredOrientations([
-      //DeviceOrientation.landscapeRight,
-      //DeviceOrientation.landscapeLeft,
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);*/
-    super.initState();
   }
 
   @override
@@ -85,12 +80,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void _handleRewardedAdClosed() {
+    if (!mounted) return;
+    setState(() {
+      isAdLoaded = false;
+      _rewardedAd = null;
+    });
+    _loadRewardedAd();
+  }
+
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
     return Scaffold(
       body: BackgroundImage(
         showAnimation: true,
@@ -337,6 +337,8 @@ class _HomePageState extends State<HomePage> {
                                                   _rewardedAd,
                                                   isAdLoaded,
                                                   allCategories[index],
+                                                  onRewardedAdClosed:
+                                                      _handleRewardedAdClosed,
                                                 );
                                               }
                                             });
