@@ -2,6 +2,8 @@
 
 Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og forbedres, sorteret efter prioritet og markeret med ToDoKanban tags. Opgaver omkring egne kategorier er flyttet til [TODO-own_words_category.md](TODO-own_words_category.md).
 
+// TODO: Add `ITSAppUsesNonExemptEncryption=false` to `ios/Runner/Info.plist` if App Store Connect encryption answers remain unchanged.
+
 ---
 
 ## ✅ DONE
