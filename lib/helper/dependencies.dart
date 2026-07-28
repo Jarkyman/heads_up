@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/controllers/categories_controller.dart';
@@ -17,11 +18,29 @@ import 'locale_handler.dart';
 
 Future<void> init() async {
   final sharedPreferences = await SharedPreferences.getInstance();
+  if (defaultTargetPlatform == TargetPlatform.iOS) {
+    await MobileAds.instance.setSameAppKeyEnabled(false);
+  }
   await MobileAds.instance.initialize().then((initializationStatus) {
     initializationStatus.adapterStatuses.forEach((key, value) {
       debugPrint('Adapter status for $key: ${value.description}');
     });
   });
+  await MobileAds.instance.updateRequestConfiguration(
+    RequestConfiguration(
+      maxAdContentRating: MaxAdContentRating.pg,
+    ),
+  );
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    try {
+      await const MethodChannel('com.hartvigsolutions.hintmaster/privacy')
+          .invokeMethod<void>('disablePublisherFirstPartyId');
+    } on PlatformException catch (error) {
+      debugPrint(
+        'Could not disable the AdMob publisher first-party ID: $error',
+      );
+    }
+  }
   await LocaleHandler.initLanguages();
 
   Get.lazyPut(
@@ -30,10 +49,8 @@ Future<void> init() async {
   //Repo
   Get.lazyPut(() => SettingsRepo(
       sharedPreferences: sharedPreferences, apiClient: Get.find()));
-  Get.lazyPut(() => CategoryRepo(
-      sharedPreferences: sharedPreferences));
-  Get.lazyPut(() => WordRepo(
-      sharedPreferences: sharedPreferences));
+  Get.lazyPut(() => CategoryRepo(sharedPreferences: sharedPreferences));
+  Get.lazyPut(() => WordRepo(sharedPreferences: sharedPreferences));
   Get.lazyPut(() => EventRepo(apiClient: Get.find()));
 
   //Controller

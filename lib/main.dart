@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/splash_page.dart';
+
 import 'helper/app_constants.dart';
 import 'helper/dependencies.dart' as dep;
 import 'helper/locale_handler.dart';
 import 'helper/orientation_helper.dart';
+import 'widgets/show_consent_form.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await showConsentForm();
   await dep.init();
 
   await OrientationHelper.setPortrait();

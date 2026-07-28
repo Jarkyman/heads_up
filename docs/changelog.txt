@@ -1,24 +1,24 @@
 <en-GB>
-- Chameleon now has a smoother setup flow with player names, saved players, and better Chameleon count handling.
-- Rules have been expanded and polished, including the Chameleon's final chance to guess the secret word.
-- Refreshed glass-style dialogs, buttons, language picker, purchase screens, and settings controls.
-- Improved Danish, Norwegian, and Swedish support, plus fixes for restore purchase messages, orientation handling, and several small UI issues.
+- A calmer first-time experience: full-screen ads are disabled for the first 20 app launches.
+- Added result-page banners with reserved space, so the interface stays stable while ads load.
+- Rating prompts now appear earlier, after a successful round.
+- Improved privacy handling, Nordic language support, and general stability.
 </en-GB>
 <da-DK>
-- Kamæleon har nu et bedre setup-flow med spillernavne, gemte spillere og bedre håndtering af antal kamæleoner.
-- Reglerne er udvidet og forbedret, inkl. kamæleonens sidste chance for at gætte det hemmelige ord.
-- Opdateret glass-design på dialoger, knapper, sprogvalg, købsskærme og indstillinger.
-- Forbedret dansk, norsk og svensk support samt fixes til gendan køb-beskeder, skærmrotation og flere små UI-fejl.
+- En roligere startoplevelse: fuldskærmsreklamer er slået fra ved de første 20 appstarter.
+- Tilføjet bannerreklamer på resultatsider med reserveret plads, så brugerfladen ikke hopper under indlæsning.
+- Rating bliver nu foreslået tidligere efter en vellykket runde.
+- Forbedret privatlivshåndtering, nordiske sprog og generel stabilitet.
 </da-DK>
 <no-NO>
-- Kameleon har nå en bedre oppsett-flyt med spillernavn, lagrede spillere og bedre håndtering av antall kameleoner.
-- Reglene er utvidet og forbedret, inkludert kameleonens siste sjanse til å gjette det hemmelige ordet.
-- Oppdatert glass-design på dialoger, knapper, språkvalg, kjøpsskjermer og innstillinger.
-- Forbedret dansk, norsk og svensk støtte samt feilrettinger for gjenopprett kjøp-meldinger, skjermrotasjon og flere små UI-feil.
+- En roligere startopplevelse: fullskjermannonser er slått av de første 20 gangene appen startes.
+- Lagt til bannerannonser på resultatsidene med reservert plass, slik at grensesnittet ikke hopper under innlasting.
+- Vurdering blir nå foreslått tidligere etter en vellykket runde.
+- Forbedret personvernhåndtering, nordiske språk og generell stabilitet.
 </no-NO>
 <sv-SE>
-- Kameleont har nu ett bättre uppstartsflöde med spelarnamn, sparade spelare och bättre hantering av antal kameleonter.
-- Reglerna har utökats och förbättrats, inklusive kameleontens sista chans att gissa det hemliga ordet.
-- Uppdaterad glass-design på dialoger, knappar, språkval, köpskärmar och inställningar.
-- Förbättrat stöd för danska, norska och svenska samt fixar för återställ köp-meddelanden, skärmrotation och flera små UI-problem.
+- En lugnare startupplevelse: helskärmsannonser är avstängda under de första 20 appstarterna.
+- Lagt till bannerannonser på resultatsidorna med reserverat utrymme, så att gränssnittet inte hoppar under inläsning.
+- Betyg föreslås nu tidigare efter en lyckad omgång.
+- Förbättrad integritetshantering, nordiska språk och allmän stabilitet.
 </sv-SE>

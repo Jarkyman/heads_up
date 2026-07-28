@@ -2,9 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 
 class AdHelper {
+  static const AdRequest request = AdRequest(
+    nonPersonalizedAds: true,
+  );
+
   static String get bannerAdUnitId {
     if (Get.find<SettingsController>().isUnlockAll) return '';
 
@@ -17,9 +22,9 @@ class AdHelper {
     }
 
     if (Platform.isAndroid) {
-      return '';
+      return 'ca-app-pub-9894760850635221/7565574915';
     } else if (Platform.isIOS) {
-      return '';
+      return 'ca-app-pub-9894760850635221/4664079403';
     }
     return '';
   }

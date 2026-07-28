@@ -19,6 +19,10 @@ class SettingsController extends GetxController implements GetxService {
 
   int get getRoundTime => _roundTime;
 
+  int _appLaunchCount = 0;
+
+  int get appLaunchCount => _appLaunchCount;
+
   bool _unlockAll = false;
 
   bool get isUnlockAll => _unlockAll;
@@ -46,6 +50,7 @@ class SettingsController extends GetxController implements GetxService {
   Future<void> readSettings() async {
     _readLanguage();
     _readRoundTime();
+    await _registerAppLaunch();
 
     await initPlatformState();
 
@@ -67,6 +72,11 @@ class SettingsController extends GetxController implements GetxService {
     resetTries();
 
     update();
+  }
+
+  Future<void> _registerAppLaunch() async {
+    _appLaunchCount = settingsRepo.appLaunchCountRead() + 1;
+    await settingsRepo.appLaunchCountSave(_appLaunchCount);
   }
 
   Future<List<StoreProduct>> get getProducts async {

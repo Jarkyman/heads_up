@@ -1,11 +1,19 @@
+import 'dart:math';
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/background_image.dart';
+import 'package:heads_up/controllers/review_controller.dart';
+import 'package:heads_up/controllers/settings_controller.dart';
+import 'package:heads_up/helper/ad_policy.dart';
 import 'package:heads_up/helper/app_colors.dart';
+import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/helper/dimensions.dart';
-import 'package:heads_up/widgets/icon_button.dart';
+import 'package:heads_up/helper/interstitial_ad_manager.dart';
 import 'package:heads_up/models/category_model.dart';
+import 'package:heads_up/widgets/icon_button.dart';
+import 'package:heads_up/widgets/result_banner_ad.dart';
 
 class ChameleonRevealPage extends StatefulWidget {
   const ChameleonRevealPage({super.key});
@@ -17,6 +25,7 @@ class ChameleonRevealPage extends StatefulWidget {
 class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
   static const double _glassBorderWidth = 1.4;
 
+  late final InterstitialAdManager _interstitialAdManager;
   late String secretWord;
   late List<String> roles;
   late CategoryModel category;
@@ -27,12 +36,38 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
   @override
   void initState() {
     super.initState();
+    final settingsController = Get.find<SettingsController>();
+    final shouldShowInterstitial = AdPolicy.shouldShowInterstitial(
+      launchCount: settingsController.appLaunchCount,
+      resultRoll: Random().nextInt(AppConstants.INTERSTITIAL_RESULT_FREQUENCY),
+    );
+    _interstitialAdManager = InterstitialAdManager(
+      enabled: !settingsController.isUnlockAll && shouldShowInterstitial,
+    )..load();
+
     secretWord = Get.arguments[0];
     roles = List<String>.from(Get.arguments[1]);
     category = Get.arguments[2];
     playerNames = List<String>.from(Get.arguments[3]);
     impostersCount = Get.arguments[4];
     canReplay = Get.arguments[5];
+    _showReviewOrInterstitial();
+  }
+
+  @override
+  void dispose() {
+    _interstitialAdManager.dispose();
+    super.dispose();
+  }
+
+  Future<void> _showReviewOrInterstitial() async {
+    await Future<void>.delayed(const Duration(seconds: 2));
+    if (!mounted) return;
+
+    final reviewWasShown = ReviewController.checkReviewPopup(context);
+    if (!reviewWasShown) {
+      _interstitialAdManager.showIfReady();
+    }
   }
 
   List<String> _getChameleonNames() {
@@ -224,6 +259,8 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
                     if (canReplay) _buildPlayAgainButton(),
                     if (canReplay) SizedBox(height: Dimensions.height20),
                     _buildMainMenuButton(),
+                    SizedBox(height: Dimensions.height10),
+                    const ResultBannerAd(),
                   ],
                 ),
               ),

@@ -6,7 +6,6 @@ import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/controllers/word_controller.dart';
 import 'package:heads_up/pages/home_page.dart';
 import 'package:heads_up/widgets/app_logo_hero.dart';
-import 'package:rate_my_app/rate_my_app.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'controllers/review_controller.dart';
@@ -49,13 +48,7 @@ class _SplashPageState extends State<SplashScreen>
 
     await Get.find<WordController>().readAllWords();
 
-    ReviewController.rateMyApp.init().then((_) {
-      for (var condition in ReviewController.rateMyApp.conditions) {
-        if (condition is DebuggableCondition) {
-          //condition.valuesAsString;
-        }
-      }
-    });
+    await ReviewController.rateMyApp.init();
 
     if (controller.isCompleted) {
       await Future.delayed(const Duration(milliseconds: 400));

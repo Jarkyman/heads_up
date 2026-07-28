@@ -22,7 +22,6 @@ import 'package:heads_up/widgets/icon_button.dart';
 
 import '../helper/ad_helper.dart';
 import '../widgets/buy_or_try_dialog.dart';
-import '../widgets/show_consent_form.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,7 +39,6 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     OrientationHelper.setPortrait();
-    showConsentForm();
     _loadRewardedAd();
   }
 
@@ -53,7 +51,7 @@ class _HomePageState extends State<HomePage> {
   void _loadRewardedAd() {
     RewardedAd.load(
       adUnitId: AdHelper.rewardedAdUnitId,
-      request: AdRequest(),
+      request: AdHelper.request,
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
           ad.fullScreenContentCallback = FullScreenContentCallback(

@@ -19,6 +19,12 @@ class AppConstants {
   static const String UNLOCK_ALL_ID = 'hint_master_unlock_all_19';
   static const String UNLOCK_ALL_ID_ENT = 'unlock_all';
   static const String CHAMELEON_PLAYER_NAMES = 'chameleon-player-names';
+  static const String APP_LAUNCH_COUNT = 'app-launch-count';
+
+  // Ads
+  static const int INTERSTITIAL_FREE_LAUNCHES = 20;
+  static const int INTERSTITIAL_RESULT_FREQUENCY = 6;
+  static const int INTERSTITIAL_RESULT_ROLL = 2;
 
   //Game
   static const String CATEGORIES = 'categories';

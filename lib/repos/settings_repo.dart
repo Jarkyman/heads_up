@@ -47,6 +47,17 @@ class SettingsRepo {
     );
   }
 
+  int appLaunchCountRead() {
+    return sharedPreferences.getInt(AppConstants.APP_LAUNCH_COUNT) ?? 0;
+  }
+
+  Future<bool> appLaunchCountSave(int launchCount) async {
+    return sharedPreferences.setInt(
+      AppConstants.APP_LAUNCH_COUNT,
+      launchCount,
+    );
+  }
+
   Future<bool> unlockAllRead() async {
     bool unlockAll =
         sharedPreferences.getBool(AppConstants.UNLOCK_ALL) ?? false;

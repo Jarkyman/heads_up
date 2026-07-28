@@ -3,16 +3,18 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/background_image.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
+import 'package:heads_up/helper/ad_policy.dart';
+import 'package:heads_up/helper/app_constants.dart';
 import 'package:heads_up/helper/dimensions.dart';
+import 'package:heads_up/helper/interstitial_ad_manager.dart';
 import 'package:heads_up/helper/orientation_helper.dart';
 import 'package:heads_up/pages/game%20pages/word_page.dart';
 import 'package:heads_up/widgets/icon_button.dart';
+import 'package:heads_up/widgets/result_banner_ad.dart';
 
 import '../../controllers/review_controller.dart';
-import '../../helper/ad_helper.dart';
 
 class ResultPage extends StatefulWidget {
   const ResultPage({super.key});
@@ -23,47 +25,45 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   final ScrollController _controller = ScrollController();
-  InterstitialAd? _interstitialAd;
+  late final InterstitialAdManager _interstitialAdManager;
 
   @override
   void initState() {
+    super.initState();
     OrientationHelper.setPortrait();
-    _loadInterstitialAd();
+    final settingsController = Get.find<SettingsController>();
+    final shouldShowInterstitial = AdPolicy.shouldShowInterstitial(
+      launchCount: settingsController.appLaunchCount,
+      resultRoll: Random().nextInt(AppConstants.INTERSTITIAL_RESULT_FREQUENCY),
+    );
+    _interstitialAdManager = InterstitialAdManager(
+      enabled: !settingsController.isUnlockAll && shouldShowInterstitial,
+    )..load();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       int sec = (Get.arguments[2].length / 2).ceil();
       _controller.animateTo(_controller.position.maxScrollExtent,
           duration: Duration(seconds: sec), curve: Curves.ease);
     });
-    super.initState();
+    _showReviewOrInterstitial();
   }
 
   @override
-  dispose() {
-    _interstitialAd?.dispose();
+  void dispose() {
+    _interstitialAdManager.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
-  void _loadInterstitialAd() {
-    if (!Get.find<SettingsController>().isUnlockAll) {
-      InterstitialAd.load(
-        adUnitId: AdHelper.interstitialAdUnitId,
-        request: AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (ad) {
-            ad.fullScreenContentCallback = FullScreenContentCallback(
-              onAdDismissedFullScreenContent: (ad) {
-                //_loadInterstitialAd();
-              },
-            );
-            setState(() {
-              _interstitialAd = ad;
-            });
-          },
-          onAdFailedToLoad: (err) {
-            debugPrint('Failed to load an interstitial ad: ${err.message}');
-          },
-        ),
-      );
+  Future<void> _showReviewOrInterstitial() async {
+    await Future<void>.delayed(const Duration(seconds: 2));
+    if (!mounted) return;
+
+    final score = Get.arguments[1] as int;
+    final reviewWasShown =
+        score > 0 && ReviewController.checkReviewPopup(context);
+    if (!reviewWasShown) {
+      _interstitialAdManager.showIfReady();
     }
   }
 
@@ -73,15 +73,6 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    Duration(seconds: 2).delay(() {
-      Random random = Random();
-      int randomInt = random.nextInt(6);
-      if (randomInt == 2) {
-        _interstitialAd?.show();
-      } else {
-        ReviewController.checkReviewPopup(context);
-      }
-    });
     return Scaffold(
       body: BackgroundImage(
         child: SafeArea(
@@ -206,6 +197,7 @@ class _ResultPageState extends State<ResultPage> {
                       ),
                     ),
                   ),
+                  const ResultBannerAd(),
                 ],
               ),
               Positioned(
