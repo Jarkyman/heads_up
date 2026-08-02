@@ -55,9 +55,11 @@ collected”.
 - Deletion requests can be handled through
   `hintmaster@hartvigsolutions.com`.
 - The currently published Android artifact still contains the Advertising ID
-  permission, so its Advertising ID declaration is Yes for advertising,
-  analytics, and fraud prevention. The next artifact removes the permission;
-  change this declaration to No together with that release.
+  permission, so keep the app-level Advertising ID declaration at Yes for now.
+  After uploading the new artifact without the permission, change the declaration
+  to No once every active production/testing artifact matches. This declaration
+  is app-level, not a separate setting on each artifact, and No does not disable
+  non-personalized ads.
 
 ## Link availability
 

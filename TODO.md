@@ -2,11 +2,13 @@
 
 Her er en fuld gennemgang af koden med ting der kan optimeres, refaktoreres og forbedres, sorteret efter prioritet og markeret med ToDoKanban tags. Opgaver omkring egne kategorier er flyttet til [TODO-own_words_category.md](TODO-own_words_category.md).
 
-// TODO: Add `ITSAppUsesNonExemptEncryption=false` to `ios/Runner/Info.plist` if App Store Connect encryption answers remain unchanged.
+// TODO {M} [analytics, product] (M): Add privacy-conscious product analytics so we can measure game mode/category usage, completed rounds and retention. Before implementation, choose the analytics provider and review consent, App Store Privacy and Google Play Data Safety declarations.
 
 ---
 
 ## ✅ DONE
+// DONE {S} [android, store_metadata] (H): Target Android 16 / API level 36 for Google Play's 2026 requirement. (`compileSdkVersion` and `targetSdkVersion` are 36, and the manifest identifies Hint Master as a game for Android 16 large-screen orientation handling).
+// DONE {S} [ios, store_metadata] (H): Add `ITSAppUsesNonExemptEncryption=false` to `ios/Runner/Info.plist`. (Added for the 1.4.0 release; App Store Connect encryption answers remain unchanged).
 // DONE: Look throw all words and check for spelling errors. (Ordlisten blev gennemgået med scripts, heuristik og macOS stavekontrol; kun en manuel shortlist af reelle kandidater stod tilbage).
 // DONE: hero "animationen" fra splash screen til home page virker ikke. (Splash og home bruger nu samme `AppLogoHero`, route fade er fjernet fra overgangen, og splash animation-controlleren initialiseres før resource loading).
 // DONE: why do we not have sv and no in "LOCALE_LIST" in AppConstants, we have the languages or what? (Tilføjet `nb_NO` og `sv_SE`, da appen allerede har orddata, oversættelser og WordController support for dem).
