@@ -79,6 +79,111 @@ class _ChameleonGamePageState extends State<ChameleonGamePage>
     _revealHoldController.reset();
   }
 
+  void _showEndGameDialog() {
+    Get.dialog<void>(
+      Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: EdgeInsets.symmetric(horizontal: Dimensions.width20),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(Dimensions.radius30),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+            child: Container(
+              padding: EdgeInsets.all(Dimensions.height20),
+              decoration: BoxDecoration(
+                color: AppColors.glassWhiteStrong,
+                borderRadius: BorderRadius.circular(Dimensions.radius30),
+                border: Border.all(
+                  color: AppColors.glassBorder,
+                  width: 1.4,
+                ),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 16,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    height: Dimensions.height45 * 1.45,
+                    width: Dimensions.height45 * 1.45,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent.withValues(alpha: 0.2),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.redAccent.withValues(alpha: 0.55),
+                        width: 1.2,
+                      ),
+                    ),
+                    child: Icon(
+                      Icons.flag_rounded,
+                      color: Colors.white,
+                      size: Dimensions.iconSize32,
+                    ),
+                  ),
+                  SizedBox(height: Dimensions.height20),
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: Text(
+                      'End game?'.tr,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: Dimensions.font26,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: Dimensions.height10),
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: Text(
+                      'End this game and return to the main menu?'.tr,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: Dimensions.font16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white70,
+                        height: 1.35,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: Dimensions.height20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildDialogButton(
+                          text: 'Keep playing'.tr,
+                          onTap: Get.back,
+                        ),
+                      ),
+                      SizedBox(width: Dimensions.width10),
+                      Expanded(
+                        child: _buildDialogButton(
+                          text: 'End game'.tr,
+                          isDestructive: true,
+                          onTap: () {
+                            Get.back();
+                            Get.until((route) => route.isFirst);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      barrierColor: Colors.black.withValues(alpha: 0.5),
+    );
+  }
+
   @override
   void dispose() {
     _revealHoldController.dispose();
@@ -141,20 +246,7 @@ class _ChameleonGamePageState extends State<ChameleonGamePage>
                 top: 10,
                 left: 10,
                 child: IconBtn(
-                  onTap: () {
-                    // Show confirmation dialog before leaving
-                    Get.defaultDialog(
-                      title: 'Quit Game?'.tr,
-                      middleText: 'Are you sure you want to quit?'.tr,
-                      backgroundColor: Colors.white,
-                      textConfirm: 'Yes'.tr,
-                      textCancel: 'No'.tr,
-                      confirmTextColor: Colors.white,
-                      onConfirm: () {
-                        Get.until((route) => route.isFirst);
-                      },
-                    );
-                  },
+                  onTap: _showEndGameDialog,
                   icon: Icons.close,
                 ),
               ),
@@ -316,6 +408,46 @@ class _ChameleonGamePageState extends State<ChameleonGamePage>
                   ),
                 ),
               ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDialogButton({
+    required String text,
+    required VoidCallback onTap,
+    bool isDestructive = false,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: Dimensions.width10,
+          vertical: Dimensions.height15,
+        ),
+        decoration: BoxDecoration(
+          color: isDestructive
+              ? Colors.redAccent.withValues(alpha: 0.28)
+              : AppColors.glassWhite,
+          borderRadius: BorderRadius.circular(Dimensions.radius20),
+          border: Border.all(
+            color: isDestructive
+                ? Colors.redAccent.withValues(alpha: 0.62)
+                : AppColors.glassBorder,
+            width: 1.2,
+          ),
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            text,
+            maxLines: 1,
+            style: TextStyle(
+              fontSize: Dimensions.font16,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
             ),
           ),
         ),
