@@ -131,19 +131,39 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
                   SizedBox(height: Dimensions.height45 * 2),
                   SizedBox(
                     width: Dimensions.screenWidth * 0.9,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        '${playerNames[currentPlayerIndex]} - ${'Your turn'.tr}',
-                        style: TextStyle(
-                          fontSize: Dimensions.font26 * 1.5,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          shadows: const [
-                            Shadow(blurRadius: 10, color: Colors.black54),
-                          ],
+                    child: Column(
+                      children: [
+                        Text(
+                          'Your turn'.tr,
+                          maxLines: 1,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: Dimensions.font20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white70,
+                          ),
                         ),
-                      ),
+                        SizedBox(height: Dimensions.height10 * 0.5),
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            playerNames[currentPlayerIndex],
+                            maxLines: 1,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: Dimensions.font26 * 1.5,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              shadows: const [
+                                Shadow(
+                                  blurRadius: 10,
+                                  color: Colors.black54,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
@@ -214,11 +234,33 @@ class _ChameleonRolePageState extends State<ChameleonRolePage>
                                             ),
                                           ),
                                         ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            top: Dimensions.height10,
+                                          ),
+                                          child: SizedBox(
+                                            width: Dimensions.screenWidth * 0.9,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: Text(
+                                                '${'Category'.tr}: ${category.category.tr}',
+                                                maxLines: 1,
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontSize: Dimensions.font16,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.white70,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                         if (roles[currentPlayerIndex] !=
                                             "Chameleon")
                                           Padding(
                                             padding: EdgeInsets.only(
-                                                top: Dimensions.height10),
+                                              top: Dimensions.height10 * 0.5,
+                                            ),
                                             child: Text(
                                               'Find out who the Chameleon is!'
                                                   .tr,

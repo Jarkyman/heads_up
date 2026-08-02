@@ -19,6 +19,7 @@ class ChameleonSetupPage extends StatefulWidget {
 class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
   static const int _minPlayers = 3;
   static const int _maxPlayers = 15;
+  static const int _maxPlayerNameLength = 16;
 
   late CategoryModel category;
   late bool canReplay;
@@ -111,9 +112,15 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
       _ensurePlayerFieldVisible(index);
     });
 
-    _playerControllers.add(TextEditingController(text: name));
+    _playerControllers.add(
+      TextEditingController(text: _limitPlayerName(name)),
+    );
     _playerFocusNodes.add(focusNode);
     _playerFieldKeys.add(GlobalKey());
+  }
+
+  String _limitPlayerName(String name) {
+    return String.fromCharCodes(name.runes.take(_maxPlayerNameLength));
   }
 
   int get _playersCount => _playerControllers.length;
@@ -519,6 +526,7 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                         ? TextInputAction.done
                         : TextInputAction.next,
                     textCapitalization: TextCapitalization.words,
+                    maxLength: _maxPlayerNameLength,
                     onTap: () => _ensurePlayerFieldVisible(index),
                     onSubmitted: (_) => _focusNextPlayerField(index),
                     style: TextStyle(
@@ -528,6 +536,7 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                     ),
                     decoration: InputDecoration(
                       border: InputBorder.none,
+                      counterText: '',
                       hintText: '${'Player'.tr} ${index + 1}',
                       hintStyle: TextStyle(
                         color: Colors.white.withValues(alpha: 0.55),
