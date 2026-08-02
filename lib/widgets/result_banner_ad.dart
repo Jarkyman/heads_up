@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:get/get.dart';
+import 'package:heads_up/controllers/settings_controller.dart';
 import 'package:heads_up/helper/ad_helper.dart';
-import 'package:heads_up/helper/dimensions.dart';
 
 class ResultBannerAd extends StatefulWidget {
   const ResultBannerAd({super.key});
@@ -22,6 +23,8 @@ class _ResultBannerAdState extends State<ResultBannerAd> {
   }
 
   void _loadBanner() {
+    if (Get.find<SettingsController>().isUnlockAll) return;
+
     final adUnitId = AdHelper.bannerAdUnitId;
     if (adUnitId.isEmpty) return;
     _shouldReserveSpace = true;
@@ -64,17 +67,14 @@ class _ResultBannerAdState extends State<ResultBannerAd> {
     final bannerAd = _bannerAd;
 
     return SizedBox(
-      height: AdSize.banner.height.toDouble() + Dimensions.height10,
+      height: AdSize.banner.height.toDouble(),
       width: double.maxFinite,
       child: bannerAd != null && _isLoaded
-          ? Padding(
-              padding: EdgeInsets.only(bottom: Dimensions.height10),
-              child: Center(
-                child: SizedBox(
-                  height: bannerAd.size.height.toDouble(),
-                  width: bannerAd.size.width.toDouble(),
-                  child: AdWidget(ad: bannerAd),
-                ),
+          ? Center(
+              child: SizedBox(
+                height: bannerAd.size.height.toDouble(),
+                width: bannerAd.size.width.toDouble(),
+                child: AdWidget(ad: bannerAd),
               ),
             )
           : const SizedBox.shrink(),

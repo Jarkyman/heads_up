@@ -252,7 +252,7 @@ class _ChameleonRevealPageState extends State<ChameleonRevealPage> {
               Positioned(
                 left: Dimensions.width20,
                 right: Dimensions.width20,
-                bottom: Dimensions.height20,
+                bottom: 0,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
