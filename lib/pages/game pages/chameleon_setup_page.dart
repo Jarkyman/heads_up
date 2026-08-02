@@ -17,7 +17,7 @@ class ChameleonSetupPage extends StatefulWidget {
 }
 
 class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
-  static const int _minPlayers = 2;
+  static const int _minPlayers = 3;
   static const int _maxPlayers = 15;
 
   late CategoryModel category;
