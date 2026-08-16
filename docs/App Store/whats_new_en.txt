@@ -1,5 +1,3 @@
-A calmer first-time experience: full-screen ads are disabled for the first 20 app launches.
+A smoother first-time experience with fewer full-screen ads.
 
-Result pages now include banners with reserved space, so the interface stays stable while ads load.
-
-Rating prompts appear earlier after a successful round, and we improved privacy handling, Nordic language support, and general stability.
+Improved privacy, Nordic language support, and overall stability.

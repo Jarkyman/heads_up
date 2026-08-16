@@ -1,0 +1,4 @@
+en: Hint Master: Charades Game
+da: Hint Master – Gæt og Grimasser
+sv: Hint Master – Charader
+no: Hint Master – Gjett ordet

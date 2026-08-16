@@ -1,24 +1,16 @@
 <en-GB>
-- A calmer first-time experience: full-screen ads are disabled for the first 20 app launches.
-- Added result-page banners with reserved space, so the interface stays stable while ads load.
-- Rating prompts now appear earlier, after a successful round.
-- Improved privacy handling, Nordic language support, and general stability.
+- A smoother first-time experience with fewer full-screen ads.
+- Improved privacy, Nordic language support, and overall stability.
 </en-GB>
 <da-DK>
-- En roligere startoplevelse: fuldskærmsreklamer er slået fra ved de første 20 appstarter.
-- Tilføjet bannerreklamer på resultatsider med reserveret plads, så brugerfladen ikke hopper under indlæsning.
-- Rating bliver nu foreslået tidligere efter en vellykket runde.
-- Forbedret privatlivshåndtering, nordiske sprog og generel stabilitet.
+- En bedre førstegangsoplevelse med færre fuldskærmsreklamer.
+- Forbedret privatliv, understøttelse af nordiske sprog og generel stabilitet.
 </da-DK>
 <no-NO>
-- En roligere startopplevelse: fullskjermannonser er slått av de første 20 gangene appen startes.
-- Lagt til bannerannonser på resultatsidene med reservert plass, slik at grensesnittet ikke hopper under innlasting.
-- Vurdering blir nå foreslått tidligere etter en vellykket runde.
-- Forbedret personvernhåndtering, nordiske språk og generell stabilitet.
+- En bedre førstegangsopplevelse med færre fullskjermannonser.
+- Forbedret personvern, støtte for nordiske språk og generell stabilitet.
 </no-NO>
 <sv-SE>
-- En lugnare startupplevelse: helskärmsannonser är avstängda under de första 20 appstarterna.
-- Lagt till bannerannonser på resultatsidorna med reserverat utrymme, så att gränssnittet inte hoppar under inläsning.
-- Betyg föreslås nu tidigare efter en lyckad omgång.
-- Förbättrad integritetshantering, nordiska språk och allmän stabilitet.
+- En bättre förstagångsupplevelse med färre helskärmsannonser.
+- Förbättrad integritet, stöd för nordiska språk och allmän stabilitet.
 </sv-SE>
