@@ -20,6 +20,8 @@ class ChameleonStartOrderButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final borderRadius = BorderRadius.circular(Dimensions.radius20);
+    final shape = RoundedRectangleBorder(borderRadius: borderRadius);
     final label = randomStart
         ? 'Random starting player'.tr
         : 'Start with first player'.tr;
@@ -34,23 +36,24 @@ class ChameleonStartOrderButton extends StatelessWidget {
       child: Tooltip(
         message: label,
         excludeFromSemantics: true,
-        child: ClipOval(
+        child: ClipRRect(
+          borderRadius: borderRadius,
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
             child: Container(
               width: size,
               height: size,
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
+                borderRadius: borderRadius,
                 color: AppColors.glassWhite,
                 border: Border.all(color: AppColors.glassBorder, width: 1.2),
               ),
               child: Material(
                 color: Colors.transparent,
-                shape: const CircleBorder(),
+                shape: shape,
                 clipBehavior: Clip.antiAlias,
                 child: InkWell(
-                  customBorder: const CircleBorder(),
+                  customBorder: shape,
                   splashFactory: NoSplash.splashFactory,
                   overlayColor: const WidgetStatePropertyAll(
                     Colors.transparent,
