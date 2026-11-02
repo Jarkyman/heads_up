@@ -56,14 +56,14 @@ class SettingsController extends GetxController implements GetxService {
 
     await unlockAllRead();
 
-    Purchases.addCustomerInfoUpdateListener(
-      (_) => updateCustomerStatus(),
-    );
+    Purchases.addCustomerInfoUpdateListener((_) => updateCustomerStatus());
     updateCustomerStatus(); // Fetch from RevenueCat immediately on startup
 
     try {
-      _products = await Purchases.getProducts(_productsIds,
-          productCategory: ProductCategory.nonSubscription);
+      _products = await Purchases.getProducts(
+        _productsIds,
+        productCategory: ProductCategory.nonSubscription,
+      );
     } catch (e) {
       debugPrint(e.toString());
       _products = [];
@@ -80,8 +80,10 @@ class SettingsController extends GetxController implements GetxService {
   }
 
   Future<List<StoreProduct>> get getProducts async {
-    _products = await Purchases.getProducts(_productsIds,
-        productCategory: ProductCategory.nonSubscription);
+    _products = await Purchases.getProducts(
+      _productsIds,
+      productCategory: ProductCategory.nonSubscription,
+    );
     return _products;
   }
 
@@ -90,11 +92,13 @@ class SettingsController extends GetxController implements GetxService {
 
     PurchasesConfiguration? configuration;
     if (Platform.isAndroid) {
-      configuration =
-          PurchasesConfiguration("goog_riiqamVOtnindMUXSiiPffyBYGG");
+      configuration = PurchasesConfiguration(
+        "goog_riiqamVOtnindMUXSiiPffyBYGG",
+      );
     } else if (Platform.isIOS) {
-      configuration =
-          PurchasesConfiguration("appl_WavSBwnfIhFtucnTxQxHiZUeZzR");
+      configuration = PurchasesConfiguration(
+        "appl_WavSBwnfIhFtucnTxQxHiZUeZzR",
+      );
     }
     await Purchases.configure(configuration!);
   }
@@ -104,7 +108,9 @@ class SettingsController extends GetxController implements GetxService {
       CustomerInfo customerInfo = await Purchases.getCustomerInfo();
 
       final entitlementAds = customerInfo
-          .entitlements.all[AppConstants.UNLOCK_ALL_ID_ENT]?.isActive;
+          .entitlements
+          .all[AppConstants.UNLOCK_ALL_ID_ENT]
+          ?.isActive;
 
       bool isUnlockAll = entitlementAds == true;
       unlockAllSave(isUnlockAll);

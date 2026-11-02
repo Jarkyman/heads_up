@@ -1,0 +1,112 @@
+{
+  "captured": "2026-11-02",
+  "version": "1.4.1+14",
+  "entrypoint": "tools/store_assets/main.dart (debug only)",
+  "native_devices": {
+    "iphone-medium": "iPhone 18 Pro",
+    "duo-outer": "iPhone Duo outer display",
+    "duo-inner": "iPhone Duo inner display",
+    "ipad-13": "iPad Pro 13-inch (M5)"
+  },
+  "assets": [
+    {
+      "file": "creative/en-US/duo-inner-categories.png",
+      "width": 2853,
+      "height": 2007,
+      "sha256": "5d5513b889426fcc1c7943790af621a5e0403c73fb36b24a285f0a45ab0968c0",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "creative/en-US/duo-outer-categories.png",
+      "width": 1398,
+      "height": 2034,
+      "sha256": "12b0eefc075a06de0c1705c0f30ee8e17f07ce2ce14591566c4862a5e4b18038",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "creative/en-US/header.png",
+      "width": 3840,
+      "height": 1646,
+      "sha256": "4f7b07362a3757d4d132d012775d690c7a4dc2ff64e773d1594be081bfda7e56",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "creative/en-US/ipad-13-categories.png",
+      "width": 2064,
+      "height": 2752,
+      "sha256": "e832a328bf2f71769c0fc32fca474226897379f9bcf1ab3570b96827ba710a33",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "creative/en-US/iphone-categories.png",
+      "width": 1206,
+      "height": 2622,
+      "sha256": "3cb7396e46e55025c46ef55e4fde6aab70fc6a86476eb815c6d4ac73e1c80620",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "creative/en-US/play-feature.png",
+      "width": 1024,
+      "height": 500,
+      "sha256": "2b53ec4ef6a9e8f3bded51019383589e4f200b4fb411830cbb04d64acdf7538c",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "creative/en-US/search.png",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "80cbb589afabe4d7ca860cfe8adb93bf47294dfc3e177e1d72ba55f78d69ba59",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual screenshots"
+    },
+    {
+      "file": "raw/en-US/duo-inner/01-categories.png",
+      "width": 2853,
+      "height": 2007,
+      "sha256": "7272acb99085a3302b27e8f147e44046c89ac46a9af70b3c50e536e4ea9f4233",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "actual premium app screenshot"
+    },
+    {
+      "file": "raw/en-US/duo-outer/01-categories.png",
+      "width": 1398,
+      "height": 2034,
+      "sha256": "e5f2d724f9cd2080dfa150b7305c5f91fa8f287bd51262e1c0ef0e6fa34286ed",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "actual premium app screenshot"
+    },
+    {
+      "file": "raw/en-US/ipad-13/01-categories.png",
+      "width": 2064,
+      "height": 2752,
+      "sha256": "5518b69dfa77f7543f78f96e4113cb79875297d65763062f3cf2e9c517d18b0a",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "actual premium app screenshot"
+    },
+    {
+      "file": "raw/en-US/iphone-medium/01-categories.png",
+      "width": 1206,
+      "height": 2622,
+      "sha256": "0841ec77f64e5620e6543e086e85df2fa803612a2191db0a57034fac2f166747",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "actual premium app screenshot"
+    }
+  ]
+}

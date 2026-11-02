@@ -13,7 +13,8 @@ class SettingsRepo {
   SettingsRepo({required this.sharedPreferences, required this.apiClient});
 
   Future<String> languageSettingRead() async {
-    String language = sharedPreferences.getString(AppConstants.LANG) ??
+    String language =
+        sharedPreferences.getString(AppConstants.LANG) ??
         (AppConstants.LOCALE_LIST.contains(Platform.localeName)
             ? Platform.localeName
             : 'en_US');
@@ -31,6 +32,18 @@ class SettingsRepo {
 
   Future<void> roundTimeSettingsSave(int time) async {
     await sharedPreferences.setInt(AppConstants.ROUND_TIME, time);
+  }
+
+  bool chameleonRandomStartRead() {
+    return sharedPreferences.getBool(AppConstants.CHAMELEON_RANDOM_START) ??
+        true;
+  }
+
+  Future<bool> chameleonRandomStartSave(bool enabled) {
+    return sharedPreferences.setBool(
+      AppConstants.CHAMELEON_RANDOM_START,
+      enabled,
+    );
   }
 
   Future<List<String>> chameleonPlayerNamesRead() async {
@@ -52,10 +65,7 @@ class SettingsRepo {
   }
 
   Future<bool> appLaunchCountSave(int launchCount) async {
-    return sharedPreferences.setInt(
-      AppConstants.APP_LAUNCH_COUNT,
-      launchCount,
-    );
+    return sharedPreferences.setInt(AppConstants.APP_LAUNCH_COUNT, launchCount);
   }
 
   Future<bool> unlockAllRead() async {
@@ -78,7 +88,8 @@ class SettingsRepo {
   }
 
   Future<String> triesDateRead() async {
-    String date = sharedPreferences.getString(AppConstants.TRIES_DATE) ??
+    String date =
+        sharedPreferences.getString(AppConstants.TRIES_DATE) ??
         DateTime.now().toString();
     return date;
   }

@@ -44,7 +44,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: SettingsBtn(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: Dimensions.width10),
+                            horizontal: Dimensions.width10,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -59,8 +60,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color:
-                                          Colors.white.withValues(alpha: 0.8),
+                                      color: Colors.white.withValues(
+                                        alpha: 0.8,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -69,13 +71,17 @@ class _SettingsPageState extends State<SettingsPage> {
                                 height: Dimensions.height45,
                                 width: Dimensions.height45,
                                 decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.black),
+                                  border: Border.all(
+                                    width: 2,
+                                    color: Colors.black,
+                                  ),
                                   borderRadius: BorderRadius.circular(
-                                      Dimensions.height45),
+                                    Dimensions.height45,
+                                  ),
                                   image: DecorationImage(
                                     image: AssetImage(
-                                        "assets/locale/flags/${Get.locale.toString().split('_')[1].toLowerCase()}.png"),
+                                      "assets/locale/flags/${Get.locale.toString().split('_')[1].toLowerCase()}.png",
+                                    ),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -85,13 +91,12 @@ class _SettingsPageState extends State<SettingsPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
+                    SizedBox(height: Dimensions.height20),
                     SettingsBtn(
                       child: Padding(
                         padding: EdgeInsets.symmetric(
-                            horizontal: Dimensions.width10),
+                          horizontal: Dimensions.width10,
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -123,9 +128,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
+                    SizedBox(height: Dimensions.height20),
                     GestureDetector(
                       onTap: () {
                         buildHowToSelectionDialog();
@@ -133,7 +136,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: SettingsBtn(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: Dimensions.width10),
+                            horizontal: Dimensions.width10,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -148,8 +152,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color:
-                                          Colors.white.withValues(alpha: 0.8),
+                                      color: Colors.white.withValues(
+                                        alpha: 0.8,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -160,9 +165,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
+                    SizedBox(height: Dimensions.height20),
                     GestureDetector(
                       onTap: () {
                         ReviewController.rateMyApp.launchStore();
@@ -170,7 +173,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: SettingsBtn(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: Dimensions.width10),
+                            horizontal: Dimensions.width10,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -185,8 +189,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color:
-                                          Colors.white.withValues(alpha: 0.8),
+                                      color: Colors.white.withValues(
+                                        alpha: 0.8,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -197,9 +202,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
+                    SizedBox(height: Dimensions.height20),
                     GestureDetector(
                       onTap: () async {
                         if (_isRestoringPurchase) return;
@@ -211,12 +214,15 @@ class _SettingsPageState extends State<SettingsPage> {
                         try {
                           CustomerInfo restoredInfo =
                               await Purchases.restorePurchases();
-                          final entitlementAds = restoredInfo.entitlements
-                              .all[AppConstants.UNLOCK_ALL_ID_ENT]?.isActive;
+                          final entitlementAds = restoredInfo
+                              .entitlements
+                              .all[AppConstants.UNLOCK_ALL_ID_ENT]
+                              ?.isActive;
                           bool isUnlockAll = entitlementAds == true;
 
-                          Get.find<SettingsController>()
-                              .unlockAllSave(isUnlockAll);
+                          Get.find<SettingsController>().unlockAllSave(
+                            isUnlockAll,
+                          );
 
                           AppSnackbar.showUnique(
                             title: 'Restore purchase'.tr,
@@ -224,8 +230,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                 ? 'Purchase restored'.tr
                                 : 'No purchase found'.tr,
                             key: 'restore-purchase-result',
-                            backgroundColor:
-                                Colors.black.withValues(alpha: 0.6),
+                            backgroundColor: Colors.black.withValues(
+                              alpha: 0.6,
+                            ),
                             colorText: Colors.white,
                           );
                         } on PlatformException catch (e) {
@@ -241,7 +248,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: SettingsBtn(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: Dimensions.width10),
+                            horizontal: Dimensions.width10,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -256,15 +264,14 @@ class _SettingsPageState extends State<SettingsPage> {
                                     style: TextStyle(
                                       fontSize: Dimensions.font26,
                                       fontWeight: FontWeight.w600,
-                                      color:
-                                          Colors.white.withValues(alpha: 0.8),
+                                      color: Colors.white.withValues(
+                                        alpha: 0.8,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                              const IconIndicator(
-                                icon: Icons.sync,
-                              ),
+                              const IconIndicator(icon: Icons.sync),
                             ],
                           ),
                         ),
@@ -276,10 +283,7 @@ class _SettingsPageState extends State<SettingsPage> {
               Positioned(
                 top: 10,
                 left: 10,
-                child: IconBtn(
-                  onTap: () => Get.back(),
-                  icon: Icons.close,
-                ),
+                child: IconBtn(onTap: () => Get.back(), icon: Icons.close),
               ),
             ],
           ),
@@ -291,10 +295,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
 class IconIndicator extends StatelessWidget {
   final IconData icon;
-  const IconIndicator({
-    super.key,
-    required this.icon,
-  });
+  const IconIndicator({super.key, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -414,10 +415,7 @@ class _RoundTimeButton extends StatelessWidget {
 
 class SettingsBtn extends StatelessWidget {
   final Widget child;
-  const SettingsBtn({
-    super.key,
-    required this.child,
-  });
+  const SettingsBtn({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -431,10 +429,7 @@ class SettingsBtn extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.glassWhite,
             borderRadius: BorderRadius.circular(Dimensions.radius20),
-            border: Border.all(
-              color: AppColors.glassBorder,
-              width: 1.2,
-            ),
+            border: Border.all(color: AppColors.glassBorder, width: 1.2),
           ),
           child: child,
         ),

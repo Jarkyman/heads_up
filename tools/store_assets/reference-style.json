@@ -1,0 +1,118 @@
+{
+  "source": "/Users/jackiejensen/Library/CloudStorage/OneDrive-Personal/Programering/Flutter/Hint Master/app screenshots/Mock UPS/EN/Hint master EN.mockup",
+  "background": {
+    "type": "gradient",
+    "color": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "gradient": {
+      "slug": "white",
+      "name": "White",
+      "angle": -90,
+      "colorOne": {
+        "red": 0,
+        "green": 209,
+        "blue": 153,
+        "alpha": 1
+      },
+      "colorTwo": {
+        "red": 46,
+        "green": 120,
+        "blue": 170,
+        "alpha": 1
+      }
+    },
+    "image": {
+      "isSet": false,
+      "src": "8e8f9bc6-7120-4f0c-93a8-293ed09053fa"
+    },
+    "panoramic": {
+      "isGlobal": true,
+      "global": {
+        "isSet": false,
+        "src": "8e8f9bc6-7120-4f0c-93a8-293ed09053fa",
+        "size": {
+          "width": 0,
+          "height": 0
+        }
+      },
+      "device": {
+        "isSet": false,
+        "src": "8e8f9bc6-7120-4f0c-93a8-293ed09053fa",
+        "size": {
+          "width": 0,
+          "height": 0
+        }
+      }
+    }
+  },
+  "title": {
+    "isActive": true,
+    "isAbove": true,
+    "text": "ALL CATEGORIES\nONE PLACE",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "size": {
+      "width": 0,
+      "height": 0
+    },
+    "font": {
+      "family": "Roboto",
+      "size": 65,
+      "weight": "700",
+      "style": "normal",
+      "lineHeight": 104,
+      "baseline": "top",
+      "alignment": "left",
+      "color": {
+        "red": 255,
+        "green": 255,
+        "blue": 255,
+        "alpha": 1
+      }
+    },
+    "margin": {
+      "type": "fixed",
+      "left": 10,
+      "right": 10,
+      "top": 10,
+      "bottom": 5
+    },
+    "shadow": {
+      "isActive": true,
+      "opacity": 1,
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "color": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 1
+      }
+    },
+    "stroke": {
+      "isActive": false,
+      "width": 0,
+      "lineJoin": "miter",
+      "miterLimit": 100,
+      "color": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 1
+      }
+    }
+  },
+  "deviceRotation": 15,
+  "fonts": [
+    "Roboto:700",
+    "Roboto:500",
+    "Roboto:400"
+  ]
+}

@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'dart:math';
+import 'package:heads_up/helper/chameleon_player_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/background_image.dart';
@@ -8,6 +10,7 @@ import 'package:heads_up/models/category_model.dart';
 import 'package:heads_up/pages/game%20pages/chameleon_role_page.dart';
 import 'package:heads_up/repos/settings_repo.dart';
 import 'package:heads_up/widgets/icon_button.dart';
+import 'package:heads_up/widgets/chameleon_start_order_button.dart';
 
 class ChameleonSetupPage extends StatefulWidget {
   const ChameleonSetupPage({super.key});
@@ -29,18 +32,23 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
   final List<GlobalKey> _playerFieldKeys = [];
   final ScrollController _scrollController = ScrollController();
   bool _hasLoadedPlayers = false;
+  late bool _randomStart;
+
+  double get _setupControlsHeight =>
+      max(kMinInteractiveDimension, Dimensions.height45 + Dimensions.height30);
 
   @override
   void initState() {
     super.initState();
     category = Get.arguments[0];
     canReplay = Get.arguments[1];
+    _randomStart = Get.find<SettingsRepo>().chameleonRandomStartRead();
     _loadCachedPlayers();
   }
 
   Future<void> _loadCachedPlayers() async {
-    final cachedNames =
-        await Get.find<SettingsRepo>().chameleonPlayerNamesRead();
+    final cachedNames = await Get.find<SettingsRepo>()
+        .chameleonPlayerNamesRead();
     if (!mounted) return;
 
     final playerNames = cachedNames.isEmpty
@@ -101,6 +109,20 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
     });
   }
 
+  void _reorderPlayer(int oldIndex, int newIndex) {
+    if (oldIndex == newIndex) return;
+    FocusManager.instance.primaryFocus?.unfocus();
+    setState(() {
+      _playerControllers.insert(
+        newIndex,
+        _playerControllers.removeAt(oldIndex),
+      );
+      _playerFocusNodes.insert(newIndex, _playerFocusNodes.removeAt(oldIndex));
+      _playerFieldKeys.insert(newIndex, _playerFieldKeys.removeAt(oldIndex));
+    });
+    _savePlayerNames();
+  }
+
   void _addPlayerController(String name) {
     final focusNode = FocusNode();
     focusNode.addListener(() {
@@ -112,9 +134,7 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
       _ensurePlayerFieldVisible(index);
     });
 
-    _playerControllers.add(
-      TextEditingController(text: _limitPlayerName(name)),
-    );
+    _playerControllers.add(TextEditingController(text: _limitPlayerName(name)));
     _playerFocusNodes.add(focusNode);
     _playerFieldKeys.add(GlobalKey());
   }
@@ -169,19 +189,22 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
   }
 
   Future<void> _savePlayerNames() async {
-    await Get.find<SettingsRepo>().chameleonPlayerNamesSave(
-      _cachedPlayerNames,
-    );
+    await Get.find<SettingsRepo>().chameleonPlayerNamesSave(_cachedPlayerNames);
   }
 
   Future<void> _startGame() async {
     await _savePlayerNames();
-    Get.to(() => const ChameleonRolePage(), arguments: [
-      category,
-      _gamePlayerNames,
-      _impostersCount,
-      canReplay,
-    ]);
+    if (!mounted) return;
+    final names = _gamePlayerNames;
+    final randomStart = Get.find<SettingsRepo>().chameleonRandomStartRead();
+    final orderedNames = chameleonPlayerOrder(
+      names,
+      startIndex: randomStart ? Random().nextInt(names.length) : 0,
+    );
+    Get.to(
+      () => const ChameleonRolePage(),
+      arguments: [category, orderedNames, _impostersCount, canReplay],
+    );
   }
 
   Future<void> _closeSetup() async {
@@ -231,7 +254,8 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
     final hiddenButtonHeight =
         Dimensions.height20 * 2 + Dimensions.font26 + Dimensions.height20;
     final visibleTop = mediaQuery.padding.top + Dimensions.height20;
-    final visibleBottom = mediaQuery.size.height -
+    final visibleBottom =
+        mediaQuery.size.height -
         keyboardHeight -
         Dimensions.height15 -
         (keyboardHeight == 0 ? hiddenButtonHeight : 0);
@@ -280,7 +304,8 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
               LayoutBuilder(
                 builder: (context, constraints) {
                   final bottomInset = MediaQuery.of(context).viewInsets.bottom;
-                  final startButtonHeight = Dimensions.height20 * 2 +
+                  final startButtonHeight =
+                      Dimensions.height20 * 2 +
                       Dimensions.font26 +
                       Dimensions.height20;
 
@@ -296,7 +321,8 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                     ),
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
-                        minHeight: constraints.maxHeight -
+                        minHeight:
+                            constraints.maxHeight -
                             Dimensions.height45 -
                             Dimensions.height20,
                       ),
@@ -313,21 +339,41 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                                 color: Colors.white,
                                 height: 1.08,
                                 shadows: const [
-                                  Shadow(
-                                    blurRadius: 10,
-                                    color: Colors.black54,
-                                  ),
+                                  Shadow(blurRadius: 10, color: Colors.black54),
                                 ],
                               ),
                             ),
                           ),
                           SizedBox(height: Dimensions.height20),
-                          _buildImposterStepper(
-                            count: _impostersCount,
-                            onMinus: () => _updateImposters(-1),
-                            onPlus: () => _updateImposters(1),
-                            canMinus: _impostersCount > 1,
-                            canPlus: _impostersCount < _maxImposters,
+                          SizedBox(
+                            height: _setupControlsHeight,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Expanded(
+                                  child: _buildImposterStepper(
+                                    count: _impostersCount,
+                                    onMinus: () => _updateImposters(-1),
+                                    onPlus: () => _updateImposters(1),
+                                    canMinus: _impostersCount > 1,
+                                    canPlus: _impostersCount < _maxImposters,
+                                  ),
+                                ),
+                                SizedBox(width: Dimensions.width10),
+                                ChameleonStartOrderButton(
+                                  key: const ValueKey(
+                                    'chameleon-start-order-button',
+                                  ),
+                                  size: _setupControlsHeight,
+                                  randomStart: _randomStart,
+                                  onChanged: (enabled) {
+                                    setState(() => _randomStart = enabled);
+                                    Get.find<SettingsRepo>()
+                                        .chameleonRandomStartSave(enabled);
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                           SizedBox(height: Dimensions.height20),
                           if (!_hasLoadedPlayers)
@@ -340,8 +386,23 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                               ),
                             )
                           else ...[
-                            for (int i = 0; i < _playerControllers.length; i++)
-                              _buildPlayerField(i),
+                            ReorderableListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              buildDefaultDragHandles: false,
+                              padding: EdgeInsets.zero,
+                              itemCount: _playerControllers.length,
+                              onReorderItem: _reorderPlayer,
+                              onReorderStart: (_) =>
+                                  FocusManager.instance.primaryFocus?.unfocus(),
+                              proxyDecorator: (child, index, animation) =>
+                                  Material(
+                                    color: Colors.transparent,
+                                    child: child,
+                                  ),
+                              itemBuilder: (context, index) =>
+                                  _buildPlayerField(index),
+                            ),
                             if (_playerControllers.length < _maxPlayers)
                               _buildAddPlayerTile(),
                           ],
@@ -361,10 +422,7 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
               Positioned(
                 top: 10,
                 left: 10,
-                child: IconBtn(
-                  onTap: _closeSetup,
-                  icon: Icons.close,
-                ),
+                child: IconBtn(onTap: _closeSetup, icon: Icons.close),
               ),
             ],
           ),
@@ -392,7 +450,10 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
               border: Border.all(color: AppColors.glassBorder, width: 1.2),
               boxShadow: const [
                 BoxShadow(
-                    color: Colors.black26, blurRadius: 8, spreadRadius: 1),
+                  color: Colors.black26,
+                  blurRadius: 8,
+                  spreadRadius: 1,
+                ),
               ],
             ),
             child: Row(
@@ -404,12 +465,17 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                   size: Dimensions.iconSize24,
                 ),
                 SizedBox(width: Dimensions.width10),
-                Text(
-                  'Start game'.tr,
-                  style: TextStyle(
-                    fontSize: Dimensions.font26,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'Start game'.tr,
+                      style: TextStyle(
+                        fontSize: Dimensions.font26,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -428,15 +494,13 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
     required bool canPlus,
   }) {
     return ClipRRect(
+      key: const ValueKey('chameleon-count-card'),
       borderRadius: BorderRadius.circular(Dimensions.radius20),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
         child: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
-            horizontal: Dimensions.width20,
-            vertical: Dimensions.height15,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: Dimensions.width15),
           decoration: BoxDecoration(
             color: AppColors.glassWhite,
             borderRadius: BorderRadius.circular(Dimensions.radius20),
@@ -445,53 +509,100 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Imposters'.tr,
-                    style: TextStyle(
-                      fontSize: Dimensions.font20,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+              Expanded(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Imposters'.tr,
+                        maxLines: 1,
+                        softWrap: false,
+                        style: TextStyle(
+                          fontSize: Dimensions.font20,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        '${'Players'.tr}: $_playersCount',
+                        maxLines: 1,
+                        softWrap: false,
+                        style: TextStyle(
+                          fontSize: Dimensions.font16,
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    '${'Players'.tr}: $_playersCount',
-                    style: TextStyle(
-                      fontSize: Dimensions.font16,
-                      color: Colors.white70,
-                    ),
-                  ),
-                ],
+                ),
               ),
               Row(
                 children: [
-                  _buildRoundIconButton(
+                  _buildCountButton(
                     icon: Icons.remove,
                     isEnabled: canMinus,
                     onTap: onMinus,
                   ),
                   SizedBox(
-                    width: Dimensions.width45,
+                    width: Dimensions.width20,
                     child: Text(
                       count.toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: Dimensions.font26,
+                        fontSize: Dimensions.font20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                  _buildRoundIconButton(
+                  _buildCountButton(
                     icon: Icons.add,
                     isEnabled: canPlus,
                     onTap: onPlus,
                   ),
                 ],
-              )
+              ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCountButton({
+    required IconData icon,
+    required bool isEnabled,
+    required VoidCallback onTap,
+  }) {
+    return Semantics(
+      button: true,
+      enabled: isEnabled,
+      label: '${'Imposters'.tr} ${icon == Icons.add ? '+1' : '−1'}',
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: isEnabled ? onTap : null,
+        child: SizedBox.square(
+          dimension: kMinInteractiveDimension,
+          child: Center(
+            child: Container(
+              width: Dimensions.height30,
+              height: Dimensions.height30,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isEnabled
+                    ? Colors.black.withValues(alpha: 0.3)
+                    : Colors.transparent,
+              ),
+              child: Icon(
+                icon,
+                color: isEnabled ? Colors.white : Colors.white24,
+                size: Dimensions.iconSize16 * 1.25,
+              ),
+            ),
           ),
         ),
       ),
@@ -548,6 +659,29 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                   icon: Icons.remove,
                   isEnabled: _playerControllers.length > _minPlayers,
                   onTap: () => _removePlayer(index),
+                  color: Colors.redAccent,
+                ),
+                SizedBox(width: Dimensions.width5),
+                ReorderableDragStartListener(
+                  index: index,
+                  child: Semantics(
+                    label: 'Reorder player'.tr,
+                    child: Tooltip(
+                      message: 'Reorder player'.tr,
+                      child: Container(
+                        padding: EdgeInsets.all(Dimensions.height10),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.3),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.drag_handle_rounded,
+                          color: Colors.white60,
+                          size: Dimensions.iconSize24,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -603,6 +737,7 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
     required IconData icon,
     required bool isEnabled,
     required VoidCallback onTap,
+    Color? color,
   }) {
     return GestureDetector(
       onTap: isEnabled ? onTap : null,
@@ -610,13 +745,14 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
         padding: EdgeInsets.all(Dimensions.height10),
         decoration: BoxDecoration(
           color: isEnabled
-              ? Colors.black.withValues(alpha: 0.3)
+              ? (color?.withValues(alpha: 0.18) ??
+                    Colors.black.withValues(alpha: 0.3))
               : Colors.transparent,
           shape: BoxShape.circle,
         ),
         child: Icon(
           icon,
-          color: isEnabled ? Colors.white : Colors.white24,
+          color: isEnabled ? (color ?? Colors.white) : Colors.white24,
           size: Dimensions.iconSize24,
         ),
       ),

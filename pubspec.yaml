@@ -2,15 +2,15 @@ name: heads_up
 description: A party game app for guessing words with friends, including Who Am I and Chameleon game modes.
 publish_to: 'none'
 
-version: 1.4.0+13
+version: 1.4.1+14
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: '>=3.10.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^2.0.0
   sensors_plus: ^7.0.0
   get: ^4.6.5
   shared_preferences: ^2.0.15
@@ -19,8 +19,8 @@ dependencies:
   group_button: ^5.2.2
   flutter_timezone: ^5.1.0
   animated_background: ^2.0.0
-  google_mobile_ads: ^8.0.0
-  purchases_flutter: ^10.2.2
+  google_mobile_ads: ^9.2.0
+  purchases_flutter: ^11.0.0
   wakelock_plus: ^1.3.2
   rate_my_app: ^2.0.0
 dev_dependencies:

@@ -1,0 +1,15 @@
+English
+- Choose who starts in Chameleon, and drag players into your preferred order.
+- Updated for a smoother experience.
+
+Dansk
+- Vælg, hvem der starter i Kamæleon, og træk spillerne i den ønskede rækkefølge.
+- Opdateret for en bedre spiloplevelse.
+
+Svenska
+- Välj vem som börjar i Kameleont och dra spelarna till önskad ordning.
+- Uppdaterat för en smidigare spelupplevelse.
+
+Norsk
+- Velg hvem som starter i Kameleon, og dra spillerne til ønsket rekkefølge.
+- Oppdatert for en bedre spillopplevelse.
