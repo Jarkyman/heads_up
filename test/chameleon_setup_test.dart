@@ -105,8 +105,16 @@ void main() {
       final toggleSize = tester.getSize(
         find.byKey(const ValueKey('chameleon-start-order-button')),
       );
-      expect(toggleSize.height, countSize.height);
-      expect(toggleSize.width, toggleSize.height);
+      expect(toggleSize.height, greaterThanOrEqualTo(kMinInteractiveDimension));
+      expect(toggleSize.height, lessThanOrEqualTo(countSize.height));
+      expect(toggleSize.width, greaterThanOrEqualTo(kMinInteractiveDimension));
+      expect(
+        find.descendant(
+          of: find.byKey(const ValueKey('chameleon-count-card')),
+          matching: find.byKey(const ValueKey('chameleon-start-order-button')),
+        ),
+        findsOneWidget,
+      );
       expect(tester.takeException(), isNull);
     }
     await tester.pumpWidget(const SizedBox.shrink());

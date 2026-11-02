@@ -347,32 +347,12 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                           SizedBox(height: Dimensions.height20),
                           SizedBox(
                             height: _setupControlsHeight,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Expanded(
-                                  child: _buildImposterStepper(
-                                    count: _impostersCount,
-                                    onMinus: () => _updateImposters(-1),
-                                    onPlus: () => _updateImposters(1),
-                                    canMinus: _impostersCount > 1,
-                                    canPlus: _impostersCount < _maxImposters,
-                                  ),
-                                ),
-                                SizedBox(width: Dimensions.width10),
-                                ChameleonStartOrderButton(
-                                  key: const ValueKey(
-                                    'chameleon-start-order-button',
-                                  ),
-                                  size: _setupControlsHeight,
-                                  randomStart: _randomStart,
-                                  onChanged: (enabled) {
-                                    setState(() => _randomStart = enabled);
-                                    Get.find<SettingsRepo>()
-                                        .chameleonRandomStartSave(enabled);
-                                  },
-                                ),
-                              ],
+                            child: _buildImposterStepper(
+                              count: _impostersCount,
+                              onMinus: () => _updateImposters(-1),
+                              onPlus: () => _updateImposters(1),
+                              canMinus: _impostersCount > 1,
+                              canPlus: _impostersCount < _maxImposters,
                             ),
                           ),
                           SizedBox(height: Dimensions.height20),
@@ -565,6 +545,16 @@ class _ChameleonSetupPageState extends State<ChameleonSetupPage> {
                     onTap: onPlus,
                   ),
                 ],
+              ),
+              SizedBox(width: Dimensions.width5),
+              ChameleonStartOrderButton(
+                key: const ValueKey('chameleon-start-order-button'),
+                height: _setupControlsHeight,
+                randomStart: _randomStart,
+                onChanged: (enabled) {
+                  setState(() => _randomStart = enabled);
+                  Get.find<SettingsRepo>().chameleonRandomStartSave(enabled);
+                },
               ),
             ],
           ),
