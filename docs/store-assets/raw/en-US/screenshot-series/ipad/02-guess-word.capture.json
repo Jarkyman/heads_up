@@ -1,0 +1,18 @@
+{
+  "group": "ipad",
+  "scene": "gameplay",
+  "display": "A6CE7762-E05F-46AD-ABBD-F8173210FB75",
+  "device": "81F05768-30BB-4F49-A05B-07AFF423309B",
+  "dimensions": [
+    2752,
+    2064
+  ],
+  "fixture": {
+    "scene": "gameplay",
+    "width": 2752.0,
+    "height": 2064.0,
+    "ready_at": "2026-11-04T15:28:03.513261Z"
+  },
+  "captured_at": "2026-11-04T15:28:04.639605+00:00",
+  "capture_tool": "Apple devicectl / Device Hub"
+}

@@ -1,6 +1,13 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
 
 class Dimensions {
+  // Gameplay rotates into landscape. Keep its scale tied to the long edge so
+  // rotating a phone doesn't shrink the word and timer to portrait-width sizes.
+  static GameplayDimensions gameplay(Size viewport) =>
+      GameplayDimensions(viewport.longestSide);
+
   static double get screenHeight => Get.context!.height; // 844 iPhone 12
   static double get screenWidth => Get.context!.width; // 390 iPhone 12
 
@@ -49,4 +56,17 @@ class Dimensions {
 
   //Splash Screen
   static double get splashImg => screenHeight / 1.2;
+}
+
+class GameplayDimensions {
+  const GameplayDimensions(this._longEdge);
+
+  final double _longEdge;
+
+  double get height10 => _longEdge / 84.4;
+  double get height20 => _longEdge / 42.2;
+  double get height30 => _longEdge / 28.13;
+  double get width20 => height20;
+  double get font26 => _longEdge / 32.46;
+  double get radius30 => height30;
 }

@@ -1,8 +1,8 @@
-# Hint Master store refresh — 2026-11-02
+# Hint Master store refresh — 2026-11-03
 
 ## Release 1.4.1 (14)
 
-- Chameleon starts with a random name, then follows the seating order cyclically. The circular shuffle/repeat button beside the Chameleon count disables random start; the first name then starts. The control was moved out of Settings. Roles remain random.
+- Chameleon starts with a random name, then follows the seating order cyclically. The embedded shuffle/repeat button in the shared Chameleon count glass card disables random start; the first name then starts. The control was moved out of Settings. Roles remain random.
 - Player drag handles reorder names, controllers and focus nodes together. New order is saved without persisting the random rotation. Delete controls are red, drag handles neutral grey.
 - Direct dependencies updated to latest resolvable releases: Cupertino Icons 2.0.0, Google Mobile Ads 9.2.0 and Purchases Flutter 11.0.0. Flutter 3.47.8 / Dart 3.13.7 used. The current Flutter build migrates iOS minimum to 15.0. Dart constraint corrected to >=3.10.0 <4.0.0.
 - Dimensions now recompute from the current viewport rather than retaining launch-time dimensions, allowing fold/resize changes.
@@ -23,11 +23,11 @@ Apple native Duo screenshots: outer 1398×2034, inner 2007×2853, or correspondi
 
 ## Creative direction
 
-Match the existing English App Store screenshot series (reviewed directly in App Store Connect): mint/teal gradient, white typography and a large angled white iPhone. Keep the existing “ALL CATEGORIES / ONE PLACE” message. Header and search artwork must show an ordinary iPhone, never Duo. Use Duo only for its device-specific screenshots and testing.
+Match the existing English App Store screenshot series (reviewed directly in App Store Connect): mint/teal gradient, white typography and a large angled white iPhone. Keep the existing “ALL CATEGORIES / ONE PLACE” message for device screenshots. The revised header/search designs use “BIG LAUGHS. tiny clues.”, navy lettering, cream/coral stickers, sparse accents and the familiar teal/blue palette. Header/search show a landscape iPad alongside an ordinary iPhone, never Duo. Use Duo only for its device-specific screenshots and testing.
 
 Show the full premium UI with every category unlocked and no system status bars (including Duo’s side time/status area). `tools/store_assets/main.dart` is a separate debug-only entrypoint that substitutes a premium settings controller without saving entitlement state or configuring purchases. Production continues to use `lib/main.dart`. Hide status UI before capture; do not paint over it or synthesize app content.
 
-Creative exports: header 3840×1646; search 1920×1280 or larger 3:2 up to 3840×2560; universal still 5244×2950 PNG. RGB, no alpha. Keep essential artwork within official template safe areas and inspect actual console crops. Header/search loops: 5–30 seconds, 30/60 fps, MOV/M4V/MP4. A subtle 8-second loop can animate background shapes and UI-card positioning without altering what the app does. Actual app previews use recorded gameplay and their separate specifications; do not treat a decorative loop as gameplay footage.
+Creative exports: header 3840×1646; search 1920×1280 or larger 3:2 up to 3840×2560; universal still 5244×2950 PNG. RGB, no alpha. Keep essential artwork within official template safe areas and inspect actual console crops. Header/search loops: 5–30 seconds, 30/60 fps, MOV/M4V/MP4. Jackie rejected the still-image zoom loops; those files are archived under `archive/rejected-still-loops/` and must not be uploaded. Video is deferred until it can show real interaction: category selection, correct/pass tilts, results and return to start. Actual app previews use recorded gameplay and their separate specifications.
 
 ## Experiments and publishing sequence
 
@@ -60,10 +60,14 @@ Original source layouts were read from `Mock UPS/EN/Hint master EN.mockup` insid
    `/usr/libexec/PlistBuddy -c 'Set :UIViewControllerBasedStatusBarAppearance true' build/ios/iphonesimulator/Runner.app/Info.plist`
    This is an adjustment to the generated screenshot bundle, not to `ios/Runner/Info.plist`.
 3. Install/launch it on the chosen simulator. Let home finish loading, then use RocketSim to capture native PNGs. Confirm no unlock icon, no category locks, and no time/Wi-Fi/battery status UI before retaining a capture. Hardware camera cutouts are part of the actual device capture.
-4. Run `swift -module-cache-path /tmp/hint-master-swift-cache tools/store_assets/render.swift` from the repository root. Roboto is bundled for rendering under its accompanying OFL license.
-5. Run `python3 tools/store_assets/video.py` (requires the existing ffmpeg installation) for 8-second, 30 fps, silent H.264 header/search loops.
+4. Capture iPad in actual landscape orientation and rebuild its category layout before saving `raw/en-US/ipad-13/02-categories-landscape.png`. All 16 base category cards should be visible. Do not rotate a portrait screenshot to imitate landscape.
+5. Run `swift -module-cache-path /tmp/hint-master-swift-cache tools/store_assets/render.swift` for the original-style device screenshots, then `swift -module-cache-path /tmp/hint-master-swift-cache tools/store_assets/render-v2.swift` for the preferred header/search drafts under `creative/en-US/v2/`. Roboto is bundled with its OFL license. `video.py` is retained as historical tooling only; do not generate new still-image loops.
 6. Restore the normal target with `flutter build ios --simulator --debug --target lib/main.dart` before ordinary app testing. Simulator instances used for captures may still run the isolated premium capture build; they are not suitable for validating real purchases or ads.
 
-Current exports are review drafts. Native captures cover one ordinary iPhone, Duo outer/inner and 13-inch iPad, all in English. Header/search contain the ordinary iPhone only. No generated AI imagery was needed. Additional gameplay/Chameleon variants, translations, console crop previews and store submissions remain later work after the first English design review.
+Current exports are review drafts. Native captures cover one ordinary iPhone, Duo outer/inner and 13-inch iPad, all in English. Preferred header/search drafts are `creative/en-US/v2/header.png` (3840×1646) and `creative/en-US/v2/search.png` (1920×1280), showing an actual landscape iPad with all 16 base categories and an ordinary iPhone. Older header/search PNGs are retained as superseded drafts. The Duo outer layout was adjusted to keep its complete headline clear of the device frame. No generated AI imagery was needed. Additional gameplay/Chameleon variants, translations, console crop previews and store submissions remain later work after the first English design review.
 
 Native raw PNGs retain RocketSim’s original alpha channel as source material. Upload the RGB, alpha-free composed exports under `creative/en-US/`, or flatten raw captures losslessly before direct upload.
+
+## English device screenshot series
+
+See [screenshots.md](screenshots.md) for the single editable Desigma document, per-device upload folders and exact completion status. Completed 2026-11-04: iPhone, Duo outer, Duo inner and iPad each have 5/5 English images. Remaining native captures were completed using Apple Device Hub/devicectl. Gameplay screenshots include the corrected landscape word and timer sizes. All twenty PNGs have verified dimensions and RGB/no-alpha format.

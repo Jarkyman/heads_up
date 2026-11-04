@@ -1,0 +1,18 @@
+{
+  "group": "duo-outer",
+  "scene": "reveal",
+  "display": "EA8A8BB8-646F-4DA7-850B-B4CEF4A92513",
+  "device": "791B008B-41CC-469F-A937-2C5B22833F04",
+  "dimensions": [
+    1398,
+    2034
+  ],
+  "fixture": {
+    "scene": "reveal",
+    "width": 1398.0,
+    "height": 2034.0,
+    "ready_at": "2026-11-04T15:34:03.857113Z"
+  },
+  "captured_at": "2026-11-04T15:34:04.913905+00:00",
+  "capture_tool": "Apple devicectl / Device Hub"
+}

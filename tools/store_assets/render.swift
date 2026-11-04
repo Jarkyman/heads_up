@@ -45,7 +45,11 @@ func render(_ width:Int,_ height:Int,_ name:String,_ image:NSImage?) throws {
     let bounds=NSRect(x:0,y:0,width:w,height:h)
     NSGradient(starting:color(0x00D199),ending:color(0x2E78AA))!.draw(in:bounds,angle:90)
     let portrait=h>w
-    if portrait {
+    if name == "duo-outer-categories" {
+        text("ALL CATEGORIES\nONE PLACE",NSRect(x:w*0.10,y:h*0.07,width:w*0.82,height:h*0.18),w*0.075)
+        text("Who Am I? + Chameleon",NSRect(x:w*0.10,y:h*0.215,width:w*0.82,height:h*0.07),w*0.038,.semibold)
+        if let image { phone(image,center:NSPoint(x:w*0.55,y:h*0.62),height:h*0.64,angle:8) }
+    } else if portrait {
         text("ALL CATEGORIES\nONE PLACE",NSRect(x:w*0.10,y:h*0.07,width:w*0.75,height:h*0.17),w*0.075)
         text("Animals\nMusic\nMovies\nFood\nElectronics\n& more...",
              NSRect(x:w*0.10,y:h*0.29,width:w*0.49,height:h*0.48),w*0.047,.semibold)

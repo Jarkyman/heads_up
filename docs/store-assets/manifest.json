@@ -22,7 +22,7 @@
       "file": "creative/en-US/duo-outer-categories.png",
       "width": 1398,
       "height": 2034,
-      "sha256": "12b0eefc075a06de0c1705c0f30ee8e17f07ce2ce14591566c4862a5e4b18038",
+      "sha256": "c76ea89ff59cd15a686d8d072e359180874c9dbda0478688ecf3b42ce9d4083f",
       "locale": "en-US",
       "status": "review draft",
       "source": "deterministic composition using actual screenshots"
@@ -33,7 +33,7 @@
       "height": 1646,
       "sha256": "4f7b07362a3757d4d132d012775d690c7a4dc2ff64e773d1594be081bfda7e56",
       "locale": "en-US",
-      "status": "review draft",
+      "status": "superseded draft",
       "source": "deterministic composition using actual screenshots"
     },
     {
@@ -69,7 +69,7 @@
       "height": 1280,
       "sha256": "80cbb589afabe4d7ca860cfe8adb93bf47294dfc3e177e1d72ba55f78d69ba59",
       "locale": "en-US",
-      "status": "review draft",
+      "status": "superseded draft",
       "source": "deterministic composition using actual screenshots"
     },
     {
@@ -107,6 +107,52 @@
       "locale": "en-US",
       "status": "review draft",
       "source": "actual premium app screenshot"
+    },
+    {
+      "file": "raw/en-US/ipad-13/02-categories-landscape.png",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "actual premium app screenshot",
+      "width": 2752,
+      "height": 2064,
+      "sha256": "6e8aa0bc475f2e71af8090a5b5b92296884788f26e9fa0c39e24fb6c896b4472",
+      "captured": "2026-11-03",
+      "orientation": "landscape",
+      "screen": "Who Am I? categories, all 16 base category cards visible"
+    },
+    {
+      "file": "creative/en-US/v2/header.png",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual premium landscape iPad and ordinary iPhone screenshots",
+      "width": 3840,
+      "height": 1646,
+      "sha256": "9d9a6c76855f6783dba099e909100a5d8370bef46c63257b4fb8756e5ab7cf17",
+      "source_files": [
+        "raw/en-US/ipad-13/02-categories-landscape.png",
+        "raw/en-US/iphone-medium/01-categories.png"
+      ],
+      "renderer": "tools/store_assets/render-v2.swift"
+    },
+    {
+      "file": "creative/en-US/v2/search.png",
+      "locale": "en-US",
+      "status": "review draft",
+      "source": "deterministic composition using actual premium landscape iPad and ordinary iPhone screenshots",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "e973ddd4580fc2e599ca8938ee50f706dc86a2388592104bc468c596aa0ea504",
+      "source_files": [
+        "raw/en-US/ipad-13/02-categories-landscape.png",
+        "raw/en-US/iphone-medium/01-categories.png"
+      ],
+      "renderer": "tools/store_assets/render-v2.swift"
     }
-  ]
+  ],
+  "updated": "2026-11-03",
+  "preferred_header_search": [
+    "creative/en-US/v2/header.png",
+    "creative/en-US/v2/search.png"
+  ],
+  "video_status": "Deferred; rejected still-image loops archived, not for upload."
 }

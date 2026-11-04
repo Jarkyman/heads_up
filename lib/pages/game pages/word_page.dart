@@ -43,6 +43,7 @@ class _WordPageState extends State<WordPage> {
 
   @override
   Widget build(BuildContext context) {
+    final dimensions = Dimensions.gameplay(MediaQuery.sizeOf(context));
     return GetBuilder<GameController>(
       builder: (game) {
         return Scaffold(
@@ -70,7 +71,7 @@ class _WordPageState extends State<WordPage> {
                               'Tap the screen to start'.tr,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: Dimensions.font26 * 2,
+                                fontSize: dimensions.font26 * 2,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -84,15 +85,17 @@ class _WordPageState extends State<WordPage> {
                               duration: const Duration(milliseconds: 250),
                               transitionBuilder: (child, animation) =>
                                   ScaleTransition(
-                                scale: animation,
-                                child: FadeTransition(
-                                    opacity: animation, child: child),
-                              ),
+                                    scale: animation,
+                                    child: FadeTransition(
+                                      opacity: animation,
+                                      child: child,
+                                    ),
+                                  ),
                               child: Text(
                                 '${game.startCountdown}',
                                 key: ValueKey(game.startCountdown),
                                 style: TextStyle(
-                                  fontSize: Dimensions.font26 * 3,
+                                  fontSize: dimensions.font26 * 3,
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,
                                   shadows: const [
@@ -109,12 +112,12 @@ class _WordPageState extends State<WordPage> {
                         // — In-game: timer ring —
                         if (game.isGameStarted)
                           Padding(
-                            padding: EdgeInsets.only(top: Dimensions.height30),
+                            padding: EdgeInsets.only(top: dimensions.height30),
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: CircularCountDownTimer(
-                                width: Dimensions.height20 * 3,
-                                height: Dimensions.height20 * 3,
+                                width: dimensions.height20 * 3,
+                                height: dimensions.height20 * 3,
                                 duration: game.roundTime,
                                 isReverse: true,
                                 controller: game.roundTimeController,
@@ -122,7 +125,7 @@ class _WordPageState extends State<WordPage> {
                                 fillColor: Colors.green,
                                 ringColor: Colors.grey,
                                 textStyle: TextStyle(
-                                  fontSize: Dimensions.font26,
+                                  fontSize: dimensions.font26,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -136,7 +139,8 @@ class _WordPageState extends State<WordPage> {
                           Center(
                             child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: Dimensions.width20),
+                                horizontal: dimensions.width20,
+                              ),
                               child: FittedBox(
                                 fit: BoxFit.contain,
                                 child: AnimatedSwitcher(
@@ -146,7 +150,7 @@ class _WordPageState extends State<WordPage> {
                                     key: ValueKey(game.currentWord),
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: Dimensions.font26 * 2.5,
+                                      fontSize: dimensions.font26 * 2.5,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white,
                                       shadows: const [
@@ -170,20 +174,19 @@ class _WordPageState extends State<WordPage> {
                             alignment: Alignment.bottomCenter,
                             child: Padding(
                               padding: EdgeInsets.only(
-                                  bottom: Dimensions.height20 * 2),
+                                bottom: dimensions.height20 * 2,
+                              ),
                               child: TweenAnimationBuilder<double>(
                                 tween: Tween(begin: 0.0, end: 1.0),
                                 duration: const Duration(milliseconds: 200),
                                 curve: Curves.elasticOut,
                                 builder: (context, value, child) =>
-                                    Transform.scale(
-                                  scale: value,
-                                  child: child,
-                                ),
+                                    Transform.scale(scale: value, child: child),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: Dimensions.width20 * 1.5,
-                                      vertical: Dimensions.height10),
+                                    horizontal: dimensions.width20 * 1.5,
+                                    vertical: dimensions.height10,
+                                  ),
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
@@ -200,16 +203,19 @@ class _WordPageState extends State<WordPage> {
                                       ],
                                     ),
                                     borderRadius: BorderRadius.circular(
-                                        Dimensions.radius30 * 2),
+                                      dimensions.radius30 * 2,
+                                    ),
                                     border: Border.all(
-                                      color:
-                                          Colors.white.withValues(alpha: 0.4),
+                                      color: Colors.white.withValues(
+                                        alpha: 0.4,
+                                      ),
                                       width: 1.5,
                                     ),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: game.backgroundColor
-                                            .withValues(alpha: 0.5),
+                                        color: game.backgroundColor.withValues(
+                                          alpha: 0.5,
+                                        ),
                                         blurRadius: 20,
                                         spreadRadius: 2,
                                       ),
@@ -221,7 +227,7 @@ class _WordPageState extends State<WordPage> {
                                         ? 'Correct'.tr
                                         : 'Pass'.tr,
                                     style: TextStyle(
-                                      fontSize: Dimensions.font26,
+                                      fontSize: dimensions.font26,
                                       fontWeight: FontWeight.w800,
                                       color: Colors.white,
                                       letterSpacing: 1.2,

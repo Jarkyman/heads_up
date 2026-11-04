@@ -1,0 +1,18 @@
+{
+  "group": "duo-outer",
+  "scene": "gameplay",
+  "display": "EA8A8BB8-646F-4DA7-850B-B4CEF4A92513",
+  "device": "791B008B-41CC-469F-A937-2C5B22833F04",
+  "dimensions": [
+    2034,
+    1398
+  ],
+  "fixture": {
+    "scene": "gameplay",
+    "width": 2034.0,
+    "height": 1398.0,
+    "ready_at": "2026-11-04T15:36:26.510906Z"
+  },
+  "captured_at": "2026-11-04T15:36:27.338575+00:00",
+  "capture_tool": "Apple devicectl / Device Hub"
+}

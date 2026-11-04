@@ -1,0 +1,18 @@
+{
+  "group": "iphone",
+  "scene": "gameplay",
+  "display": "A0F7CD6A-46F3-442A-8BC6-58BD991261E8",
+  "device": "3A247DB0-D7A3-44EF-A6BE-18C47C9BB620",
+  "dimensions": [
+    2622,
+    1206
+  ],
+  "fixture": {
+    "scene": "gameplay",
+    "width": 2622.0,
+    "height": 1206.0,
+    "ready_at": "2026-11-04T15:28:03.742808Z"
+  },
+  "captured_at": "2026-11-04T15:28:04.599977+00:00",
+  "capture_tool": "Apple devicectl / Device Hub"
+}
