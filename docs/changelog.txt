@@ -1,16 +1,16 @@
 <en-GB>
-- A smoother first-time experience with fewer full-screen ads.
-- Improved privacy, Nordic language support, and overall stability.
+- Choose random or fixed starts in Chameleon, and drag to reorder players.
+- Improved setup controls and larger, clearer gameplay text in landscape.
 </en-GB>
 <da-DK>
-- En bedre førstegangsoplevelse med færre fuldskærmsreklamer.
-- Forbedret privatliv, understøttelse af nordiske sprog og generel stabilitet.
+- Slå tilfældig start til eller fra i Kamæleon, og træk spillerne i den ønskede rækkefølge.
+- Forbedrede opsætningsknapper og større, tydeligere tekst på spilskærmen i liggende format.
 </da-DK>
 <no-NO>
-- En bedre førstegangsopplevelse med færre fullskjermannonser.
-- Forbedret personvern, støtte for nordiske språk og generell stabilitet.
+- Slå tilfeldig start av eller på i Kameleon, og dra spillerne til ønsket rekkefølge.
+- Forbedrede oppsettknapper og større, tydeligere tekst på spillskjermen i liggende format.
 </no-NO>
 <sv-SE>
-- En bättre förstagångsupplevelse med färre helskärmsannonser.
-- Förbättrad integritet, stöd för nordiska språk och allmän stabilitet.
+- Slå på eller av slumpmässig start i Kameleont och dra spelarna till önskad ordning.
+- Förbättrade inställningsknappar och större, tydligare text på spelskärmen i liggande läge.
 </sv-SE>

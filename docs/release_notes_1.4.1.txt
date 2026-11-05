@@ -1,15 +1,15 @@
 English
-- Choose who starts in Chameleon, and drag players into your preferred order.
-- Updated for a smoother experience.
+- Choose random or fixed starts in Chameleon, and drag to reorder players.
+- Improved setup controls and larger, clearer gameplay text in landscape.
 
 Dansk
-- Vælg, hvem der starter i Kamæleon, og træk spillerne i den ønskede rækkefølge.
-- Opdateret for en bedre spiloplevelse.
+- Slå tilfældig start til eller fra i Kamæleon, og træk spillerne i den ønskede rækkefølge.
+- Forbedrede opsætningsknapper og større, tydeligere tekst på spilskærmen i liggende format.
 
 Svenska
-- Välj vem som börjar i Kameleont och dra spelarna till önskad ordning.
-- Uppdaterat för en smidigare spelupplevelse.
+- Slå på eller av slumpmässig start i Kameleont och dra spelarna till önskad ordning.
+- Förbättrade inställningsknappar och större, tydligare text på spelskärmen i liggande läge.
 
 Norsk
-- Velg hvem som starter i Kameleon, og dra spillerne til ønsket rekkefølge.
-- Oppdatert for en bedre spillopplevelse.
+- Slå tilfeldig start av eller på i Kameleon, og dra spillerne til ønsket rekkefølge.
+- Forbedrede oppsettknapper og større, tydeligere tekst på spillskjermen i liggende format.

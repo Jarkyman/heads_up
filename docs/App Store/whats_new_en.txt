@@ -1,3 +1,2 @@
-A smoother first-time experience with fewer full-screen ads.
-
-Improved privacy, Nordic language support, and overall stability.
+- Choose random or fixed starts in Chameleon, and drag to reorder players.
+- Improved setup controls and larger, clearer gameplay text in landscape.

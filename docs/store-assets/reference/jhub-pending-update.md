@@ -1,0 +1,18 @@
+# Pending JHub update — 2026-11-04
+
+> Synced to the Hint Master `Project overview` note on 2026-11-04. The later editable Desigma design-system replacement, 38 language variables and Store Pictures workflow were also appended successfully. Retained as a local audit trail; no action remains pending.
+
+JHub get_project was unreachable on both the initial request and one retry. No remote write was attempted. Read the current project overview and merge the following completion update when the private connection returns; do not replace unrelated content or create a duplicate note.
+
+- Project: Hint Master (`6875f37c-b501-43dc-96ee-51cd01093951`).
+- Existing overview note: `0387435b-4703-43b1-9b94-3566bf0d0760`.
+
+## Completed English screenshot series and gameplay text fix
+
+- Completed one editable Desigma document with four pages and five English frames per page: `Desigma Library/projects/Hint Master/files/app-store-screenshots-en-US.desigma`. It is registered under Hint Master → Screenshots. Final copy, line breaks and spacing were polished through official Desigma alpha.17 MCP tools. All twenty PNG exports were produced with desigma_export_image and flattened to RGB/no alpha.
+- Upload folders at OneDrive `Desigma Library/exports/Hint Master/Screenshots/en-US/`: iPhone (5 at 1206×2622), Duo/Outer (5 at 1398×2034), Duo/Inner (5 at 2853×2007), iPad (5 at 2064×2752). Exact dimensions, PNG CRCs, hashes and five files per folder verified. No pending frames remain. Native originals are retained; losslessly recompressed image fills were verified pixel-identical across all twenty images. Source/native/embedded/export hashes are in upload-verification.json. Final contact strips are in Verification/Screenshot Series/en-US and repo docs/store-assets/creative/en-US/screenshots/.
+- The previous RocketSim quota block was resolved at Jackie's request by using Apple's Device Hub and devicectl. Explicit display IDs avoid accidentally capturing Duo's inactive outer screen. Some native inner captures are upright portrait, composed without stretching onto the landscape store canvas. Apple console upload/acceptance remains untested; no submission was made.
+- Screenshot-only debug entrypoint supports compile-time production-page fixtures using actual category resources, fictional names and a valid seeded Chameleon result. The countdown is paused only in the separate screenshot app while switching displays. Normal app preferences and purchase entitlements are unaffected. Capture code/tooling is in tools/store_assets/main.dart and capture_scenes.py; build one matching HINTMASTER_STORE_SCENE fixture per capture run. Normal lib/main.dart simulator build restored successfully.
+- Jackie identified that landscape gameplay text had shrunk. Confirmed regression from replacing cached Dimensions fields with height-based viewport getters. WordPage now uses GameplayDimensions derived from its own MediaQuery longest edge; large word, timer and countdown sizes survive rotation and resizing. Seven tests pass, including readable landscape text and long-word fitting across five screen sizes; flutter analyze passes. Native iPhone/iPad/Duo gameplay captures visually verify the fix.
+- Desigma document remains compact JSON (~45 MB), below MCP's 64 MiB import cap. Previous partial document, index and exports archived on OneDrive before replacement. Canonical document contains final MCP refinements beyond the initial Rust generator. See docs/store-assets/screenshots.md for full handoff.
+- Obsidian project note updated. Existing two completed JHub tasks should remain unchanged. No commit or push; other languages, video and Google Play creatives remain deferred.

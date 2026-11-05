@@ -1,6 +1,6 @@
 # English App Store screenshot series
 
-Canonical editable document (one document, four pages, five frames per page):
+Canonical editable document (one document, four pages: twenty frames each on iPhone, Duo outer and iPad; five original reference frames on unused Duo inner):
 
 `/Users/jackiejensen/Library/CloudStorage/OneDrive-Personal/Programering/Flutter/Hint Master/Desigma Library/projects/Hint Master/files/app-store-screenshots-en-US.desigma`
 
@@ -14,14 +14,14 @@ Root: `Desigma Library/exports/Hint Master/Screenshots/en-US/`
 |---|---|---:|---:|
 | iPhone | 1206 × 2622 | 5 | 0 |
 | Duo/Outer | 1398 × 2034 | 5 | 0 |
-| Duo/Inner | 2853 × 2007 | 5 | 0 |
+| Duo/Inner | Reference only; excluded from upload | — | — |
 | iPad | 2064 × 2752 | 5 | 0 |
 
 All twenty frames are complete and exported into these folders. There are no remaining placeholder frames. No files were uploaded to App Store Connect and acceptance has not been tested.
 
-All 20 exported PNGs were checked for exact dimensions, 8-bit RGB without alpha, PNG chunk CRCs and SHA-256. Losslessly optimized image fills were verified to render the exact same pixels as the original native captures; originals are retained separately. Detailed frame IDs and hashes are in adjacent `upload-verification.json`. Previews and contact sheets live separately under `Verification/Screenshot Series/en-US/`; do not upload those previews.
+Latest repo upload folder: `upload/en-US/screenshots/`. All twenty screenshots freshly exported from Jackie's current larger-text layouts on 2026-11-04. Exact dimensions, RGB/no-alpha, CRCs and SHA-256 checked; current manifest: `upload/en-US/verification.json`. iPhone image 03 uses raw/en-US/iphone-medium/03-chameleon_setup.png. Old external image duplicates and preview strips were moved to Trash; original raw files and images embedded in the canonical document remain intact.
 
-Specifications checked 2026-11-03: [Apple screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications). The medium Dynamic Island iPhone, both Duo displays and 13-inch iPad use their own accepted output sizes. Landscape gameplay stays landscape within the composed device frame.
+Specifications checked against [Apple's requirements](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/) on 2026-11-04.
 
 ## Five-image story
 
@@ -49,6 +49,12 @@ The earlier change from cached Dimensions fields to viewport getters caused Word
 
 ## Authoring evidence
 
-`tools/store_assets/screenshots.rs` is the initial native Desigma layout generator (desigma-doc/desigma-render alpha.14 Rust crates, compatible with the installed alpha.17 editor). Final copy was refined through the official alpha.17 MCP server's file session; the initial generator now also preserves the approved Duo outer text/device gap; final PNGs were exported through `desigma_export_image` and flattened with macOS AppKit. The canonical document is authoritative after those MCP edits. PNG image fills are losslessly recompressed with Apple pngcrush and verified pixel-identical using CoreGraphics; native originals remain in raw/en-US/screenshot-series/.
+`tools/store_assets/screenshots.rs` is the initial native Desigma layout generator (desigma-doc/desigma-render alpha.14 Rust crates, compatible with the installed alpha.17 editor). Final copy was refined through the official alpha.17 MCP server's file session; the initial generator now also preserves the approved Duo outer text/device gap; final PNGs were exported through `desigma_export_image` and flattened with macOS AppKit. The canonical document is authoritative after those MCP edits. Native originals remain in raw/en-US/screenshot-series/; canonical image fills remain embedded. External optimized duplicates were removed from docs during cleanup.
 
 Desigma serializes embedded PNG bytes as JSON arrays. The final native file is compact JSON (about 45 MB), preserving all images and layers while keeping it below MCP's 64 MiB import limit. A pretty-printed save can exceed that import limit; compacting JSON without changing data restores compatibility. Do not overwrite the canonical file by rerunning the initial layout generator without preserving final copy/layout edits.
+
+## Localized text rows — 2026-11-04
+
+The iPhone, Duo outer and iPad pages now contain English plus three duplicated rows in order: Danish, Norwegian Bokmål and Swedish. Five frames per row. The translations change only promotional text, not the real embedded English app captures. Same font sizes, colors, transforms and screenshot image bytes; 45 localized PNGs exported using official Desigma MCP. Local upload folders follow upload/da-DK/screenshots/, upload/nb-NO/screenshots/ and upload/sv-SE/screenshots/, with iPhone, Duo/Outer and iPad subfolders. Matching OneDrive exports are under exports/Hint Master/Screenshots/<locale>/. Each language has a current verification.json.
+
+Only Duo outer will be submitted at Jackie's request. Duo inner has no new translations and its old English upload exports were retired to macOS Trash; original page/raw captures retained as reference. This supersedes the earlier twenty-English-export submission scope.

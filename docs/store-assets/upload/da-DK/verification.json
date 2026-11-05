@@ -1,0 +1,325 @@
+{
+  "verified_date": "2026-11-04",
+  "locale": "da-DK",
+  "translation_scope": "Editable promotional text only; embedded app screenshots remain English.",
+  "source_document": "projects/Hint Master/files/app-store-screenshots-en-US.desigma",
+  "source_document_sha256": "76731de3ea9a6763499f5aefbca2fd328166818fa9133d16043a33801ecae53c",
+  "files": [
+    {
+      "path": "screenshots/iPhone/01-categories-1206x2622-da-DK.png",
+      "frame_id": 211,
+      "source_english_frame_id": 2,
+      "dimensions": [
+        1206,
+        2622
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "84953a2452fc95dff74a598f64301d39461ce9250c278691fa21c4b3b36aacf6"
+    },
+    {
+      "path": "screenshots/iPhone/02-guess-word-1206x2622-da-DK.png",
+      "frame_id": 220,
+      "source_english_frame_id": 12,
+      "dimensions": [
+        1206,
+        2622
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "b8a63e87c8ca5900df6191fe79b7db3f3c16e78e1acd3ac11cc2dce172a8f4cd"
+    },
+    {
+      "path": "screenshots/iPhone/03-chameleon-setup-1206x2622-da-DK.png",
+      "frame_id": 231,
+      "source_english_frame_id": 24,
+      "dimensions": [
+        1206,
+        2622
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "bd98a4710a2081cf8eed9e895d8c0c1c679059ed5c408b875a3bc919c9d70f97"
+    },
+    {
+      "path": "screenshots/iPhone/04-secret-role-1206x2622-da-DK.png",
+      "frame_id": 240,
+      "source_english_frame_id": 34,
+      "dimensions": [
+        1206,
+        2622
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "678f40c55717ac4e669c016505d3cf2e81dd973e95e64e0d18d0096e17b85904"
+    },
+    {
+      "path": "screenshots/iPhone/05-reveal-1206x2622-da-DK.png",
+      "frame_id": 249,
+      "source_english_frame_id": 44,
+      "dimensions": [
+        1206,
+        2622
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "2158fd5ce48dac243b2753fc586c38d387003fd560168940efdcc7eccc56dff1"
+    },
+    {
+      "path": "screenshots/Duo/Outer/01-categories-1398x2034-da-DK.png",
+      "frame_id": 352,
+      "source_english_frame_id": 55,
+      "dimensions": [
+        1398,
+        2034
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "f494fdcd364867e3cbae89cd7139f36d8e8c63914de8da91b8963a402ea679c2"
+    },
+    {
+      "path": "screenshots/Duo/Outer/02-guess-word-1398x2034-da-DK.png",
+      "frame_id": 361,
+      "source_english_frame_id": 65,
+      "dimensions": [
+        1398,
+        2034
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "15d3895a880144d116220a0d5334db6a5b273b5fa95fea9aeae5ff0900fcb46a"
+    },
+    {
+      "path": "screenshots/Duo/Outer/03-chameleon-setup-1398x2034-da-DK.png",
+      "frame_id": 372,
+      "source_english_frame_id": 77,
+      "dimensions": [
+        1398,
+        2034
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "3d9cb1f63daa8f3d09a886c79f5301061f25c31eaf09b0046c69c2d391b0171f"
+    },
+    {
+      "path": "screenshots/Duo/Outer/04-secret-role-1398x2034-da-DK.png",
+      "frame_id": 381,
+      "source_english_frame_id": 87,
+      "dimensions": [
+        1398,
+        2034
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "c564ff6c8839ca2b7f0b6243decc93395993ea527708b10e558a335acf97b8d6"
+    },
+    {
+      "path": "screenshots/Duo/Outer/05-reveal-1398x2034-da-DK.png",
+      "frame_id": 390,
+      "source_english_frame_id": 97,
+      "dimensions": [
+        1398,
+        2034
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "cc3837e423f265f87eeea8e8201f28071173f7035f754af5f9f02d1928b9a784"
+    },
+    {
+      "path": "screenshots/iPad/01-categories-2064x2752-da-DK.png",
+      "frame_id": 493,
+      "source_english_frame_id": 159,
+      "dimensions": [
+        2064,
+        2752
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "d777bf62c13b6f2a8ffb80b985e6cf3cb5d7c66a5f31e1c95d9a3d2bcb01cb9e"
+    },
+    {
+      "path": "screenshots/iPad/02-guess-word-2064x2752-da-DK.png",
+      "frame_id": 502,
+      "source_english_frame_id": 169,
+      "dimensions": [
+        2064,
+        2752
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "02160484d3366c97b6999ddd1be8c7ea9918db0e5d378a37db3831f9069b7bb8"
+    },
+    {
+      "path": "screenshots/iPad/03-chameleon-setup-2064x2752-da-DK.png",
+      "frame_id": 513,
+      "source_english_frame_id": 181,
+      "dimensions": [
+        2064,
+        2752
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "e4ce421dc037725bfc094ba51cd8425a980d033f8310c69d7ef400afdf1c804e"
+    },
+    {
+      "path": "screenshots/iPad/04-secret-role-2064x2752-da-DK.png",
+      "frame_id": 522,
+      "source_english_frame_id": 191,
+      "dimensions": [
+        2064,
+        2752
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "db054ebe25fe4c33f2c7ddd68a55580d8aaa4a4760129a258c40c1ac0149b006"
+    },
+    {
+      "path": "screenshots/iPad/05-reveal-2064x2752-da-DK.png",
+      "frame_id": 531,
+      "source_english_frame_id": 201,
+      "dimensions": [
+        2064,
+        2752
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "5a84042da38652d64d7eea8ae089b294adb63703e8d79ff57db70fa5ecec5ab0"
+    },
+    {
+      "path": "promotion/Header-3840x1646-da-DK.png",
+      "frame_id": 672,
+      "dimensions": [
+        3840,
+        1646
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "fbfd07b16da228b1d1e2c196c7df97b20fe6e70c29fcda0290ea4ea766d52c24"
+    },
+    {
+      "path": "promotion/Search-1920x1280-da-DK.png",
+      "frame_id": 732,
+      "dimensions": [
+        1920,
+        1280
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "7b7d76e409e18d4fc71a5052e63cf3e472e8040285cbe898266e439ce3b779b0"
+    },
+    {
+      "path": "google-play/android-phone/01-categories-1440x2560-da-DK.png",
+      "frame_id": 790,
+      "dimensions": [
+        1440,
+        2560
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "4d6093112592129146b67e99dc89a048f196e1829fa58025d4a57a55fa7b723b",
+      "raw": "docs/store-assets/raw/en-US/android-phone/01-categories.png",
+      "raw_sha256": "5afd798094bcdb2e694e5853cc1764bba08a0fde32aa9d296d6e67783ff5800c"
+    },
+    {
+      "path": "google-play/android-phone/02-guess-word-1440x2560-da-DK.png",
+      "frame_id": 828,
+      "dimensions": [
+        1440,
+        2560
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "21c2c42c3774fcd24a8891dc687429ba243f0beaae3f8602fa20efdae0f8aca3",
+      "raw": "docs/store-assets/raw/en-US/android-phone/02-guess-word.png",
+      "raw_sha256": "72fa8ae7701b7c3ad1437be1f98ad0bb05bf9e69bd24eddf90bca6978333c911"
+    },
+    {
+      "path": "google-play/android-phone/03-chameleon-setup-1440x2560-da-DK.png",
+      "frame_id": 870,
+      "dimensions": [
+        1440,
+        2560
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "a4cdce869fbf110639a6f6d8a38b9c1c360d4741941a3a569096543dd968bba7",
+      "raw": "docs/store-assets/raw/en-US/android-phone/03-chameleon-setup.png",
+      "raw_sha256": "aab692f6b7a5caa1c6a9b853f931b0465e584a9097cee8994f221281976f2115"
+    },
+    {
+      "path": "google-play/android-phone/04-secret-role-1440x2560-da-DK.png",
+      "frame_id": 906,
+      "dimensions": [
+        1440,
+        2560
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "5846d48e8d211c1bd688047ea860c7bb060f8e1d181d07a086abaee5d1948d37",
+      "raw": "docs/store-assets/raw/en-US/android-phone/04-secret-role.png",
+      "raw_sha256": "453613220b3329d8974651a7027ce0b1d831575ef9faa8021504e8f6829067f2"
+    },
+    {
+      "path": "google-play/android-phone/05-reveal-1440x2560-da-DK.png",
+      "frame_id": 942,
+      "dimensions": [
+        1440,
+        2560
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "20be9985fe629354eefd7c9b8e11322d09e79815b002da4a9cfce7d0ec5ed713",
+      "raw": "docs/store-assets/raw/en-US/android-phone/05-reveal.png",
+      "raw_sha256": "ae01a434a2db51e0332f4332b6a713285e25adafcc1b4a010a2d853c5c3f4b0b"
+    },
+    {
+      "path": "google-play/android-tablet/01-categories-2560x1440-da-DK.png",
+      "frame_id": 979,
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "feb3ea1aa6050c0d2574413dcba65ebf2be0979cf2241d7e05772448fb6740cd",
+      "raw": "docs/store-assets/raw/en-US/android-tablet/01-categories.png",
+      "raw_sha256": "913ecb1607583671229e54feeb0a1947ae624992afaa08cc9054dbbbb33b69ef"
+    },
+    {
+      "path": "google-play/android-tablet/02-guess-word-2560x1440-da-DK.png",
+      "frame_id": 1015,
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "d70823afbbc2c26b38fec04a3d0dbb538fe0678050788a01f2e14f206739608d",
+      "raw": "docs/store-assets/raw/en-US/android-tablet/02-guess-word.png",
+      "raw_sha256": "994c8de196434212b359dc21825318aa9411ca6e5d8843bac0d35ec6cb50a205"
+    },
+    {
+      "path": "google-play/android-tablet/03-chameleon-setup-2560x1440-da-DK.png",
+      "frame_id": 1051,
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "3d035c41b146a5c4972dfd2e476e186bb2f85533ec619750511f07ad754bde4e",
+      "raw": "docs/store-assets/raw/en-US/android-tablet/03-chameleon-setup.png",
+      "raw_sha256": "41ab214eae5a33d348e15991a32e4580bc5317116b970fdfda0464cb32b2d0e9"
+    },
+    {
+      "path": "google-play/android-tablet/04-secret-role-2560x1440-da-DK.png",
+      "frame_id": 1087,
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "8aacdd488dc0db46c4e3f9270c97e67307d33dc12366e4efb8011a64ab605379",
+      "raw": "docs/store-assets/raw/en-US/android-tablet/04-secret-role.png",
+      "raw_sha256": "f8f3bafae0ae3e7155b92816d69766389788fef1f287154482ccf5af2e5a46aa"
+    },
+    {
+      "path": "google-play/android-tablet/05-reveal-2560x1440-da-DK.png",
+      "frame_id": 1123,
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "189dd17c0049402c33d80b325742cc92c637c5790b109a31faae81bc1185980f",
+      "raw": "docs/store-assets/raw/en-US/android-tablet/05-reveal.png",
+      "raw_sha256": "61d17a9dcecd36b18362bce465a6c0cead3ceb8bb172d1f03c1a125871948ce2"
+    },
+    {
+      "path": "google-play/Feature-Graphic-1024x500-da-DK.png",
+      "frame_id": 1167,
+      "dimensions": [
+        1024,
+        500
+      ],
+      "mode": "RGB 8-bit, no alpha",
+      "sha256": "99ac5a1b1abc1dc4a9b22e261acd93b9c1e227df08c20410158643bf2a05cc8c",
+      "alt_text": "Hint Masters kategorier og en gætterunde på tid med teksten Gæt ord og Find bluffet."
+    }
+  ]
+}
