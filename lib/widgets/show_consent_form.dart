@@ -3,79 +3,79 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+import '../helper/ad_helper.dart';
+import '../helper/dependencies.dart';
+
+final privacyOptionsRequired = ValueNotifier(false);
+bool _adsInitialized = false;
+
 Future<void> showConsentForm({
   bool isForTest = false,
   String? testDeviceId,
 }) async {
-  ConsentDebugSettings? debugSettings;
-  if (isForTest) {
-    debugSettings = ConsentDebugSettings(
-      debugGeography: DebugGeography.debugGeographyEea,
-      testIdentifiers: testDeviceId != null && testDeviceId.isNotEmpty
-          ? [testDeviceId]
-          : null,
-    );
-  }
-
-  final params = ConsentRequestParameters(
-    tagForUnderAgeOfConsent: false,
-    consentDebugSettings: debugSettings,
-  );
-
-  final consentInfo = ConsentInformation.instance;
-  final completer = Completer<void>();
-
+  final info = ConsentInformation.instance;
+  final updated = Completer<bool>();
   try {
-    consentInfo.requestConsentInfoUpdate(
-      params,
-      () async {
-        try {
-          final status = await consentInfo.getConsentStatus();
-          await ConsentForm.loadAndShowConsentFormIfRequired(
-            (FormError? formError) {
-              if (formError != null) {
-                debugPrint(
-                  'Consent form failed: ${_formatConsentError(formError)}',
-                );
-              } else {
-                debugPrint('Consent form handled (status: $status)');
-              }
-            },
-          );
-        } catch (error) {
-          debugPrint('Consent form exception: $error');
-        } finally {
-          if (!completer.isCompleted) {
-            completer.complete();
-          }
-        }
-      },
-      (FormError error) async {
-        ConsentStatus? status;
-        try {
-          status = await consentInfo.getConsentStatus();
-        } catch (_) {
-          status = null;
-        }
-        debugPrint(
-          'Consent update failed: ${_formatConsentError(error)} '
-          '(current status: $status)',
-        );
-        if (!completer.isCompleted) {
-          completer.complete();
-        }
+    info.requestConsentInfoUpdate(
+      ConsentRequestParameters(
+        consentDebugSettings: isForTest
+            ? ConsentDebugSettings(
+                debugGeography: DebugGeography.debugGeographyEea,
+                testIdentifiers: testDeviceId != null && testDeviceId.isNotEmpty
+                    ? [testDeviceId]
+                    : null,
+              )
+            : null,
+      ),
+      () => updated.complete(true),
+      (error) {
+        debugPrint('Consent update failed: ${error.message}');
+        updated.complete(false);
       },
     );
-  } catch (error) {
-    debugPrint('Consent update exception: $error');
-    if (!completer.isCompleted) {
-      completer.complete();
+    if (await updated.future) {
+      await ConsentForm.loadAndShowConsentFormIfRequired((error) {
+        if (error != null) debugPrint('Consent form failed: ${error.message}');
+      });
     }
+  } catch (error) {
+    debugPrint('Could not refresh ad consent: $error');
+  } finally {
+    await _refreshAdPermission();
   }
-
-  return completer.future;
 }
 
-String _formatConsentError(FormError error) {
-  return 'code ${error.errorCode}: ${error.message}';
+Future<bool> showAdPrivacyOptions() async {
+  AdHelper.setAdsAllowed(false);
+  try {
+    FormError? formError;
+    await ConsentForm.showPrivacyOptionsForm((error) => formError = error);
+    return formError == null;
+  } catch (error) {
+    debugPrint('Privacy options failed: $error');
+    return false;
+  } finally {
+    await _refreshAdPermission();
+  }
+}
+
+Future<void> _refreshAdPermission() async {
+  final info = ConsentInformation.instance;
+  try {
+    privacyOptionsRequired.value =
+        await info.getPrivacyOptionsRequirementStatus() ==
+        PrivacyOptionsRequirementStatus.required;
+  } catch (error) {
+    debugPrint('Could not read privacy options requirement: $error');
+  }
+  try {
+    if (!await info.canRequestAds()) return;
+    if (!_adsInitialized) {
+      await initializeAds();
+      _adsInitialized = true;
+    }
+    AdHelper.setAdsAllowed(true);
+  } catch (error) {
+    debugPrint('Could not enable ads: $error');
+  }
 }

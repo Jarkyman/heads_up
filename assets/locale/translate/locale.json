@@ -3,6 +3,8 @@
     "language": "English",
     "country_code": "en_US",
     "texts": {
+      "Ad privacy choices": "Ad privacy choices",
+      "Could not open privacy choices": "Could not open privacy choices",
       "Duration": "Duration",
       "Language": "Language",
       "How to play": "How to play",
@@ -120,6 +122,8 @@
     "language": "Deutsch",
     "country_code": "de_DE",
     "texts": {
+      "Ad privacy choices": "Datenschutz für Werbung",
+      "Could not open privacy choices": "Datenschutzeinstellungen konnten nicht geöffnet werden",
       "Duration": "Dauer",
       "Language": "Sprache",
       "How to play": "Wie man spielt",
@@ -237,6 +241,8 @@
     "language": "Dansk",
     "country_code": "da_DK",
     "texts": {
+      "Ad privacy choices": "Privatliv og annoncer",
+      "Could not open privacy choices": "Kunne ikke åbne privatlivsvalgene",
       "Duration": "Varighed",
       "Language": "Sprog",
       "How to play": "Hvordan spiller man",
@@ -354,6 +360,8 @@
     "language": "Svenska",
     "country_code": "sv_SE",
     "texts": {
+      "Ad privacy choices": "Integritet och annonser",
+      "Could not open privacy choices": "Det gick inte att öppna integritetsvalen",
       "Duration": "Varaktighet",
       "Language": "Språk",
       "How to play": "Hur man spelar",
@@ -471,6 +479,8 @@
     "language": "Norsk",
     "country_code": "nb_NO",
     "texts": {
+      "Ad privacy choices": "Personvern og annonser",
+      "Could not open privacy choices": "Kunne ikke åpne personvernvalgene",
       "Duration": "Varighet",
       "Language": "Språk",
       "How to play": "Hvordan spille",
@@ -588,6 +598,8 @@
     "language": "Español",
     "country_code": "es_ES",
     "texts": {
+      "Ad privacy choices": "Privacidad de los anuncios",
+      "Could not open privacy choices": "No se pudieron abrir las opciones de privacidad",
       "Duration": "Duración",
       "Language": "Idioma",
       "How to play": "Cómo jugar",
@@ -705,6 +717,8 @@
     "language": "Français",
     "country_code": "fr_FR",
     "texts": {
+      "Ad privacy choices": "Confidentialité des annonces",
+      "Could not open privacy choices": "Impossible d’ouvrir les options de confidentialité",
       "Duration": "Durée",
       "Language": "Langue",
       "How to play": "Comment jouer",
@@ -822,6 +836,8 @@
     "language": "Português",
     "country_code": "pt_PT",
     "texts": {
+      "Ad privacy choices": "Privacidade dos anúncios",
+      "Could not open privacy choices": "Não foi possível abrir as opções de privacidade",
       "Duration": "Duração",
       "Language": "Idioma",
       "How to play": "Como jogar",
@@ -939,6 +955,8 @@
     "language": "Brasileiro",
     "country_code": "pt_BR",
     "texts": {
+      "Ad privacy choices": "Privacidade dos anúncios",
+      "Could not open privacy choices": "Não foi possível abrir as opções de privacidade",
       "Duration": "Duração",
       "Language": "Idioma",
       "How to play": "Como jogar",

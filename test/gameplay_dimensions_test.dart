@@ -4,11 +4,9 @@ import 'package:get/get.dart';
 import 'package:heads_up/controllers/event_controller.dart';
 import 'package:heads_up/controllers/game_controller.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
-import 'package:heads_up/data/api/api_client.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/models/category_model.dart';
 import 'package:heads_up/pages/game pages/word_page.dart';
-import 'package:heads_up/repos/event_repo.dart';
 import 'package:heads_up/repos/settings_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -49,13 +47,11 @@ void main() {
       addTearDown(tester.view.resetDevicePixelRatio);
       addTearDown(Get.reset);
       SharedPreferences.setMockInitialValues({});
-      final api = ApiClient(appBaseUrl: '');
       final repo = SettingsRepo(
         sharedPreferences: await SharedPreferences.getInstance(),
-        apiClient: api,
       );
       Get.put(SettingsController(settingsRepo: repo));
-      Get.put(EventController(eventRepo: EventRepo(apiClient: api)));
+      Get.put(EventController());
       final round = Get.put<GameController>(_PreviewRound());
       await tester.pumpWidget(
         GetMaterialApp(

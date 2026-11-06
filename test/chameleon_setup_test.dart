@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:heads_up/controllers/event_controller.dart';
-import 'package:heads_up/data/api/api_client.dart';
 import 'package:heads_up/models/category_model.dart';
 import 'package:heads_up/helper/dimensions.dart';
 import 'package:heads_up/pages/game pages/chameleon_setup_page.dart';
-import 'package:heads_up/repos/event_repo.dart';
 import 'package:heads_up/repos/settings_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,13 +19,11 @@ void main() {
     SharedPreferences.setMockInitialValues({
       'chameleon-player-names': ['Anna', 'Bo', 'Clara', 'David'],
     });
-    final api = ApiClient(appBaseUrl: '');
     final repo = SettingsRepo(
       sharedPreferences: await SharedPreferences.getInstance(),
-      apiClient: api,
     );
     Get.put(repo);
-    Get.put(EventController(eventRepo: EventRepo(apiClient: api)));
+    Get.put(EventController());
     await tester.pumpWidget(
       GetMaterialApp(
         home: Scaffold(

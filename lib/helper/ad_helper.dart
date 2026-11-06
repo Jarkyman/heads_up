@@ -6,12 +6,20 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:heads_up/controllers/settings_controller.dart';
 
 class AdHelper {
-  static const AdRequest request = AdRequest(
-    nonPersonalizedAds: true,
-  );
+  static final consentRevision = ValueNotifier(0);
+  static bool _adsAllowed = false;
+  static bool get adsAllowed => _adsAllowed;
+
+  static void setAdsAllowed(bool allowed) {
+    if (_adsAllowed == allowed) return;
+    _adsAllowed = allowed;
+    consentRevision.value++;
+  }
+
+  static const AdRequest request = AdRequest(nonPersonalizedAds: true);
 
   static String get bannerAdUnitId {
-    if (Get.find<SettingsController>().isUnlockAll) return '';
+    if (!adsAllowed || Get.find<SettingsController>().isUnlockAll) return '';
 
     if (kDebugMode) {
       if (Platform.isAndroid) {
@@ -30,7 +38,7 @@ class AdHelper {
   }
 
   static String get interstitialAdUnitId {
-    if (Get.find<SettingsController>().isUnlockAll) return '';
+    if (!adsAllowed || Get.find<SettingsController>().isUnlockAll) return '';
 
     if (kDebugMode) {
       if (Platform.isAndroid) {
@@ -49,7 +57,7 @@ class AdHelper {
   }
 
   static String get rewardedAdUnitId {
-    if (Get.find<SettingsController>().isUnlockAll) return '';
+    if (!adsAllowed || Get.find<SettingsController>().isUnlockAll) return '';
 
     if (kDebugMode) {
       if (Platform.isAndroid) {

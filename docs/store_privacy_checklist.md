@@ -61,6 +61,23 @@ collected”.
   is app-level, not a separate setting on each artifact, and No does not disable
   non-personalized ads.
 
+## Consent behavior and local time
+
+The app checks UMP's `canRequestAds()` before enabling ad requests. When UMP
+requires a privacy entry point, Settings shows **Ad privacy choices**. Opening
+the form pauses ads and invalidates existing ad loads. The app checks permission
+again when the form closes. A refusal can still result in limited ads if Google
+permits them. The IP address can still be used for ad delivery, so the store
+declarations for approximate location remain in place.
+
+Seasonal content and trial resets use the device clock. The app no longer sends
+the device time zone to TimeAPI.io. Trial resets now follow the device's clock
+settings.
+
+The shared AdMob message applies to Hint Master and Flags Game on iOS and Android.
+The direct **Do not consent** button was enabled for all regions in the shared
+message and published on 2026-11-05 after Jackie approved both apps.
+
 ## Link availability
 
 The certificate for `hartvigsolutions.com` was repaired on 2026-07-28. Google

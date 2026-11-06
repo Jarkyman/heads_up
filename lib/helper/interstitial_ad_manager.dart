@@ -10,17 +10,19 @@ class InterstitialAdManager {
   InterstitialAd? _ad;
   bool _isDisposed = false;
   bool _hasShown = false;
+  int? _adRevision;
 
   void load() {
     final adUnitId = AdHelper.interstitialAdUnitId;
     if (!enabled || adUnitId.isEmpty || _isDisposed) return;
 
+    final revision = AdHelper.consentRevision.value;
     InterstitialAd.load(
       adUnitId: adUnitId,
       request: AdHelper.request,
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
-          if (_isDisposed) {
+          if (_isDisposed || revision != AdHelper.consentRevision.value) {
             ad.dispose();
             return;
           }
@@ -28,18 +30,15 @@ class InterstitialAdManager {
           ad.fullScreenContentCallback = FullScreenContentCallback(
             onAdDismissedFullScreenContent: (ad) => ad.dispose(),
             onAdFailedToShowFullScreenContent: (ad, error) {
-              debugPrint(
-                'Failed to show an interstitial ad: ${error.message}',
-              );
+              debugPrint('Failed to show an interstitial ad: ${error.message}');
               ad.dispose();
             },
           );
+          _adRevision = revision;
           _ad = ad;
         },
         onAdFailedToLoad: (error) {
-          debugPrint(
-            'Failed to load an interstitial ad: ${error.message}',
-          );
+          debugPrint('Failed to load an interstitial ad: ${error.message}');
         },
       ),
     );
@@ -47,7 +46,13 @@ class InterstitialAdManager {
 
   bool showIfReady() {
     final ad = _ad;
-    if (ad == null || _hasShown || _isDisposed) return false;
+    if (ad == null ||
+        _hasShown ||
+        _isDisposed ||
+        !AdHelper.adsAllowed ||
+        _adRevision != AdHelper.consentRevision.value) {
+      return false;
+    }
 
     _hasShown = true;
     _ad = null;

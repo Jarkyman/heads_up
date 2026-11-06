@@ -33,46 +33,53 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   RewardedAd? _rewardedAd;
   bool isAdLoaded = false;
-  String gdprStatus = 'none';
 
   @override
   void initState() {
     super.initState();
     OrientationHelper.setPortrait();
+    AdHelper.consentRevision.addListener(_onConsentChanged);
     _loadRewardedAd();
   }
 
   @override
-  dispose() {
+  void dispose() {
+    AdHelper.consentRevision.removeListener(_onConsentChanged);
     _rewardedAd?.dispose();
     super.dispose();
   }
 
+  void _onConsentChanged() {
+    _rewardedAd?.dispose();
+    setState(() {
+      _rewardedAd = null;
+      isAdLoaded = false;
+    });
+    _loadRewardedAd();
+  }
+
   void _loadRewardedAd() {
+    final adUnitId = AdHelper.rewardedAdUnitId;
+    if (adUnitId.isEmpty) return;
+    final revision = AdHelper.consentRevision.value;
     RewardedAd.load(
-      adUnitId: AdHelper.rewardedAdUnitId,
+      adUnitId: adUnitId,
       request: AdHelper.request,
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
-          ad.fullScreenContentCallback = FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (ad) {
-              setState(() {
-                ad.dispose();
-                _rewardedAd = null;
-              });
-              _loadRewardedAd();
-            },
-          );
+          if (!mounted || revision != AdHelper.consentRevision.value) {
+            ad.dispose();
+            return;
+          }
           setState(() {
             isAdLoaded = true;
             _rewardedAd = ad;
           });
         },
-        onAdFailedToLoad: (err) {
-          setState(() {
-            isAdLoaded = false;
-          });
-          debugPrint('Failed to load a rewarded ad: ${err.message}');
+        onAdFailedToLoad: (error) {
+          if (!mounted || revision != AdHelper.consentRevision.value) return;
+          setState(() => isAdLoaded = false);
+          debugPrint('Failed to load a rewarded ad: ${error.message}');
         },
       ),
     );

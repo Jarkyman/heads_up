@@ -5,9 +5,6 @@ class AppConstants {
   static const String IOS_ID = '1666497757';
   static const String ANDROID_ID = 'com.hartvig.develop.hint.master';
 
-  //Links
-  static const String TIME_API =
-      'https://www.timeapi.io/api/Time/current/zone?timeZone=';
   //Settings
   static const int TRYS_PR_DAY = 5;
   static const String LANG = 'Language';

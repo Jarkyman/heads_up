@@ -19,7 +19,18 @@ class _ResultBannerAdState extends State<ResultBannerAd> {
   @override
   void initState() {
     super.initState();
+    AdHelper.consentRevision.addListener(_onConsentChanged);
     _loadBanner();
+  }
+
+  void _onConsentChanged() {
+    _bannerAd?.dispose();
+    setState(() {
+      _bannerAd = null;
+      _isLoaded = false;
+      _shouldReserveSpace = false;
+      _loadBanner();
+    });
   }
 
   void _loadBanner() {
@@ -35,16 +46,15 @@ class _ResultBannerAdState extends State<ResultBannerAd> {
       request: AdHelper.request,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
-          if (!mounted) {
-            ad.dispose();
-            return;
-          }
+          if (!mounted || _bannerAd != ad) return;
           setState(() {
             _isLoaded = true;
           });
         },
         onAdFailedToLoad: (ad, error) {
+          if (!mounted || _bannerAd != ad) return;
           debugPrint('Failed to load a banner ad: ${error.message}');
+          _bannerAd = null;
           ad.dispose();
         },
       ),
@@ -56,6 +66,7 @@ class _ResultBannerAdState extends State<ResultBannerAd> {
 
   @override
   void dispose() {
+    AdHelper.consentRevision.removeListener(_onConsentChanged);
     _bannerAd?.dispose();
     super.dispose();
   }

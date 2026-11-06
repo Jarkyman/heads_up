@@ -3,7 +3,6 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
@@ -160,14 +159,14 @@ class SettingsController extends GetxController implements GetxService {
   Future<void> triesPerDaySave(int tries) async {
     _tries = tries;
     await settingsRepo.triesPerDaySave(tries);
-    DateTime today = await getDateNow();
+    DateTime today = DateTime.now();
     //debugPrint('now $today');
     await settingsRepo.triesDateSave(today.toString());
     update();
   }
 
   Future<void> resetTries() async {
-    DateTime today = await getDateNow();
+    DateTime today = DateTime.now();
     String loadRead = await settingsRepo.triesDateRead();
     //debugPrint('read $loadRead');
     DateTime old = DateTime.parse(loadRead).add(const Duration(days: 1));
@@ -183,24 +182,12 @@ class SettingsController extends GetxController implements GetxService {
   }
 
   Future<Duration> getTimeToNewTry() async {
-    DateTime today = await getDateNow();
+    DateTime today = DateTime.now();
     String loadRead = await settingsRepo.triesDateRead();
     //debugPrint('read $loadRead');
     DateTime old = DateTime.parse(loadRead).add(Duration(days: 1));
     //DateTime old = DateTime.parse(loadRead).add(Duration(minutes: 1)); //TEST ONLY
     //debugPrint('Dif = ${old.difference(today)}');
     return old.difference(today);
-  }
-
-  Future<DateTime> getDateNow() async {
-    final String currentTimeZone =
-        (await FlutterTimezone.getLocalTimezone()).identifier;
-    Response response = await settingsRepo.getTime(currentTimeZone);
-    //debugPrint(response.body);
-    if (response.statusCode == 200) {
-      return DateTime.parse(response.body['dateTime']);
-    } else {
-      return DateTime.now();
-    }
   }
 }

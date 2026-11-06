@@ -1,3 +1,4 @@
+import 'package:heads_up/helper/ad_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -133,13 +134,14 @@ class _BuyOrTryWidgetState extends State<BuyOrTryWidget> {
         GetBuilder<SettingsController>(builder: (settingsController) {
           final hasTriesLeft =
               settingsController.getTries < AppConstants.TRYS_PR_DAY;
-          final canWatchAd = widget.isAdLoaded && hasTriesLeft;
+          final canWatchAd =
+              widget.isAdLoaded && hasTriesLeft && AdHelper.adsAllowed;
 
           return PremiumActionButton(
             onTap: () {
               debugPrint(settingsController.getTries.toString());
               final rewardedAd = widget.rewardedAd;
-              if (canWatchAd && rewardedAd != null) {
+              if (canWatchAd && AdHelper.adsAllowed && rewardedAd != null) {
                 _earnedReward = false;
                 rewardedAd.fullScreenContentCallback =
                     FullScreenContentCallback(

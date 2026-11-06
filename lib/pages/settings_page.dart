@@ -15,6 +15,7 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import '../helper/app_constants.dart';
 import '../widgets/change_language_dialog.dart';
 import '../widgets/icon_button.dart';
+import '../widgets/show_consent_form.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -25,6 +26,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   bool _isRestoringPurchase = false;
+  bool _isOpeningPrivacyOptions = false;
 
   @override
   Widget build(BuildContext context) {
@@ -276,6 +278,42 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                       ),
+                    ),
+                    ValueListenableBuilder<bool>(
+                      valueListenable: privacyOptionsRequired,
+                      builder: (context, required, _) {
+                        if (!required) return const SizedBox.shrink();
+                        return Padding(
+                          padding: EdgeInsets.only(top: Dimensions.height10),
+                          child: SettingsBtn(
+                            child: TextButton.icon(
+                              onPressed: () async {
+                                if (_isOpeningPrivacyOptions) return;
+                                _isOpeningPrivacyOptions = true;
+                                final opened = await showAdPrivacyOptions();
+                                _isOpeningPrivacyOptions = false;
+                                if (!opened && context.mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Could not open privacy choices'.tr,
+                                      ),
+                                    ),
+                                  );
+                                }
+                              },
+                              icon: const Icon(Icons.privacy_tip_outlined),
+                              label: Text(
+                                'Ad privacy choices'.tr,
+                                style: TextStyle(fontSize: Dimensions.font20),
+                              ),
+                              style: TextButton.styleFrom(
+                                foregroundColor: Colors.white,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

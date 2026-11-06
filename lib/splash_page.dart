@@ -42,7 +42,7 @@ class _SplashPageState extends State<SplashScreen>
     WakelockPlus.enable();
     await Get.find<SettingsController>().readSettings();
 
-    await Get.find<EventController>().getDate();
+    Get.find<EventController>().getDate();
 
     await Get.find<CategoryController>().readAllCategories();
 

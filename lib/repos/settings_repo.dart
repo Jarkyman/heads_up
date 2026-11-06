@@ -1,16 +1,13 @@
 import 'dart:io';
 
-import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../data/api/api_client.dart';
 import '../helper/app_constants.dart';
 
 class SettingsRepo {
   final SharedPreferences sharedPreferences;
-  final ApiClient apiClient;
 
-  SettingsRepo({required this.sharedPreferences, required this.apiClient});
+  SettingsRepo({required this.sharedPreferences});
 
   Future<String> languageSettingRead() async {
     String language =
@@ -96,10 +93,5 @@ class SettingsRepo {
 
   Future<bool> triesDateSave(String date) async {
     return await sharedPreferences.setString(AppConstants.TRIES_DATE, date);
-  }
-
-  Future<Response> getTime(String timeZone) async {
-    String url = AppConstants.TIME_API + timeZone;
-    return await apiClient.getData(url);
   }
 }

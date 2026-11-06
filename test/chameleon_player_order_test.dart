@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heads_up/data/api/api_client.dart';
 import 'package:heads_up/helper/chameleon_player_order.dart';
 import 'package:heads_up/repos/settings_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,10 +28,7 @@ void main() {
   test('random start defaults on and survives reloading preferences', () async {
     SharedPreferences.setMockInitialValues({});
     final prefs = await SharedPreferences.getInstance();
-    final repo = SettingsRepo(
-      sharedPreferences: prefs,
-      apiClient: ApiClient(appBaseUrl: ''),
-    );
+    final repo = SettingsRepo(sharedPreferences: prefs);
     expect(repo.chameleonRandomStartRead(), isTrue);
     await repo.chameleonRandomStartSave(false);
     await prefs.reload();
