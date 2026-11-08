@@ -54,12 +54,9 @@ collected”.
 - Data is encrypted in transit.
 - Deletion requests can be handled through
   `hintmaster@hartvigsolutions.com`.
-- The currently published Android artifact still contains the Advertising ID
-  permission, so keep the app-level Advertising ID declaration at Yes for now.
-  After uploading the new artifact without the permission, change the declaration
-  to No once every active production/testing artifact matches. This declaration
-  is app-level, not a separate setting on each artifact, and No does not disable
-  non-personalized ads.
+- Keep the app-level Advertising ID declaration at Yes. The Android manifest
+  includes `com.google.android.gms.permission.AD_ID` for AdMob. This
+  permission does not grant access to device location.
 
 ## Consent behavior and local time
 

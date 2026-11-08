@@ -2,9 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.hartvig.develop.heads_up">
     <uses-permission android:name="com.android.vending.BILLING"/>
-    <uses-permission
-        android:name="com.google.android.gms.permission.AD_ID"
-        tools:node="remove"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
     <uses-permission
         android:name="android.permission.ACCESS_ADSERVICES_AD_ID"
         tools:node="remove"/>

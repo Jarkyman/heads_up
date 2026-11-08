@@ -44,90 +44,35 @@ class _SettingsPageState extends State<SettingsPage> {
                         buildLanguageDialog();
                       },
                       child: SettingsBtn(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: Dimensions.width10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: Dimensions.width30 * 7.5,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Language'.tr,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      fontSize: Dimensions.font26,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(
-                                        alpha: 0.8,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                        label: 'Language'.tr,
+                        trailing: Container(
+                          height: Dimensions.height45,
+                          width: Dimensions.height45,
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 2, color: Colors.black),
+                            borderRadius: BorderRadius.circular(
+                              Dimensions.height45,
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage(
+                                "assets/locale/flags/${Get.locale.toString().split('_')[1].toLowerCase()}.png",
                               ),
-                              Container(
-                                height: Dimensions.height45,
-                                width: Dimensions.height45,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: 2,
-                                    color: Colors.black,
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                    Dimensions.height45,
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/locale/flags/${Get.locale.toString().split('_')[1].toLowerCase()}.png",
-                                    ),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ],
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(height: Dimensions.height20),
                     SettingsBtn(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: Dimensions.width10,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: Dimensions.width45 * 2.6,
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'Duration'.tr,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontSize: Dimensions.font26,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white.withValues(alpha: 0.8),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            GetBuilder<SettingsController>(
-                              builder: (settingsController) {
-                                return RoundTimeSelector(
-                                  selectedTime: settingsController.getRoundTime,
-                                  onSelected: settingsController.roundTimeSave,
-                                );
-                              },
-                            ),
-                          ],
-                        ),
+                      label: 'Duration'.tr,
+                      trailing: GetBuilder<SettingsController>(
+                        builder: (settingsController) {
+                          return RoundTimeSelector(
+                            selectedTime: settingsController.getRoundTime,
+                            onSelected: settingsController.roundTimeSave,
+                          );
+                        },
                       ),
                     ),
                     SizedBox(height: Dimensions.height20),
@@ -136,34 +81,9 @@ class _SettingsPageState extends State<SettingsPage> {
                         buildHowToSelectionDialog();
                       },
                       child: SettingsBtn(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: Dimensions.width10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: Dimensions.width30 * 7.5,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'How to play'.tr,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      fontSize: Dimensions.font26,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(
-                                        alpha: 0.8,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const IconIndicator(icon: Icons.question_mark),
-                            ],
-                          ),
+                        label: 'How to play'.tr,
+                        trailing: const IconIndicator(
+                          icon: Icons.question_mark,
                         ),
                       ),
                     ),
@@ -173,35 +93,8 @@ class _SettingsPageState extends State<SettingsPage> {
                         ReviewController.rateMyApp.launchStore();
                       },
                       child: SettingsBtn(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: Dimensions.width10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: Dimensions.width30 * 7.5,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Review app'.tr,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      fontSize: Dimensions.font26,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(
-                                        alpha: 0.8,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const IconIndicator(icon: Icons.star),
-                            ],
-                          ),
-                        ),
+                        label: 'Review app'.tr,
+                        trailing: const IconIndicator(icon: Icons.star),
                       ),
                     ),
                     SizedBox(height: Dimensions.height20),
@@ -248,35 +141,8 @@ class _SettingsPageState extends State<SettingsPage> {
                         }
                       },
                       child: SettingsBtn(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: Dimensions.width10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: Dimensions.width30 * 7.5,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Restore purchase'.tr,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      fontSize: Dimensions.font26,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white.withValues(
-                                        alpha: 0.8,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const IconIndicator(icon: Icons.sync),
-                            ],
-                          ),
-                        ),
+                        label: 'Restore purchase'.tr,
+                        trailing: const IconIndicator(icon: Icons.sync),
                       ),
                     ),
                     ValueListenableBuilder<bool>(
@@ -284,31 +150,31 @@ class _SettingsPageState extends State<SettingsPage> {
                       builder: (context, required, _) {
                         if (!required) return const SizedBox.shrink();
                         return Padding(
-                          padding: EdgeInsets.only(top: Dimensions.height10),
-                          child: SettingsBtn(
-                            child: TextButton.icon(
-                              onPressed: () async {
-                                if (_isOpeningPrivacyOptions) return;
-                                _isOpeningPrivacyOptions = true;
-                                final opened = await showAdPrivacyOptions();
+                          padding: EdgeInsets.only(top: Dimensions.height20),
+                          child: GestureDetector(
+                            onTap: () async {
+                              if (_isOpeningPrivacyOptions) return;
+                              _isOpeningPrivacyOptions = true;
+                              final bool opened;
+                              try {
+                                opened = await showAdPrivacyOptions();
+                              } finally {
                                 _isOpeningPrivacyOptions = false;
-                                if (!opened && context.mounted) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'Could not open privacy choices'.tr,
-                                      ),
+                              }
+                              if (!opened && context.mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Could not open privacy choices'.tr,
                                     ),
-                                  );
-                                }
-                              },
-                              icon: const Icon(Icons.privacy_tip_outlined),
-                              label: Text(
-                                'Ad privacy choices'.tr,
-                                style: TextStyle(fontSize: Dimensions.font20),
-                              ),
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.white,
+                                  ),
+                                );
+                              }
+                            },
+                            child: SettingsBtn(
+                              label: 'Ad privacy choices'.tr,
+                              trailing: const IconIndicator(
+                                icon: Icons.privacy_tip_outlined,
                               ),
                             ),
                           ),
@@ -452,8 +318,10 @@ class _RoundTimeButton extends StatelessWidget {
 }
 
 class SettingsBtn extends StatelessWidget {
-  final Widget child;
-  const SettingsBtn({super.key, required this.child});
+  const SettingsBtn({super.key, required this.label, required this.trailing});
+
+  final String label;
+  final Widget trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -469,7 +337,30 @@ class SettingsBtn extends StatelessWidget {
             borderRadius: BorderRadius.circular(Dimensions.radius20),
             border: Border.all(color: AppColors.glassBorder, width: 1.2),
           ),
-          child: child,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: Dimensions.width10),
+            child: Row(
+              children: [
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      label,
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontSize: Dimensions.font26,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white.withValues(alpha: 0.8),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: Dimensions.width10),
+                trailing,
+              ],
+            ),
+          ),
         ),
       ),
     );

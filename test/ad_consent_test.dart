@@ -7,8 +7,10 @@ import 'package:heads_up/helper/ad_helper.dart';
 import 'package:heads_up/widgets/show_consent_form.dart';
 
 class _ConsentInfo extends Fake implements ConsentInformation {
+  final permissionCheck = Completer<bool>();
+
   @override
-  Future<bool> canRequestAds() async => false;
+  Future<bool> canRequestAds() => permissionCheck.future;
 
   @override
   Future<PrivacyOptionsRequirementStatus>
@@ -20,20 +22,23 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test(
-    'opening privacy options suspends ads until UMP allows requests',
+    'privacy options can reopen while ad permission is being refreshed',
     () async {
       final previous = ConsentInformation.instance;
-      ConsentInformation.instance = _ConsentInfo();
+      final info = _ConsentInfo();
+      ConsentInformation.instance = info;
       addTearDown(() => ConsentInformation.instance = previous);
       addTearDown(() => privacyOptionsRequired.value = false);
       addTearDown(() => AdHelper.setAdsAllowed(false));
 
       const channel = MethodChannel('plugins.flutter.io/google_mobile_ads/ump');
       final dismissed = Completer<void>();
+      var presentations = 0;
       final messenger =
           TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
       messenger.setMockMethodCallHandler(channel, (call) async {
         expect(call.method, 'UserMessagingPlatform#showPrivacyOptionsForm');
+        presentations++;
         await dismissed.future;
         return null;
       });
@@ -48,6 +53,10 @@ void main() {
       expect(AdHelper.rewardedAdUnitId, isEmpty);
       dismissed.complete();
       expect(await dialog, isTrue);
+      expect(await showAdPrivacyOptions(), isTrue);
+      expect(presentations, 2);
+      info.permissionCheck.complete(false);
+      await Future<void>.delayed(Duration.zero);
       expect(AdHelper.adsAllowed, isFalse);
       expect(privacyOptionsRequired.value, isTrue);
     },

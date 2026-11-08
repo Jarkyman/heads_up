@@ -7,7 +7,8 @@ import '../helper/ad_helper.dart';
 import '../helper/dependencies.dart';
 
 final privacyOptionsRequired = ValueNotifier(false);
-bool _adsInitialized = false;
+Future<void>? _adsInitialization;
+int _permissionRevision = 0;
 
 Future<void> showConsentForm({
   bool isForTest = false,
@@ -46,6 +47,7 @@ Future<void> showConsentForm({
 }
 
 Future<bool> showAdPrivacyOptions() async {
+  _permissionRevision++;
   AdHelper.setAdsAllowed(false);
   try {
     FormError? formError;
@@ -55,26 +57,37 @@ Future<bool> showAdPrivacyOptions() async {
     debugPrint('Privacy options failed: $error');
     return false;
   } finally {
-    await _refreshAdPermission();
+    unawaited(_refreshAdPermission());
   }
 }
 
 Future<void> _refreshAdPermission() async {
+  final revision = ++_permissionRevision;
   final info = ConsentInformation.instance;
   try {
+    final status = await info.getPrivacyOptionsRequirementStatus();
+    if (revision != _permissionRevision) return;
     privacyOptionsRequired.value =
-        await info.getPrivacyOptionsRequirementStatus() ==
-        PrivacyOptionsRequirementStatus.required;
+        status == PrivacyOptionsRequirementStatus.required;
   } catch (error) {
     debugPrint('Could not read privacy options requirement: $error');
   }
   try {
-    if (!await info.canRequestAds()) return;
-    if (!_adsInitialized) {
-      await initializeAds();
-      _adsInitialized = true;
+    if (revision != _permissionRevision ||
+        !await info.canRequestAds() ||
+        revision != _permissionRevision) {
+      return;
     }
-    AdHelper.setAdsAllowed(true);
+    final initialization = _adsInitialization ??= initializeAds();
+    try {
+      await initialization;
+    } catch (_) {
+      if (identical(_adsInitialization, initialization)) {
+        _adsInitialization = null;
+      }
+      rethrow;
+    }
+    if (revision == _permissionRevision) AdHelper.setAdsAllowed(true);
   } catch (error) {
     debugPrint('Could not enable ads: $error');
   }
